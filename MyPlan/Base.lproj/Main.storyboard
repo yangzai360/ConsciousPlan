@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--SettingVC-->
+        <!--信息-->
         <scene sceneID="1iW-JR-UKv">
             <objects>
                 <viewController id="tsS-KZ-fp5" customClass="MPSettingVC" customModule="MyPlan" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HT4-I2-dVj">
-                                <rect key="frame" x="318" y="28" width="37" height="30"/>
+                                <rect key="frame" x="322" y="94" width="37" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
@@ -32,11 +32,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="信息" id="Bn0-qG-wlU">
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="HUq-mD-uPb">
+                            <connections>
+                                <action selector="doneItemBtnClicked:" destination="tsS-KZ-fp5" id="sUC-3I-lbp"/>
+                                <segue destination="mRs-ol-WrW" kind="unwind" unwindAction="unwindToPlansList:" id="934-SK-Uf8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEq-MF-JZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="mRs-ol-WrW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="-699"/>
+            <point key="canvasLocation" x="2608.8000000000002" y="-699.40029985007504"/>
         </scene>
         <!--计划列表-->
         <scene sceneID="73d-qd-jQ4">
@@ -88,7 +97,7 @@
                     <navigationItem key="navigationItem" title="计划列表" id="DsO-qx-axi">
                         <barButtonItem key="leftBarButtonItem" image="Setting" id="XaI-NV-3U2">
                             <connections>
-                                <segue destination="tsS-KZ-fp5" kind="popoverPresentation" popoverAnchorBarButtonItem="XaI-NV-3U2" id="O3G-HW-rdF">
+                                <segue destination="h0D-qF-vJ5" kind="popoverPresentation" popoverAnchorBarButtonItem="XaI-NV-3U2" id="O3G-HW-rdF">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>
@@ -469,6 +478,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h59-8d-m3j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4245.6000000000004" y="1136.5817091454273"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9vi-7X-E08">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h0D-qF-vJ5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ePt-4E-eeV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tsS-KZ-fp5" kind="relationship" relationship="rootViewController" id="Ttw-ow-CmJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O4K-Ns-lfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1669.5999999999999" y="-699.40029985007504"/>
         </scene>
     </scenes>
     <resources>

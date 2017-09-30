@@ -38,6 +38,7 @@
 		D520F0811F7F932F001DFACE /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520F07C1F7F932F001DFACE /* DimmingPresentationController.swift */; };
 		D520F0821F7F932F001DFACE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520F07D1F7F932F001DFACE /* GradientView.swift */; };
 		D520F0831F7F932F001DFACE /* MPPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520F07E1F7F932F001DFACE /* MPPopView.swift */; };
+		D520F08C1F7F9F46001DFACE /* MPSettingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D520F08B1F7F9F46001DFACE /* MPSettingHeaderView.xib */; };
 		D52ED3861E8D072B00ED23FA /* EKColorCheckCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D52ED3851E8D072B00ED23FA /* EKColorCheckCell.xib */; };
 		D52ED3881E8FA09300ED23FA /* MPPlanDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52ED3871E8FA09300ED23FA /* MPPlanDetailVC.swift */; };
 		D52ED39A1E94A37300ED23FA /* MPAddPlanProgressPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52ED3991E94A37300ED23FA /* MPAddPlanProgressPopVC.swift */; };
@@ -121,6 +122,7 @@
 		D520F07C1F7F932F001DFACE /* DimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
 		D520F07D1F7F932F001DFACE /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		D520F07E1F7F932F001DFACE /* MPPopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPopView.swift; sourceTree = "<group>"; };
+		D520F08B1F7F9F46001DFACE /* MPSettingHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MPSettingHeaderView.xib; sourceTree = "<group>"; };
 		D52ED3851E8D072B00ED23FA /* EKColorCheckCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EKColorCheckCell.xib; sourceTree = "<group>"; };
 		D52ED3871E8FA09300ED23FA /* MPPlanDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanDetailVC.swift; sourceTree = "<group>"; };
 		D52ED3991E94A37300ED23FA /* MPAddPlanProgressPopVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MPAddPlanProgressPopVC.swift; path = ../View/MPAddPlanProgressPopVC.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				8F52E8501E87B79A00E41627 /* Controller */,
 				D52ED3891E8FB59900ED23FA /* View */,
 				D541DEBC1E8CA18B00FFFC88 /* EurekaCell */,
+				D520F0861F7F9EFD001DFACE /* Mudules */,
 				8F52E81F1E87B5C500E41627 /* AppDelegate.swift */,
 				8FC3B8161E8A93B800E9E5A1 /* CoreDataStack.swift */,
 				D54EFDBA1E8BA2A70030A6E8 /* NSDate+MPPlanDate.swift */,
@@ -310,6 +313,46 @@
 				D520F07E1F7F932F001DFACE /* MPPopView.swift */,
 			);
 			path = MPProgress;
+			sourceTree = "<group>";
+		};
+		D520F0861F7F9EFD001DFACE /* Mudules */ = {
+			isa = PBXGroup;
+			children = (
+				D520F0871F7F9F07001DFACE /* Setting */,
+			);
+			path = Mudules;
+			sourceTree = "<group>";
+		};
+		D520F0871F7F9F07001DFACE /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				D520F0881F7F9F26001DFACE /* Controllers */,
+				D520F0891F7F9F26001DFACE /* EurekaCell */,
+				D520F08A1F7F9F26001DFACE /* View */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		D520F0881F7F9F26001DFACE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D520F0891F7F9F26001DFACE /* EurekaCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EurekaCell;
+			sourceTree = "<group>";
+		};
+		D520F08A1F7F9F26001DFACE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D520F08B1F7F9F46001DFACE /* MPSettingHeaderView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D52ED3891E8FB59900ED23FA /* View */ = {
@@ -471,6 +514,7 @@
 				8F52E82D1E87B5C500E41627 /* LaunchScreen.storyboard in Resources */,
 				8F52E82A1E87B5C500E41627 /* Assets.xcassets in Resources */,
 				D52ED3861E8D072B00ED23FA /* EKColorCheckCell.xib in Resources */,
+				D520F08C1F7F9F46001DFACE /* MPSettingHeaderView.xib in Resources */,
 				D541DEC01E8CA5BA00FFFC88 /* EKColorPickCell.xib in Resources */,
 				8FBA6DFB1F04E82D007E4B93 /* MPPlanListCell.xib in Resources */,
 				D5737B0F1F2BAEFA009E4240 /* MPPlanTypeTimeView.xib in Resources */,
