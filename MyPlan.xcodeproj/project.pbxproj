@@ -33,13 +33,13 @@
 		8FC3B8171E8A93B800E9E5A1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC3B8161E8A93B800E9E5A1 /* CoreDataStack.swift */; };
 		8FC3B8191E8C098600E9E5A1 /* MPSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC3B8181E8C098600E9E5A1 /* MPSettingVC.swift */; };
 		8FC3B81C1E902F3B00E9E5A1 /* UIViewControlelr+MPAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC3B81B1E902F3B00E9E5A1 /* UIViewControlelr+MPAppearance.swift */; };
+		D520F07F1F7F932F001DFACE /* BounceAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520F07A1F7F932F001DFACE /* BounceAnimationController.swift */; };
+		D520F0801F7F932F001DFACE /* FadeOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520F07B1F7F932F001DFACE /* FadeOutAnimationController.swift */; };
+		D520F0811F7F932F001DFACE /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520F07C1F7F932F001DFACE /* DimmingPresentationController.swift */; };
+		D520F0821F7F932F001DFACE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520F07D1F7F932F001DFACE /* GradientView.swift */; };
+		D520F0831F7F932F001DFACE /* MPPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520F07E1F7F932F001DFACE /* MPPopView.swift */; };
 		D52ED3861E8D072B00ED23FA /* EKColorCheckCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D52ED3851E8D072B00ED23FA /* EKColorCheckCell.xib */; };
 		D52ED3881E8FA09300ED23FA /* MPPlanDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52ED3871E8FA09300ED23FA /* MPPlanDetailVC.swift */; };
-		D52ED3911E948DC500ED23FA /* BounceAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52ED38D1E948DC500ED23FA /* BounceAnimationController.swift */; };
-		D52ED3921E948DC500ED23FA /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52ED38E1E948DC500ED23FA /* DimmingPresentationController.swift */; };
-		D52ED3931E948DC500ED23FA /* FadeOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52ED38F1E948DC500ED23FA /* FadeOutAnimationController.swift */; };
-		D52ED3941E948DC500ED23FA /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52ED3901E948DC500ED23FA /* GradientView.swift */; };
-		D52ED3981E94924B00ED23FA /* MPPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52ED3971E94924B00ED23FA /* MPPopView.swift */; };
 		D52ED39A1E94A37300ED23FA /* MPAddPlanProgressPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52ED3991E94A37300ED23FA /* MPAddPlanProgressPopVC.swift */; };
 		D534BEDD1E94E75C007CED1E /* MPPlan+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D534BEDC1E94E75C007CED1E /* MPPlan+CoreDataProperties.swift */; };
 		D534BEE01E94E7A3007CED1E /* Execution+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D534BEDE1E94E7A3007CED1E /* Execution+CoreDataClass.swift */; };
@@ -116,13 +116,13 @@
 		8FC3B8181E8C098600E9E5A1 /* MPSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPSettingVC.swift; sourceTree = "<group>"; };
 		8FC3B81B1E902F3B00E9E5A1 /* UIViewControlelr+MPAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControlelr+MPAppearance.swift"; sourceTree = "<group>"; };
 		AC6AEDD082A5F5D669D509FF /* Pods-MyPlan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlan.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlan/Pods-MyPlan.release.xcconfig"; sourceTree = "<group>"; };
+		D520F07A1F7F932F001DFACE /* BounceAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimationController.swift; sourceTree = "<group>"; };
+		D520F07B1F7F932F001DFACE /* FadeOutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeOutAnimationController.swift; sourceTree = "<group>"; };
+		D520F07C1F7F932F001DFACE /* DimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
+		D520F07D1F7F932F001DFACE /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		D520F07E1F7F932F001DFACE /* MPPopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPopView.swift; sourceTree = "<group>"; };
 		D52ED3851E8D072B00ED23FA /* EKColorCheckCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EKColorCheckCell.xib; sourceTree = "<group>"; };
 		D52ED3871E8FA09300ED23FA /* MPPlanDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanDetailVC.swift; sourceTree = "<group>"; };
-		D52ED38D1E948DC500ED23FA /* BounceAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimationController.swift; sourceTree = "<group>"; };
-		D52ED38E1E948DC500ED23FA /* DimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
-		D52ED38F1E948DC500ED23FA /* FadeOutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeOutAnimationController.swift; sourceTree = "<group>"; };
-		D52ED3901E948DC500ED23FA /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		D52ED3971E94924B00ED23FA /* MPPopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPopView.swift; sourceTree = "<group>"; };
 		D52ED3991E94A37300ED23FA /* MPAddPlanProgressPopVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MPAddPlanProgressPopVC.swift; path = ../View/MPAddPlanProgressPopVC.swift; sourceTree = "<group>"; };
 		D534BEDC1E94E75C007CED1E /* MPPlan+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MPPlan+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D534BEDE1E94E7A3007CED1E /* Execution+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Execution+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -188,6 +188,7 @@
 		33C6E1AB1F3B4AB800399343 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				D520F0791F7F932F001DFACE /* MPProgress */,
 				33C6E1AC1F3B4ADB00399343 /* YZDatePicker */,
 			);
 			path = Others;
@@ -299,6 +300,18 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D520F0791F7F932F001DFACE /* MPProgress */ = {
+			isa = PBXGroup;
+			children = (
+				D520F07A1F7F932F001DFACE /* BounceAnimationController.swift */,
+				D520F07B1F7F932F001DFACE /* FadeOutAnimationController.swift */,
+				D520F07C1F7F932F001DFACE /* DimmingPresentationController.swift */,
+				D520F07D1F7F932F001DFACE /* GradientView.swift */,
+				D520F07E1F7F932F001DFACE /* MPPopView.swift */,
+			);
+			path = MPProgress;
+			sourceTree = "<group>";
+		};
 		D52ED3891E8FB59900ED23FA /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,21 +323,8 @@
 				D5737B0E1F2BAEFA009E4240 /* MPPlanTypeTimeView.xib */,
 				D5737B101F2BB331009E4240 /* MPPlanTypeToDoView.swift */,
 				D5737B121F2BB343009E4240 /* MPPlanTypeToDoView.xib */,
-				D52ED38C1E948DC500ED23FA /* MPProgress */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		D52ED38C1E948DC500ED23FA /* MPProgress */ = {
-			isa = PBXGroup;
-			children = (
-				D52ED38D1E948DC500ED23FA /* BounceAnimationController.swift */,
-				D52ED38E1E948DC500ED23FA /* DimmingPresentationController.swift */,
-				D52ED38F1E948DC500ED23FA /* FadeOutAnimationController.swift */,
-				D52ED3901E948DC500ED23FA /* GradientView.swift */,
-				D52ED3971E94924B00ED23FA /* MPPopView.swift */,
-			);
-			path = MPProgress;
 			sourceTree = "<group>";
 		};
 		D541DEBC1E8CA18B00FFFC88 /* EurekaCell */ = {
@@ -555,35 +555,35 @@
 				D534BEE01E94E7A3007CED1E /* Execution+CoreDataClass.swift in Sources */,
 				D541DEC31E8CAB7000FFFC88 /* EKColorPickRow.swift in Sources */,
 				8F52E8281E87B5C500E41627 /* MyPlan.xcdatamodeld in Sources */,
-				D52ED3981E94924B00ED23FA /* MPPopView.swift in Sources */,
 				D534BEDD1E94E75C007CED1E /* MPPlan+CoreDataProperties.swift in Sources */,
 				33C6E1B61F3B4AF000399343 /* YZYearlyView.swift in Sources */,
 				D52ED3881E8FA09300ED23FA /* MPPlanDetailVC.swift in Sources */,
 				8FC3B8191E8C098600E9E5A1 /* MPSettingVC.swift in Sources */,
 				D534BEFB1E978D01007CED1E /* EKStartUnitValueRow.swift in Sources */,
-				D52ED3941E948DC500ED23FA /* GradientView.swift in Sources */,
 				D53600721F27C5870054B0E3 /* MPPlanInfoTVC.swift in Sources */,
 				D53D05001F5E46A000B071CD /* MPPlanTodoListEuVC.swift in Sources */,
-				D52ED3911E948DC500ED23FA /* BounceAnimationController.swift in Sources */,
 				8F52E8561E87B80300E41627 /* MPCreatePlanVC.swift in Sources */,
+				D520F0831F7F932F001DFACE /* MPPopView.swift in Sources */,
 				D5737B111F2BB331009E4240 /* MPPlanTypeToDoView.swift in Sources */,
 				8FC3B81C1E902F3B00E9E5A1 /* UIViewControlelr+MPAppearance.swift in Sources */,
 				D54EFDBB1E8BA2A70030A6E8 /* NSDate+MPPlanDate.swift in Sources */,
 				D5737B0D1F2BAEE0009E4240 /* MPPlanTypeTimeView.swift in Sources */,
-				D52ED3921E948DC500ED23FA /* DimmingPresentationController.swift in Sources */,
+				D520F0821F7F932F001DFACE /* GradientView.swift in Sources */,
 				33C6E1AA1F3B4A3700399343 /* MPCalendarVC.swift in Sources */,
 				D5CA5B821EA3C37300960944 /* SubTodo+CoreDataClass.swift in Sources */,
+				D520F0811F7F932F001DFACE /* DimmingPresentationController.swift in Sources */,
 				33A9B6DA1F3B5890002346A2 /* MPCalendarListTVC.swift in Sources */,
 				D536006C1F2744CA0054B0E3 /* MPPlanDetailView.swift in Sources */,
 				8F52E8541E87B7DB00E41627 /* MPPlanListVC.swift in Sources */,
 				33A416991F2A37BB00F829F3 /* MPPlanTypeValueView.swift in Sources */,
 				D534BEE31E95F304007CED1E /* MPPlanExecutionListVC.swift in Sources */,
 				D5CA5B7D1EA38CCD00960944 /* MPEnums.swift in Sources */,
+				D520F07F1F7F932F001DFACE /* BounceAnimationController.swift in Sources */,
 				33A416971F2A367000F829F3 /* MPPlanDetailViewDelegate.swift in Sources */,
 				8FC3B8141E894A4400E9E5A1 /* MPPlan+CoreDataClass.swift in Sources */,
 				33C6E1B41F3B4AF000399343 /* YZMonthGridView.swift in Sources */,
-				D52ED3931E948DC500ED23FA /* FadeOutAnimationController.swift in Sources */,
 				D5CA5B831EA3C37300960944 /* SubTodo+CoreDataProperties.swift in Sources */,
+				D520F0801F7F932F001DFACE /* FadeOutAnimationController.swift in Sources */,
 				8FA16C501F61A8DC00FEAFEF /* MPAddTodoPopVC.swift in Sources */,
 				33C6E1B51F3B4AF000399343 /* YZMonthView.swift in Sources */,
 				8FBA6DFA1F04E82D007E4B93 /* MPPlanListCell.swift in Sources */,
