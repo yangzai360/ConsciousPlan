@@ -1,0 +1,20 @@
+PODS:
+  - Charts (3.0.1):
+    - Charts/Core (= 3.0.1)
+  - Charts/Core (3.0.1)
+  - Eureka (2.0.1)
+  - SnapKit (3.2.0)
+
+DEPENDENCIES:
+  - Charts (~> 3.0.1)
+  - Eureka
+  - SnapKit (~> 3.2.0)
+
+SPEC CHECKSUMS:
+  Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
+  Eureka: ae837bb1dfae0c07bc1bda7aeef87876eeb537c2
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+
+PODFILE CHECKSUM: 307bf8ad9069e8bded09ccf3e1dd4aa056909e09
+
+COCOAPODS: 1.2.1

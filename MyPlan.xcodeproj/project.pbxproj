@@ -1,0 +1,888 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F2F827921C8A01E84322E89 /* Pods_MyPlan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC244AF85381AC65B679FF4A /* Pods_MyPlan.framework */; };
+		33A416971F2A367000F829F3 /* MPPlanDetailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A416961F2A367000F829F3 /* MPPlanDetailViewDelegate.swift */; };
+		33A416991F2A37BB00F829F3 /* MPPlanTypeValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A416981F2A37BB00F829F3 /* MPPlanTypeValueView.swift */; };
+		33A9B6DA1F3B5890002346A2 /* MPCalendarListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A9B6D91F3B5890002346A2 /* MPCalendarListTVC.swift */; };
+		33C6E1AA1F3B4A3700399343 /* MPCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C6E1A91F3B4A3700399343 /* MPCalendarVC.swift */; };
+		33C6E1B21F3B4AF000399343 /* YZDatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C6E1AD1F3B4AF000399343 /* YZDatePickerController.swift */; };
+		33C6E1B31F3B4AF000399343 /* YZDayGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C6E1AE1F3B4AF000399343 /* YZDayGridView.swift */; };
+		33C6E1B41F3B4AF000399343 /* YZMonthGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C6E1AF1F3B4AF000399343 /* YZMonthGridView.swift */; };
+		33C6E1B51F3B4AF000399343 /* YZMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C6E1B01F3B4AF000399343 /* YZMonthView.swift */; };
+		33C6E1B61F3B4AF000399343 /* YZYearlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C6E1B11F3B4AF000399343 /* YZYearlyView.swift */; };
+		8F52E8201E87B5C500E41627 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52E81F1E87B5C500E41627 /* AppDelegate.swift */; };
+		8F52E8251E87B5C500E41627 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F52E8231E87B5C500E41627 /* Main.storyboard */; };
+		8F52E8281E87B5C500E41627 /* MyPlan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F52E8261E87B5C500E41627 /* MyPlan.xcdatamodeld */; };
+		8F52E82A1E87B5C500E41627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F52E8291E87B5C500E41627 /* Assets.xcassets */; };
+		8F52E82D1E87B5C500E41627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F52E82B1E87B5C500E41627 /* LaunchScreen.storyboard */; };
+		8F52E8381E87B5C500E41627 /* MyPlanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52E8371E87B5C500E41627 /* MyPlanTests.swift */; };
+		8F52E8431E87B5C500E41627 /* MyPlanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52E8421E87B5C500E41627 /* MyPlanUITests.swift */; };
+		8F52E8541E87B7DB00E41627 /* MPPlanListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52E8531E87B7DB00E41627 /* MPPlanListVC.swift */; };
+		8F52E8561E87B80300E41627 /* MPCreatePlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52E8551E87B80300E41627 /* MPCreatePlanVC.swift */; };
+		8FA16C501F61A8DC00FEAFEF /* MPAddTodoPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA16C4F1F61A8DC00FEAFEF /* MPAddTodoPopVC.swift */; };
+		8FBA6DFA1F04E82D007E4B93 /* MPPlanListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA6DF81F04E82D007E4B93 /* MPPlanListCell.swift */; };
+		8FBA6DFB1F04E82D007E4B93 /* MPPlanListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FBA6DF91F04E82D007E4B93 /* MPPlanListCell.xib */; };
+		8FC3B8141E894A4400E9E5A1 /* MPPlan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC3B8121E894A4400E9E5A1 /* MPPlan+CoreDataClass.swift */; };
+		8FC3B8171E8A93B800E9E5A1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC3B8161E8A93B800E9E5A1 /* CoreDataStack.swift */; };
+		8FC3B8191E8C098600E9E5A1 /* MPSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC3B8181E8C098600E9E5A1 /* MPSettingVC.swift */; };
+		8FC3B81C1E902F3B00E9E5A1 /* UIViewControlelr+MPAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC3B81B1E902F3B00E9E5A1 /* UIViewControlelr+MPAppearance.swift */; };
+		D52ED3861E8D072B00ED23FA /* EKColorCheckCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D52ED3851E8D072B00ED23FA /* EKColorCheckCell.xib */; };
+		D52ED3881E8FA09300ED23FA /* MPPlanDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52ED3871E8FA09300ED23FA /* MPPlanDetailVC.swift */; };
+		D52ED3911E948DC500ED23FA /* BounceAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52ED38D1E948DC500ED23FA /* BounceAnimationController.swift */; };
+		D52ED3921E948DC500ED23FA /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52ED38E1E948DC500ED23FA /* DimmingPresentationController.swift */; };
+		D52ED3931E948DC500ED23FA /* FadeOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52ED38F1E948DC500ED23FA /* FadeOutAnimationController.swift */; };
+		D52ED3941E948DC500ED23FA /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52ED3901E948DC500ED23FA /* GradientView.swift */; };
+		D52ED3981E94924B00ED23FA /* MPPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52ED3971E94924B00ED23FA /* MPPopView.swift */; };
+		D52ED39A1E94A37300ED23FA /* MPAddPlanProgressPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52ED3991E94A37300ED23FA /* MPAddPlanProgressPopVC.swift */; };
+		D534BEDD1E94E75C007CED1E /* MPPlan+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D534BEDC1E94E75C007CED1E /* MPPlan+CoreDataProperties.swift */; };
+		D534BEE01E94E7A3007CED1E /* Execution+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D534BEDE1E94E7A3007CED1E /* Execution+CoreDataClass.swift */; };
+		D534BEE11E94E7A3007CED1E /* Execution+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D534BEDF1E94E7A3007CED1E /* Execution+CoreDataProperties.swift */; };
+		D534BEE31E95F304007CED1E /* MPPlanExecutionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D534BEE21E95F304007CED1E /* MPPlanExecutionListVC.swift */; };
+		D534BEF91E978C96007CED1E /* EKStartUnitValueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D534BEF81E978C96007CED1E /* EKStartUnitValueCell.xib */; };
+		D534BEFB1E978D01007CED1E /* EKStartUnitValueRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D534BEFA1E978D01007CED1E /* EKStartUnitValueRow.swift */; };
+		D536006C1F2744CA0054B0E3 /* MPPlanDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536006B1F2744CA0054B0E3 /* MPPlanDetailView.swift */; };
+		D53600721F27C5870054B0E3 /* MPPlanInfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53600711F27C5870054B0E3 /* MPPlanInfoTVC.swift */; };
+		D53D05001F5E46A000B071CD /* MPPlanTodoListEuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53D04FF1F5E46A000B071CD /* MPPlanTodoListEuVC.swift */; };
+		D541DEC01E8CA5BA00FFFC88 /* EKColorPickCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D541DEBF1E8CA5BA00FFFC88 /* EKColorPickCell.xib */; };
+		D541DEC31E8CAB7000FFFC88 /* EKColorPickRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D541DEC21E8CAB7000FFFC88 /* EKColorPickRow.swift */; };
+		D54EFDBB1E8BA2A70030A6E8 /* NSDate+MPPlanDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54EFDBA1E8BA2A70030A6E8 /* NSDate+MPPlanDate.swift */; };
+		D5737B0B1F2BAA1B009E4240 /* MPPlanTypeValueView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5737B0A1F2BAA1B009E4240 /* MPPlanTypeValueView.xib */; };
+		D5737B0D1F2BAEE0009E4240 /* MPPlanTypeTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5737B0C1F2BAEE0009E4240 /* MPPlanTypeTimeView.swift */; };
+		D5737B0F1F2BAEFA009E4240 /* MPPlanTypeTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5737B0E1F2BAEFA009E4240 /* MPPlanTypeTimeView.xib */; };
+		D5737B111F2BB331009E4240 /* MPPlanTypeToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5737B101F2BB331009E4240 /* MPPlanTypeToDoView.swift */; };
+		D5737B131F2BB343009E4240 /* MPPlanTypeToDoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5737B121F2BB343009E4240 /* MPPlanTypeToDoView.xib */; };
+		D5CA5B7D1EA38CCD00960944 /* MPEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CA5B7C1EA38CCD00960944 /* MPEnums.swift */; };
+		D5CA5B821EA3C37300960944 /* SubTodo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CA5B7F1EA3C37300960944 /* SubTodo+CoreDataClass.swift */; };
+		D5CA5B831EA3C37300960944 /* SubTodo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CA5B801EA3C37300960944 /* SubTodo+CoreDataProperties.swift */; };
+		D5CBBA291F444EFC0021FFEA /* MPCalendarExecutionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CBBA271F444EFC0021FFEA /* MPCalendarExecutionCell.swift */; };
+		D5CBBA2A1F444EFC0021FFEA /* MPCalendarExecutionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5CBBA281F444EFC0021FFEA /* MPCalendarExecutionCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8F52E8341E87B5C500E41627 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F52E8141E87B5C500E41627 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F52E81B1E87B5C500E41627;
+			remoteInfo = MyPlan;
+		};
+		8F52E83F1E87B5C500E41627 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F52E8141E87B5C500E41627 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F52E81B1E87B5C500E41627;
+			remoteInfo = MyPlan;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		28CF0099B453A85892A44F96 /* Pods-MyPlan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlan/Pods-MyPlan.debug.xcconfig"; sourceTree = "<group>"; };
+		33A416961F2A367000F829F3 /* MPPlanDetailViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanDetailViewDelegate.swift; sourceTree = "<group>"; };
+		33A416981F2A37BB00F829F3 /* MPPlanTypeValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanTypeValueView.swift; sourceTree = "<group>"; };
+		33A9B6D91F3B5890002346A2 /* MPCalendarListTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCalendarListTVC.swift; sourceTree = "<group>"; };
+		33C6E1A91F3B4A3700399343 /* MPCalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCalendarVC.swift; sourceTree = "<group>"; };
+		33C6E1AD1F3B4AF000399343 /* YZDatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZDatePickerController.swift; sourceTree = "<group>"; };
+		33C6E1AE1F3B4AF000399343 /* YZDayGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZDayGridView.swift; sourceTree = "<group>"; };
+		33C6E1AF1F3B4AF000399343 /* YZMonthGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZMonthGridView.swift; sourceTree = "<group>"; };
+		33C6E1B01F3B4AF000399343 /* YZMonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZMonthView.swift; sourceTree = "<group>"; };
+		33C6E1B11F3B4AF000399343 /* YZYearlyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZYearlyView.swift; sourceTree = "<group>"; };
+		8F52E81C1E87B5C500E41627 /* MyPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F52E81F1E87B5C500E41627 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8F52E8241E87B5C500E41627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8F52E8271E87B5C500E41627 /* MyPlan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyPlan.xcdatamodel; sourceTree = "<group>"; };
+		8F52E8291E87B5C500E41627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8F52E82C1E87B5C500E41627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8F52E82E1E87B5C500E41627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F52E8331E87B5C500E41627 /* MyPlanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPlanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F52E8371E87B5C500E41627 /* MyPlanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlanTests.swift; sourceTree = "<group>"; };
+		8F52E8391E87B5C500E41627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F52E83E1E87B5C500E41627 /* MyPlanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPlanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F52E8421E87B5C500E41627 /* MyPlanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlanUITests.swift; sourceTree = "<group>"; };
+		8F52E8441E87B5C500E41627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F52E8531E87B7DB00E41627 /* MPPlanListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanListVC.swift; sourceTree = "<group>"; };
+		8F52E8551E87B80300E41627 /* MPCreatePlanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCreatePlanVC.swift; sourceTree = "<group>"; };
+		8FA16C4F1F61A8DC00FEAFEF /* MPAddTodoPopVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPAddTodoPopVC.swift; sourceTree = "<group>"; };
+		8FBA6DF81F04E82D007E4B93 /* MPPlanListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanListCell.swift; sourceTree = "<group>"; };
+		8FBA6DF91F04E82D007E4B93 /* MPPlanListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MPPlanListCell.xib; sourceTree = "<group>"; };
+		8FC3B8121E894A4400E9E5A1 /* MPPlan+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MPPlan+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8FC3B8161E8A93B800E9E5A1 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		8FC3B8181E8C098600E9E5A1 /* MPSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPSettingVC.swift; sourceTree = "<group>"; };
+		8FC3B81B1E902F3B00E9E5A1 /* UIViewControlelr+MPAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControlelr+MPAppearance.swift"; sourceTree = "<group>"; };
+		AC6AEDD082A5F5D669D509FF /* Pods-MyPlan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlan.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlan/Pods-MyPlan.release.xcconfig"; sourceTree = "<group>"; };
+		D52ED3851E8D072B00ED23FA /* EKColorCheckCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EKColorCheckCell.xib; sourceTree = "<group>"; };
+		D52ED3871E8FA09300ED23FA /* MPPlanDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanDetailVC.swift; sourceTree = "<group>"; };
+		D52ED38D1E948DC500ED23FA /* BounceAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimationController.swift; sourceTree = "<group>"; };
+		D52ED38E1E948DC500ED23FA /* DimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
+		D52ED38F1E948DC500ED23FA /* FadeOutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeOutAnimationController.swift; sourceTree = "<group>"; };
+		D52ED3901E948DC500ED23FA /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		D52ED3971E94924B00ED23FA /* MPPopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPopView.swift; sourceTree = "<group>"; };
+		D52ED3991E94A37300ED23FA /* MPAddPlanProgressPopVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MPAddPlanProgressPopVC.swift; path = ../View/MPAddPlanProgressPopVC.swift; sourceTree = "<group>"; };
+		D534BEDC1E94E75C007CED1E /* MPPlan+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MPPlan+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D534BEDE1E94E7A3007CED1E /* Execution+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Execution+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D534BEDF1E94E7A3007CED1E /* Execution+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Execution+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D534BEE21E95F304007CED1E /* MPPlanExecutionListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanExecutionListVC.swift; sourceTree = "<group>"; };
+		D534BEF81E978C96007CED1E /* EKStartUnitValueCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EKStartUnitValueCell.xib; sourceTree = "<group>"; };
+		D534BEFA1E978D01007CED1E /* EKStartUnitValueRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKStartUnitValueRow.swift; sourceTree = "<group>"; };
+		D536006B1F2744CA0054B0E3 /* MPPlanDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanDetailView.swift; sourceTree = "<group>"; };
+		D53600711F27C5870054B0E3 /* MPPlanInfoTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanInfoTVC.swift; sourceTree = "<group>"; };
+		D53D04FF1F5E46A000B071CD /* MPPlanTodoListEuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanTodoListEuVC.swift; sourceTree = "<group>"; };
+		D541DEBF1E8CA5BA00FFFC88 /* EKColorPickCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EKColorPickCell.xib; sourceTree = "<group>"; };
+		D541DEC21E8CAB7000FFFC88 /* EKColorPickRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKColorPickRow.swift; sourceTree = "<group>"; };
+		D54EFDBA1E8BA2A70030A6E8 /* NSDate+MPPlanDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+MPPlanDate.swift"; sourceTree = "<group>"; };
+		D54EFDBC1E8BA39F0030A6E8 /* MPPlanCodePG.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MPPlanCodePG.playground; sourceTree = "<group>"; };
+		D5737B0A1F2BAA1B009E4240 /* MPPlanTypeValueView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MPPlanTypeValueView.xib; sourceTree = "<group>"; };
+		D5737B0C1F2BAEE0009E4240 /* MPPlanTypeTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanTypeTimeView.swift; sourceTree = "<group>"; };
+		D5737B0E1F2BAEFA009E4240 /* MPPlanTypeTimeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MPPlanTypeTimeView.xib; sourceTree = "<group>"; };
+		D5737B101F2BB331009E4240 /* MPPlanTypeToDoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanTypeToDoView.swift; sourceTree = "<group>"; };
+		D5737B121F2BB343009E4240 /* MPPlanTypeToDoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MPPlanTypeToDoView.xib; sourceTree = "<group>"; };
+		D5CA5B7C1EA38CCD00960944 /* MPEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPEnums.swift; sourceTree = "<group>"; };
+		D5CA5B7F1EA3C37300960944 /* SubTodo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SubTodo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D5CA5B801EA3C37300960944 /* SubTodo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SubTodo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D5CBBA271F444EFC0021FFEA /* MPCalendarExecutionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCalendarExecutionCell.swift; sourceTree = "<group>"; };
+		D5CBBA281F444EFC0021FFEA /* MPCalendarExecutionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MPCalendarExecutionCell.xib; sourceTree = "<group>"; };
+		EC244AF85381AC65B679FF4A /* Pods_MyPlan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8F52E8191E87B5C500E41627 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F2F827921C8A01E84322E89 /* Pods_MyPlan.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F52E8301E87B5C500E41627 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F52E83B1E87B5C500E41627 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		30606550526D2B85E1FAE4E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				28CF0099B453A85892A44F96 /* Pods-MyPlan.debug.xcconfig */,
+				AC6AEDD082A5F5D669D509FF /* Pods-MyPlan.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		33C6E1AB1F3B4AB800399343 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				33C6E1AC1F3B4ADB00399343 /* YZDatePicker */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		33C6E1AC1F3B4ADB00399343 /* YZDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				33C6E1AD1F3B4AF000399343 /* YZDatePickerController.swift */,
+				33C6E1AE1F3B4AF000399343 /* YZDayGridView.swift */,
+				33C6E1AF1F3B4AF000399343 /* YZMonthGridView.swift */,
+				33C6E1B01F3B4AF000399343 /* YZMonthView.swift */,
+				33C6E1B11F3B4AF000399343 /* YZYearlyView.swift */,
+			);
+			path = YZDatePicker;
+			sourceTree = "<group>";
+		};
+		8F52E8131E87B5C500E41627 = {
+			isa = PBXGroup;
+			children = (
+				8F52E81E1E87B5C500E41627 /* MyPlan */,
+				8F52E8361E87B5C500E41627 /* MyPlanTests */,
+				8F52E8411E87B5C500E41627 /* MyPlanUITests */,
+				8F52E81D1E87B5C500E41627 /* Products */,
+				30606550526D2B85E1FAE4E0 /* Pods */,
+				EE386B7DA00A94257EB0FDDE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8F52E81D1E87B5C500E41627 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8F52E81C1E87B5C500E41627 /* MyPlan.app */,
+				8F52E8331E87B5C500E41627 /* MyPlanTests.xctest */,
+				8F52E83E1E87B5C500E41627 /* MyPlanUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F52E81E1E87B5C500E41627 /* MyPlan */ = {
+			isa = PBXGroup;
+			children = (
+				33C6E1AB1F3B4AB800399343 /* Others */,
+				8F52E8581E87F10F00E41627 /* Model */,
+				8F52E8501E87B79A00E41627 /* Controller */,
+				D52ED3891E8FB59900ED23FA /* View */,
+				D541DEBC1E8CA18B00FFFC88 /* EurekaCell */,
+				8F52E81F1E87B5C500E41627 /* AppDelegate.swift */,
+				8FC3B8161E8A93B800E9E5A1 /* CoreDataStack.swift */,
+				D54EFDBA1E8BA2A70030A6E8 /* NSDate+MPPlanDate.swift */,
+				8FC3B81B1E902F3B00E9E5A1 /* UIViewControlelr+MPAppearance.swift */,
+				8F52E8231E87B5C500E41627 /* Main.storyboard */,
+				D54EFDBC1E8BA39F0030A6E8 /* MPPlanCodePG.playground */,
+				8F52E8291E87B5C500E41627 /* Assets.xcassets */,
+				8F52E82B1E87B5C500E41627 /* LaunchScreen.storyboard */,
+				8F52E82E1E87B5C500E41627 /* Info.plist */,
+				8F52E8261E87B5C500E41627 /* MyPlan.xcdatamodeld */,
+			);
+			path = MyPlan;
+			sourceTree = "<group>";
+		};
+		8F52E8361E87B5C500E41627 /* MyPlanTests */ = {
+			isa = PBXGroup;
+			children = (
+				8F52E8371E87B5C500E41627 /* MyPlanTests.swift */,
+				8F52E8391E87B5C500E41627 /* Info.plist */,
+			);
+			path = MyPlanTests;
+			sourceTree = "<group>";
+		};
+		8F52E8411E87B5C500E41627 /* MyPlanUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8F52E8421E87B5C500E41627 /* MyPlanUITests.swift */,
+				8F52E8441E87B5C500E41627 /* Info.plist */,
+			);
+			path = MyPlanUITests;
+			sourceTree = "<group>";
+		};
+		8F52E8501E87B79A00E41627 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8F52E8531E87B7DB00E41627 /* MPPlanListVC.swift */,
+				8F52E8551E87B80300E41627 /* MPCreatePlanVC.swift */,
+				8FC3B8181E8C098600E9E5A1 /* MPSettingVC.swift */,
+				D52ED3871E8FA09300ED23FA /* MPPlanDetailVC.swift */,
+				D52ED3991E94A37300ED23FA /* MPAddPlanProgressPopVC.swift */,
+				8FA16C4F1F61A8DC00FEAFEF /* MPAddTodoPopVC.swift */,
+				D53600711F27C5870054B0E3 /* MPPlanInfoTVC.swift */,
+				D53D04FF1F5E46A000B071CD /* MPPlanTodoListEuVC.swift */,
+				D534BEE21E95F304007CED1E /* MPPlanExecutionListVC.swift */,
+				33C6E1A91F3B4A3700399343 /* MPCalendarVC.swift */,
+				33A9B6D91F3B5890002346A2 /* MPCalendarListTVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8F52E8581E87F10F00E41627 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D5CA5B7F1EA3C37300960944 /* SubTodo+CoreDataClass.swift */,
+				D5CA5B801EA3C37300960944 /* SubTodo+CoreDataProperties.swift */,
+				8FC3B8121E894A4400E9E5A1 /* MPPlan+CoreDataClass.swift */,
+				D534BEDC1E94E75C007CED1E /* MPPlan+CoreDataProperties.swift */,
+				D534BEDE1E94E7A3007CED1E /* Execution+CoreDataClass.swift */,
+				D534BEDF1E94E7A3007CED1E /* Execution+CoreDataProperties.swift */,
+				D5CA5B7C1EA38CCD00960944 /* MPEnums.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D52ED3891E8FB59900ED23FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D536006B1F2744CA0054B0E3 /* MPPlanDetailView.swift */,
+				33A416961F2A367000F829F3 /* MPPlanDetailViewDelegate.swift */,
+				33A416981F2A37BB00F829F3 /* MPPlanTypeValueView.swift */,
+				D5737B0A1F2BAA1B009E4240 /* MPPlanTypeValueView.xib */,
+				D5737B0C1F2BAEE0009E4240 /* MPPlanTypeTimeView.swift */,
+				D5737B0E1F2BAEFA009E4240 /* MPPlanTypeTimeView.xib */,
+				D5737B101F2BB331009E4240 /* MPPlanTypeToDoView.swift */,
+				D5737B121F2BB343009E4240 /* MPPlanTypeToDoView.xib */,
+				D52ED38C1E948DC500ED23FA /* MPProgress */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D52ED38C1E948DC500ED23FA /* MPProgress */ = {
+			isa = PBXGroup;
+			children = (
+				D52ED38D1E948DC500ED23FA /* BounceAnimationController.swift */,
+				D52ED38E1E948DC500ED23FA /* DimmingPresentationController.swift */,
+				D52ED38F1E948DC500ED23FA /* FadeOutAnimationController.swift */,
+				D52ED3901E948DC500ED23FA /* GradientView.swift */,
+				D52ED3971E94924B00ED23FA /* MPPopView.swift */,
+			);
+			path = MPProgress;
+			sourceTree = "<group>";
+		};
+		D541DEBC1E8CA18B00FFFC88 /* EurekaCell */ = {
+			isa = PBXGroup;
+			children = (
+				D541DEBF1E8CA5BA00FFFC88 /* EKColorPickCell.xib */,
+				D52ED3851E8D072B00ED23FA /* EKColorCheckCell.xib */,
+				D541DEC21E8CAB7000FFFC88 /* EKColorPickRow.swift */,
+				D534BEF81E978C96007CED1E /* EKStartUnitValueCell.xib */,
+				D534BEFA1E978D01007CED1E /* EKStartUnitValueRow.swift */,
+				8FBA6DF81F04E82D007E4B93 /* MPPlanListCell.swift */,
+				8FBA6DF91F04E82D007E4B93 /* MPPlanListCell.xib */,
+				D5CBBA271F444EFC0021FFEA /* MPCalendarExecutionCell.swift */,
+				D5CBBA281F444EFC0021FFEA /* MPCalendarExecutionCell.xib */,
+			);
+			path = EurekaCell;
+			sourceTree = "<group>";
+		};
+		EE386B7DA00A94257EB0FDDE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC244AF85381AC65B679FF4A /* Pods_MyPlan.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8F52E81B1E87B5C500E41627 /* MyPlan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F52E8471E87B5C500E41627 /* Build configuration list for PBXNativeTarget "MyPlan" */;
+			buildPhases = (
+				3F261AA7D120B04EDEF1E858 /* [CP] Check Pods Manifest.lock */,
+				8F52E8181E87B5C500E41627 /* Sources */,
+				8F52E8191E87B5C500E41627 /* Frameworks */,
+				8F52E81A1E87B5C500E41627 /* Resources */,
+				B57360C40C4943299C0310C5 /* [CP] Embed Pods Frameworks */,
+				1C71EDDC13B3836DF7E1F32F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyPlan;
+			productName = MyPlan;
+			productReference = 8F52E81C1E87B5C500E41627 /* MyPlan.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8F52E8321E87B5C500E41627 /* MyPlanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F52E84A1E87B5C500E41627 /* Build configuration list for PBXNativeTarget "MyPlanTests" */;
+			buildPhases = (
+				8F52E82F1E87B5C500E41627 /* Sources */,
+				8F52E8301E87B5C500E41627 /* Frameworks */,
+				8F52E8311E87B5C500E41627 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8F52E8351E87B5C500E41627 /* PBXTargetDependency */,
+			);
+			name = MyPlanTests;
+			productName = MyPlanTests;
+			productReference = 8F52E8331E87B5C500E41627 /* MyPlanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8F52E83D1E87B5C500E41627 /* MyPlanUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F52E84D1E87B5C500E41627 /* Build configuration list for PBXNativeTarget "MyPlanUITests" */;
+			buildPhases = (
+				8F52E83A1E87B5C500E41627 /* Sources */,
+				8F52E83B1E87B5C500E41627 /* Frameworks */,
+				8F52E83C1E87B5C500E41627 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8F52E8401E87B5C500E41627 /* PBXTargetDependency */,
+			);
+			name = MyPlanUITests;
+			productName = MyPlanUITests;
+			productReference = 8F52E83E1E87B5C500E41627 /* MyPlanUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8F52E8141E87B5C500E41627 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Sean.Jie;
+				TargetAttributes = {
+					8F52E81B1E87B5C500E41627 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 539UQ5N6XQ;
+						ProvisioningStyle = Automatic;
+					};
+					8F52E8321E87B5C500E41627 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 539UQ5N6XQ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8F52E81B1E87B5C500E41627;
+					};
+					8F52E83D1E87B5C500E41627 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 539UQ5N6XQ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8F52E81B1E87B5C500E41627;
+					};
+				};
+			};
+			buildConfigurationList = 8F52E8171E87B5C500E41627 /* Build configuration list for PBXProject "MyPlan" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8F52E8131E87B5C500E41627;
+			productRefGroup = 8F52E81D1E87B5C500E41627 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8F52E81B1E87B5C500E41627 /* MyPlan */,
+				8F52E8321E87B5C500E41627 /* MyPlanTests */,
+				8F52E83D1E87B5C500E41627 /* MyPlanUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8F52E81A1E87B5C500E41627 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5737B131F2BB343009E4240 /* MPPlanTypeToDoView.xib in Resources */,
+				D534BEF91E978C96007CED1E /* EKStartUnitValueCell.xib in Resources */,
+				D5CBBA2A1F444EFC0021FFEA /* MPCalendarExecutionCell.xib in Resources */,
+				D5737B0B1F2BAA1B009E4240 /* MPPlanTypeValueView.xib in Resources */,
+				8F52E82D1E87B5C500E41627 /* LaunchScreen.storyboard in Resources */,
+				8F52E82A1E87B5C500E41627 /* Assets.xcassets in Resources */,
+				D52ED3861E8D072B00ED23FA /* EKColorCheckCell.xib in Resources */,
+				D541DEC01E8CA5BA00FFFC88 /* EKColorPickCell.xib in Resources */,
+				8FBA6DFB1F04E82D007E4B93 /* MPPlanListCell.xib in Resources */,
+				D5737B0F1F2BAEFA009E4240 /* MPPlanTypeTimeView.xib in Resources */,
+				8F52E8251E87B5C500E41627 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F52E8311E87B5C500E41627 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F52E83C1E87B5C500E41627 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C71EDDC13B3836DF7E1F32F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyPlan/Pods-MyPlan-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F261AA7D120B04EDEF1E858 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B57360C40C4943299C0310C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyPlan/Pods-MyPlan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8F52E8181E87B5C500E41627 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33C6E1B31F3B4AF000399343 /* YZDayGridView.swift in Sources */,
+				D534BEE11E94E7A3007CED1E /* Execution+CoreDataProperties.swift in Sources */,
+				8F52E8201E87B5C500E41627 /* AppDelegate.swift in Sources */,
+				D5CBBA291F444EFC0021FFEA /* MPCalendarExecutionCell.swift in Sources */,
+				33C6E1B21F3B4AF000399343 /* YZDatePickerController.swift in Sources */,
+				D534BEE01E94E7A3007CED1E /* Execution+CoreDataClass.swift in Sources */,
+				D541DEC31E8CAB7000FFFC88 /* EKColorPickRow.swift in Sources */,
+				8F52E8281E87B5C500E41627 /* MyPlan.xcdatamodeld in Sources */,
+				D52ED3981E94924B00ED23FA /* MPPopView.swift in Sources */,
+				D534BEDD1E94E75C007CED1E /* MPPlan+CoreDataProperties.swift in Sources */,
+				33C6E1B61F3B4AF000399343 /* YZYearlyView.swift in Sources */,
+				D52ED3881E8FA09300ED23FA /* MPPlanDetailVC.swift in Sources */,
+				8FC3B8191E8C098600E9E5A1 /* MPSettingVC.swift in Sources */,
+				D534BEFB1E978D01007CED1E /* EKStartUnitValueRow.swift in Sources */,
+				D52ED3941E948DC500ED23FA /* GradientView.swift in Sources */,
+				D53600721F27C5870054B0E3 /* MPPlanInfoTVC.swift in Sources */,
+				D53D05001F5E46A000B071CD /* MPPlanTodoListEuVC.swift in Sources */,
+				D52ED3911E948DC500ED23FA /* BounceAnimationController.swift in Sources */,
+				8F52E8561E87B80300E41627 /* MPCreatePlanVC.swift in Sources */,
+				D5737B111F2BB331009E4240 /* MPPlanTypeToDoView.swift in Sources */,
+				8FC3B81C1E902F3B00E9E5A1 /* UIViewControlelr+MPAppearance.swift in Sources */,
+				D54EFDBB1E8BA2A70030A6E8 /* NSDate+MPPlanDate.swift in Sources */,
+				D5737B0D1F2BAEE0009E4240 /* MPPlanTypeTimeView.swift in Sources */,
+				D52ED3921E948DC500ED23FA /* DimmingPresentationController.swift in Sources */,
+				33C6E1AA1F3B4A3700399343 /* MPCalendarVC.swift in Sources */,
+				D5CA5B821EA3C37300960944 /* SubTodo+CoreDataClass.swift in Sources */,
+				33A9B6DA1F3B5890002346A2 /* MPCalendarListTVC.swift in Sources */,
+				D536006C1F2744CA0054B0E3 /* MPPlanDetailView.swift in Sources */,
+				8F52E8541E87B7DB00E41627 /* MPPlanListVC.swift in Sources */,
+				33A416991F2A37BB00F829F3 /* MPPlanTypeValueView.swift in Sources */,
+				D534BEE31E95F304007CED1E /* MPPlanExecutionListVC.swift in Sources */,
+				D5CA5B7D1EA38CCD00960944 /* MPEnums.swift in Sources */,
+				33A416971F2A367000F829F3 /* MPPlanDetailViewDelegate.swift in Sources */,
+				8FC3B8141E894A4400E9E5A1 /* MPPlan+CoreDataClass.swift in Sources */,
+				33C6E1B41F3B4AF000399343 /* YZMonthGridView.swift in Sources */,
+				D52ED3931E948DC500ED23FA /* FadeOutAnimationController.swift in Sources */,
+				D5CA5B831EA3C37300960944 /* SubTodo+CoreDataProperties.swift in Sources */,
+				8FA16C501F61A8DC00FEAFEF /* MPAddTodoPopVC.swift in Sources */,
+				33C6E1B51F3B4AF000399343 /* YZMonthView.swift in Sources */,
+				8FBA6DFA1F04E82D007E4B93 /* MPPlanListCell.swift in Sources */,
+				8FC3B8171E8A93B800E9E5A1 /* CoreDataStack.swift in Sources */,
+				D52ED39A1E94A37300ED23FA /* MPAddPlanProgressPopVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F52E82F1E87B5C500E41627 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F52E8381E87B5C500E41627 /* MyPlanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F52E83A1E87B5C500E41627 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F52E8431E87B5C500E41627 /* MyPlanUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8F52E8351E87B5C500E41627 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F52E81B1E87B5C500E41627 /* MyPlan */;
+			targetProxy = 8F52E8341E87B5C500E41627 /* PBXContainerItemProxy */;
+		};
+		8F52E8401E87B5C500E41627 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F52E81B1E87B5C500E41627 /* MyPlan */;
+			targetProxy = 8F52E83F1E87B5C500E41627 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8F52E8231E87B5C500E41627 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F52E8241E87B5C500E41627 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8F52E82B1E87B5C500E41627 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F52E82C1E87B5C500E41627 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8F52E8451E87B5C500E41627 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8F52E8461E87B5C500E41627 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8F52E8481E87B5C500E41627 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28CF0099B453A85892A44F96 /* Pods-MyPlan.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 539UQ5N6XQ;
+				INFOPLIST_FILE = MyPlan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACH_O_TYPE = mh_execute;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SeanJie.MyPlan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		8F52E8491E87B5C500E41627 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC6AEDD082A5F5D669D509FF /* Pods-MyPlan.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 539UQ5N6XQ;
+				INFOPLIST_FILE = MyPlan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACH_O_TYPE = mh_execute;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SeanJie.MyPlan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		8F52E84B1E87B5C500E41627 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 539UQ5N6XQ;
+				INFOPLIST_FILE = MyPlanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SeanJie.MyPlanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyPlan.app/MyPlan";
+			};
+			name = Debug;
+		};
+		8F52E84C1E87B5C500E41627 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 539UQ5N6XQ;
+				INFOPLIST_FILE = MyPlanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SeanJie.MyPlanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyPlan.app/MyPlan";
+			};
+			name = Release;
+		};
+		8F52E84E1E87B5C500E41627 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 539UQ5N6XQ;
+				INFOPLIST_FILE = MyPlanUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SeanJie.MyPlanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MyPlan;
+			};
+			name = Debug;
+		};
+		8F52E84F1E87B5C500E41627 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 539UQ5N6XQ;
+				INFOPLIST_FILE = MyPlanUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SeanJie.MyPlanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MyPlan;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8F52E8171E87B5C500E41627 /* Build configuration list for PBXProject "MyPlan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F52E8451E87B5C500E41627 /* Debug */,
+				8F52E8461E87B5C500E41627 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F52E8471E87B5C500E41627 /* Build configuration list for PBXNativeTarget "MyPlan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F52E8481E87B5C500E41627 /* Debug */,
+				8F52E8491E87B5C500E41627 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F52E84A1E87B5C500E41627 /* Build configuration list for PBXNativeTarget "MyPlanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F52E84B1E87B5C500E41627 /* Debug */,
+				8F52E84C1E87B5C500E41627 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F52E84D1E87B5C500E41627 /* Build configuration list for PBXNativeTarget "MyPlanUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F52E84E1E87B5C500E41627 /* Debug */,
+				8F52E84F1E87B5C500E41627 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8F52E8261E87B5C500E41627 /* MyPlan.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8F52E8271E87B5C500E41627 /* MyPlan.xcdatamodel */,
+			);
+			currentVersion = 8F52E8271E87B5C500E41627 /* MyPlan.xcdatamodel */;
+			path = MyPlan.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8F52E8141E87B5C500E41627 /* Project object */;
+}

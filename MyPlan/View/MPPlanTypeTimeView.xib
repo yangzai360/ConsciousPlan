@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MPPlanTypeTimeView" customModule="MyPlan" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="X1O-2I-1UM" customClass="MPPlanTypeTimeView" customModule="MyPlan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="357" height="280"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5M-cF-kLQ">
+                    <rect key="frame" x="16" y="16" width="25" height="25"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="uBp-dC-3sp"/>
+                        <constraint firstAttribute="width" constant="25" id="vRV-5U-tzM"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <real key="value" value="12.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="planNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgB-0u-Rea">
+                    <rect key="frame" x="49" y="18" width="119" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目标值：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALP-df-DEc">
+                    <rect key="frame" x="16" y="96" width="70" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已完成：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NbC-tu-7QN">
+                    <rect key="frame" x="16" y="132" width="70" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="剩余量：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hli-Vr-7NS">
+                    <rect key="frame" x="16" y="168" width="70" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="从  2017年3月25日  09:00  至  2017年5月25日  09:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEB-Oj-Jcp">
+                    <rect key="frame" x="16" y="207" width="321" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.57647058819999997" green="0.56078431370000004" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已完成：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZM3-zH-R0E">
+                    <rect key="frame" x="269" y="16" width="70" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cx-x2-mQ2">
+                    <rect key="frame" x="16" y="231" width="90" height="30"/>
+                    <state key="normal" title="+ 添加新进度"/>
+                    <connections>
+                        <action selector="addNewValueBtnClicked:" destination="-1" eventType="touchUpInside" id="Y0j-SO-ZeD"/>
+                    </connections>
+                </button>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRG-WH-rmX">
+                    <rect key="frame" x="20" y="61" width="317" height="20"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASU-xY-UAG">
+                            <rect key="frame" x="0.0" y="0.0" width="125" height="20"/>
+                            <color key="backgroundColor" red="0.41960784309999999" green="0.72156862749999995" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="125" id="63V-TG-FYo"/>
+                                <constraint firstAttribute="height" constant="20" id="uIM-1T-oSS"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="ASU-xY-UAG" firstAttribute="leading" secondItem="KRG-WH-rmX" secondAttribute="leading" id="GGQ-74-X6q"/>
+                        <constraint firstAttribute="height" constant="20" id="J1Z-xP-MK0"/>
+                        <constraint firstItem="ASU-xY-UAG" firstAttribute="top" secondItem="KRG-WH-rmX" secondAttribute="top" id="rLL-ut-to6"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJl-W8-lvp">
+                    <rect key="frame" x="0.0" y="279" width="357" height="1"/>
+                    <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="oIS-hN-1pS"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JU1-eF-8xY">
+                    <rect key="frame" x="245" y="231" width="92" height="30"/>
+                    <state key="normal" title="执行历史记录"/>
+                    <connections>
+                        <action selector="executionListBtnTapped:" destination="-1" eventType="touchUpInside" id="Y4P-gR-sDN"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="hli-Vr-7NS" firstAttribute="leading" secondItem="X1O-2I-1UM" secondAttribute="leading" constant="16" id="1d3-Y3-RFE"/>
+                <constraint firstAttribute="trailing" secondItem="KRG-WH-rmX" secondAttribute="trailing" constant="20" id="2L3-fm-pWu"/>
+                <constraint firstItem="JU1-eF-8xY" firstAttribute="top" secondItem="rEB-Oj-Jcp" secondAttribute="bottom" constant="8" id="3sw-qT-21x"/>
+                <constraint firstItem="rEB-Oj-Jcp" firstAttribute="top" secondItem="hli-Vr-7NS" secondAttribute="bottom" constant="18" id="9me-FM-ge9"/>
+                <constraint firstItem="h5M-cF-kLQ" firstAttribute="top" secondItem="X1O-2I-1UM" secondAttribute="top" constant="16" id="CfT-Xy-qlE"/>
+                <constraint firstAttribute="trailing" secondItem="JU1-eF-8xY" secondAttribute="trailing" constant="20" id="Def-VG-Yzk"/>
+                <constraint firstItem="NbC-tu-7QN" firstAttribute="leading" secondItem="X1O-2I-1UM" secondAttribute="leading" constant="16" id="Hys-nV-2XZ"/>
+                <constraint firstItem="KgB-0u-Rea" firstAttribute="leading" secondItem="h5M-cF-kLQ" secondAttribute="trailing" constant="8" id="MzN-sD-gsO"/>
+                <constraint firstItem="ZM3-zH-R0E" firstAttribute="top" secondItem="X1O-2I-1UM" secondAttribute="top" constant="16" id="OUy-8q-GzX"/>
+                <constraint firstItem="eJl-W8-lvp" firstAttribute="leading" secondItem="X1O-2I-1UM" secondAttribute="leading" id="Oyx-sp-uOc"/>
+                <constraint firstItem="0cx-x2-mQ2" firstAttribute="leading" secondItem="X1O-2I-1UM" secondAttribute="leading" constant="16" id="Q6y-Q1-Fq4"/>
+                <constraint firstItem="ALP-df-DEc" firstAttribute="top" secondItem="h5M-cF-kLQ" secondAttribute="bottom" constant="55" id="SMw-HM-fX0"/>
+                <constraint firstItem="hli-Vr-7NS" firstAttribute="top" secondItem="NbC-tu-7QN" secondAttribute="bottom" constant="15" id="Tem-OK-fGN"/>
+                <constraint firstAttribute="trailing" secondItem="eJl-W8-lvp" secondAttribute="trailing" id="Utr-LA-PI7"/>
+                <constraint firstAttribute="trailing" secondItem="ZM3-zH-R0E" secondAttribute="trailing" constant="18" id="Vf2-HD-yXH"/>
+                <constraint firstItem="rEB-Oj-Jcp" firstAttribute="leading" secondItem="X1O-2I-1UM" secondAttribute="leading" constant="16" id="Wac-AM-amb"/>
+                <constraint firstItem="KRG-WH-rmX" firstAttribute="top" secondItem="h5M-cF-kLQ" secondAttribute="bottom" constant="20" id="eov-sY-GUt"/>
+                <constraint firstAttribute="bottom" secondItem="eJl-W8-lvp" secondAttribute="bottom" id="gAJ-Pg-bVh"/>
+                <constraint firstItem="NbC-tu-7QN" firstAttribute="top" secondItem="ALP-df-DEc" secondAttribute="bottom" constant="15" id="lec-Yk-zgB"/>
+                <constraint firstItem="KgB-0u-Rea" firstAttribute="top" secondItem="X1O-2I-1UM" secondAttribute="top" constant="18" id="lhf-D3-2OL"/>
+                <constraint firstItem="KRG-WH-rmX" firstAttribute="leading" secondItem="X1O-2I-1UM" secondAttribute="leading" constant="20" id="nHB-43-TMB"/>
+                <constraint firstItem="h5M-cF-kLQ" firstAttribute="leading" secondItem="X1O-2I-1UM" secondAttribute="leading" constant="16" id="poB-H1-mFk"/>
+                <constraint firstItem="0cx-x2-mQ2" firstAttribute="top" secondItem="rEB-Oj-Jcp" secondAttribute="bottom" constant="8" id="rbS-s0-MPY"/>
+                <constraint firstItem="ALP-df-DEc" firstAttribute="leading" secondItem="X1O-2I-1UM" secondAttribute="leading" constant="16" id="wdj-PN-CJg"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="containLabel" destination="ZM3-zH-R0E" id="D67-10-Ov1"/>
+                <outlet property="leftLabel" destination="hli-Vr-7NS" id="cEa-cU-zF4"/>
+                <outlet property="planNameLabel" destination="KgB-0u-Rea" id="Z00-P8-D19"/>
+                <outlet property="progressBackView" destination="KRG-WH-rmX" id="Jrm-hy-MAy"/>
+                <outlet property="progressView" destination="ASU-xY-UAG" id="7ez-42-QZM"/>
+                <outlet property="progressViewWidthCons" destination="63V-TG-FYo" id="and-of-Tei"/>
+                <outlet property="targetLabel" destination="ALP-df-DEc" id="ABW-Uz-Lem"/>
+                <outlet property="timeLabel" destination="rEB-Oj-Jcp" id="uOs-KK-bQM"/>
+                <outlet property="tintColorView" destination="h5M-cF-kLQ" id="5e3-f3-ZgK"/>
+                <outlet property="valueLabel" destination="NbC-tu-7QN" id="VII-u4-kZZ"/>
+            </connections>
+            <point key="canvasLocation" x="-17" y="-86"/>
+        </view>
+    </objects>
+</document>
