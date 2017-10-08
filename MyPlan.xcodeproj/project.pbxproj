@@ -29,9 +29,11 @@
 		8FA16C501F61A8DC00FEAFEF /* MPAddTodoPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA16C4F1F61A8DC00FEAFEF /* MPAddTodoPopVC.swift */; };
 		8FBA6DFA1F04E82D007E4B93 /* MPPlanListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA6DF81F04E82D007E4B93 /* MPPlanListCell.swift */; };
 		8FBA6DFB1F04E82D007E4B93 /* MPPlanListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FBA6DF91F04E82D007E4B93 /* MPPlanListCell.xib */; };
+		8FBB53DF1F892A81004465AE /* EKSettingSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB53DD1F892A81004465AE /* EKSettingSelectCell.swift */; };
+		8FBB53E01F892A81004465AE /* EKSettingSelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FBB53DE1F892A81004465AE /* EKSettingSelectCell.xib */; };
+		8FBB53E21F892DCC004465AE /* MPSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB53E11F892DCC004465AE /* MPSettingVC.swift */; };
 		8FC3B8141E894A4400E9E5A1 /* MPPlan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC3B8121E894A4400E9E5A1 /* MPPlan+CoreDataClass.swift */; };
 		8FC3B8171E8A93B800E9E5A1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC3B8161E8A93B800E9E5A1 /* CoreDataStack.swift */; };
-		8FC3B8191E8C098600E9E5A1 /* MPSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC3B8181E8C098600E9E5A1 /* MPSettingVC.swift */; };
 		8FC3B81C1E902F3B00E9E5A1 /* UIViewControlelr+MPAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC3B81B1E902F3B00E9E5A1 /* UIViewControlelr+MPAppearance.swift */; };
 		D520F07F1F7F932F001DFACE /* BounceAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520F07A1F7F932F001DFACE /* BounceAnimationController.swift */; };
 		D520F0801F7F932F001DFACE /* FadeOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520F07B1F7F932F001DFACE /* FadeOutAnimationController.swift */; };
@@ -112,9 +114,11 @@
 		8FA16C4F1F61A8DC00FEAFEF /* MPAddTodoPopVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPAddTodoPopVC.swift; sourceTree = "<group>"; };
 		8FBA6DF81F04E82D007E4B93 /* MPPlanListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanListCell.swift; sourceTree = "<group>"; };
 		8FBA6DF91F04E82D007E4B93 /* MPPlanListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MPPlanListCell.xib; sourceTree = "<group>"; };
+		8FBB53DD1F892A81004465AE /* EKSettingSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKSettingSelectCell.swift; sourceTree = "<group>"; };
+		8FBB53DE1F892A81004465AE /* EKSettingSelectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EKSettingSelectCell.xib; sourceTree = "<group>"; };
+		8FBB53E11F892DCC004465AE /* MPSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPSettingVC.swift; sourceTree = "<group>"; };
 		8FC3B8121E894A4400E9E5A1 /* MPPlan+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MPPlan+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8FC3B8161E8A93B800E9E5A1 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		8FC3B8181E8C098600E9E5A1 /* MPSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPSettingVC.swift; sourceTree = "<group>"; };
 		8FC3B81B1E902F3B00E9E5A1 /* UIViewControlelr+MPAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControlelr+MPAppearance.swift"; sourceTree = "<group>"; };
 		AC6AEDD082A5F5D669D509FF /* Pods-MyPlan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlan.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlan/Pods-MyPlan.release.xcconfig"; sourceTree = "<group>"; };
 		D520F07A1F7F932F001DFACE /* BounceAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimationController.swift; sourceTree = "<group>"; };
@@ -276,7 +280,6 @@
 			children = (
 				8F52E8531E87B7DB00E41627 /* MPPlanListVC.swift */,
 				8F52E8551E87B80300E41627 /* MPCreatePlanVC.swift */,
-				8FC3B8181E8C098600E9E5A1 /* MPSettingVC.swift */,
 				D52ED3871E8FA09300ED23FA /* MPPlanDetailVC.swift */,
 				D52ED3991E94A37300ED23FA /* MPAddPlanProgressPopVC.swift */,
 				8FA16C4F1F61A8DC00FEAFEF /* MPAddTodoPopVC.swift */,
@@ -336,6 +339,7 @@
 		D520F0881F7F9F26001DFACE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8FBB53E11F892DCC004465AE /* MPSettingVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -351,6 +355,8 @@
 			isa = PBXGroup;
 			children = (
 				D520F08B1F7F9F46001DFACE /* MPSettingHeaderView.xib */,
+				8FBB53DD1F892A81004465AE /* EKSettingSelectCell.swift */,
+				8FBB53DE1F892A81004465AE /* EKSettingSelectCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -509,6 +515,7 @@
 			files = (
 				D5737B131F2BB343009E4240 /* MPPlanTypeToDoView.xib in Resources */,
 				D534BEF91E978C96007CED1E /* EKStartUnitValueCell.xib in Resources */,
+				8FBB53E01F892A81004465AE /* EKSettingSelectCell.xib in Resources */,
 				D5CBBA2A1F444EFC0021FFEA /* MPCalendarExecutionCell.xib in Resources */,
 				D5737B0B1F2BAA1B009E4240 /* MPPlanTypeValueView.xib in Resources */,
 				8F52E82D1E87B5C500E41627 /* LaunchScreen.storyboard in Resources */,
@@ -602,11 +609,11 @@
 				D534BEDD1E94E75C007CED1E /* MPPlan+CoreDataProperties.swift in Sources */,
 				33C6E1B61F3B4AF000399343 /* YZYearlyView.swift in Sources */,
 				D52ED3881E8FA09300ED23FA /* MPPlanDetailVC.swift in Sources */,
-				8FC3B8191E8C098600E9E5A1 /* MPSettingVC.swift in Sources */,
 				D534BEFB1E978D01007CED1E /* EKStartUnitValueRow.swift in Sources */,
 				D53600721F27C5870054B0E3 /* MPPlanInfoTVC.swift in Sources */,
 				D53D05001F5E46A000B071CD /* MPPlanTodoListEuVC.swift in Sources */,
 				8F52E8561E87B80300E41627 /* MPCreatePlanVC.swift in Sources */,
+				8FBB53E21F892DCC004465AE /* MPSettingVC.swift in Sources */,
 				D520F0831F7F932F001DFACE /* MPPopView.swift in Sources */,
 				D5737B111F2BB331009E4240 /* MPPlanTypeToDoView.swift in Sources */,
 				8FC3B81C1E902F3B00E9E5A1 /* UIViewControlelr+MPAppearance.swift in Sources */,
@@ -619,6 +626,7 @@
 				33A9B6DA1F3B5890002346A2 /* MPCalendarListTVC.swift in Sources */,
 				D536006C1F2744CA0054B0E3 /* MPPlanDetailView.swift in Sources */,
 				8F52E8541E87B7DB00E41627 /* MPPlanListVC.swift in Sources */,
+				8FBB53DF1F892A81004465AE /* EKSettingSelectCell.swift in Sources */,
 				33A416991F2A37BB00F829F3 /* MPPlanTypeValueView.swift in Sources */,
 				D534BEE31E95F304007CED1E /* MPPlanExecutionListVC.swift in Sources */,
 				D5CA5B7D1EA38CCD00960944 /* MPEnums.swift in Sources */,

@@ -40,7 +40,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEq-MF-JZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="mRs-ol-WrW" userLabel="Exit" sceneMemberID="exit"/>

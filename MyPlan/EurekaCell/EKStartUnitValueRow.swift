@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import Eureka
 
+// 检查发现，这个 Cell 没有被使用过
+
 // MARK: Custom Cell
 public class EKStartUnitValueCell : Cell<UIColor>, CellType {
     @IBOutlet weak var colorView: UIView!
