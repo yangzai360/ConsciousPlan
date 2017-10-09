@@ -7,10 +7,12 @@
 //
 
 import Eureka
+import MessageUI
 
-class MPSettingVC : FormViewController {
+class MPSettingVC : FormViewController{
     
     @IBAction func doneItemBtnClicked(_ sender: UIBarButtonItem) {
+        
     }
     
     override func viewDidLoad() {
@@ -42,8 +44,41 @@ class MPSettingVC : FormViewController {
         
         form +++ Section("")
             <<< ButtonRow("推荐给朋友") {
-                    $0.title = $0.tag
+                $0.title = $0.tag
             }
-        
+            .onCellSelection { [weak self] (cell, row) in
+            self?.sendMail()
+        }
+    }
+    
+    //MARK: 发送邮件
+    func sendMail() {
+        guard MFMailComposeViewController.canSendMail() else {
+            print("本设备并不支持发送邮件哦~")
+            return
+        }
+        let mailVC = MFMailComposeViewController()
+        mailVC.mailComposeDelegate = self
+        mailVC.setSubject("自觉计划用户问题反馈：")
+        mailVC.setToRecipients(["yangzai360@icloud.com"])
+        mailVC.setMessageBody("在使用中遇到的问题如下：\n", isHTML: false)
+        present(mailVC, animated: true, completion: nil)
+    }
+}
+
+// 发送邮件 ViewController Delegate
+extension MPSettingVC : MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+        switch result {
+        case .sent:
+            print("sented")
+        case .cancelled:
+            print("cancelled")
+        case .saved:
+            print("saved")
+        case .failed:
+            print("failed")
+        }
     }
 }
