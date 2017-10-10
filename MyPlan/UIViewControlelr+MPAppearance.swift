@@ -24,6 +24,12 @@ extension UIViewController {
         navController.navigationBar.tintColor = fontColor
         let attr: [String : Any]! = [NSForegroundColorAttributeName: fontColor]
         navController.navigationBar.titleTextAttributes = attr
-        
+    }
+    
+    func alertWithMessage(msg: String) {
+        let alertViewController = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "知道了", style: .cancel, handler: nil)
+        alertViewController.addAction(okAction)
+        present(alertViewController, animated: true, completion: nil)
     }
 }

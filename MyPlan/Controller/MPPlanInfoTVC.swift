@@ -13,12 +13,10 @@ class MPPlanInfoTVC: UITableViewController {
     var managedObjectContext: NSManagedObjectContext?
     var plan: MPPlan!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -57,7 +55,6 @@ class MPPlanInfoTVC: UITableViewController {
         })
        plan.subTodos = NSOrderedSet(array: orderdTodosAry)
         
-        
         var numberOfUnselectedTodo = 0
         for item in orderdTodosAry {
             let todo = item as! SubTodo
@@ -69,12 +66,12 @@ class MPPlanInfoTVC: UITableViewController {
         }
         
 //        tableView.beginUpdates()
-//        tableView.moveRow(at: indexPath, to: IndexPath(row: numberOfUnselectedTodo, section: indexPath.section))
+        tableView.moveRow(at: indexPath, to: IndexPath(row: numberOfUnselectedTodo, section: indexPath.section))
 //        tableView.endUpdates()
         
 //        tableView.reloadRows(at: [indexPath], with: .automatic)
         
-        tableView.reloadData()
+        //tableView.reloadData()
         
         do {
             try managedObjectContext?.save()
@@ -103,6 +100,11 @@ class MPPlanInfoTVC: UITableViewController {
             }
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    
+    //move row test
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        print("Hello")
     }
 }
 

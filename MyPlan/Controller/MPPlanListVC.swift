@@ -32,8 +32,8 @@ class MPPlanListVC : UIViewController {
 
         self.automaticallyAdjustsScrollViewInsets = false
         
-//        稍后加入另一个没有数据的cell，所以这个暂时还是var
-        var cellNib = UINib(nibName: PlanListCellIDs.planCell, bundle: nil)
+
+        let cellNib = UINib(nibName: PlanListCellIDs.planCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: PlanListCellIDs.planCell)
         
         tableView.rowHeight = 80

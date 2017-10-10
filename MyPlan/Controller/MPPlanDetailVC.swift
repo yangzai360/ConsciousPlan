@@ -16,19 +16,37 @@ class MPPlanDetailVC : UIViewController {
     var managedObjectContext: NSManagedObjectContext?
     var plan: MPPlan!
     var planDetailView: MPPlanDetailView!
-    var planDetailTableVC :MPPlanInfoTVC!
+    
+    //下面的列表
+    var planDetailTableVC :MPPlanInfoTVC?
+    var planExecutionListVC :MPPlanExecutionListVC?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateAppearance(tintColor: plan.tintColor as! UIColor)
         
-        //下面的列表初始化
-        planDetailTableVC = MPPlanInfoTVC()
-        planDetailTableVC.plan = plan
-        planDetailTableVC.managedObjectContext = managedObjectContext
-        addChildViewController(planDetailTableVC)
-        view.addSubview(planDetailTableVC.view)
-        planDetailTableVC.view.snp.makeConstraints { (make) -> Void in
+        let planDetailTVC : UIViewController! // 下面就直接赋值，所以保证 !
+        
+        // 根据两个不同的 计划类型，下面显示不同的进度，ToDo就显示项目，剩下的两个类型，显示 添加记录
+        if (Int(plan.planType) ==  2) {
+            //下面的列表初始化
+            let planDetailTableVC = MPPlanInfoTVC()
+            self.planDetailTableVC = planDetailTableVC
+            planDetailTVC = planDetailTableVC
+            planDetailTableVC.plan = plan
+            planDetailTableVC.managedObjectContext = managedObjectContext
+        } else {
+            let planExexutionsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MPPlanExecutionListVC") as! MPPlanExecutionListVC
+            self.planExecutionListVC = planExexutionsVC
+            planDetailTVC = planExexutionsVC
+            planExexutionsVC.plan = plan
+            planExexutionsVC.managedObjectContext = managedObjectContext!
+        }
+        
+        addChildViewController(planDetailTVC)
+        view.addSubview(planDetailTVC.view)
+        planDetailTVC.view.snp.makeConstraints { (make) -> Void in
             make.width.equalTo(self.view)
 //            make.top.equalTo(planDetailView.snp.bottom)
             make.top.equalTo(self.view).offset(64)
@@ -50,7 +68,11 @@ class MPPlanDetailVC : UIViewController {
         }
         planDetailView.configureViewWithPlan()
         
-        planDetailTableVC.tableView.contentInset = UIEdgeInsetsMake(CGFloat(planDetailView.viewHeight - 64.0), 0, 0, 0);
+        if (Int(plan.planType) ==  2) {
+            planDetailTableVC!.tableView.contentInset = UIEdgeInsetsMake(CGFloat(planDetailView.viewHeight - 64.0), 0, 0, 0);
+        } else {
+            planExecutionListVC!.tableView.contentInset = UIEdgeInsetsMake(CGFloat(planDetailView.viewHeight - 64.0), 0, 0, 0);
+        }
         planDetailView.alpha = 0.94
     }
     
@@ -85,13 +107,12 @@ extension MPPlanDetailVC : MPAddPlanProgressPopVCDelegate {
 
 extension MPPlanDetailVC : MPAddTodoPopVCDelegate {
     func didAddTodo() {
-        planDetailTableVC.tableView.reloadData()
+        // ToDo 点击添加 ToDo 之后的操作 （肯定存在 planDetailTableVC）
+        planDetailTableVC!.tableView.reloadData()
     }
 }
 
 extension MPPlanDetailVC : MPPlanDetailViewDelegate {
-    
-    
     func didClickedAddNewValueBtn() {
         performSegue(withIdentifier: "addNewValueSegue", sender: nil)
     }

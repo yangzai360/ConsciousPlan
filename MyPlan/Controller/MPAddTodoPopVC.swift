@@ -16,7 +16,7 @@ protocol MPAddTodoPopVCDelegate: class {
 class MPAddTodoPopVC: MPPopView {
     
     weak var delegate: MPAddTodoPopVCDelegate?
-
+    
     var managedObjectContext: NSManagedObjectContext!
     var plan: MPPlan!
     
