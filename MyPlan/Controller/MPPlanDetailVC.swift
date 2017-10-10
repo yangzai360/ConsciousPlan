@@ -69,9 +69,9 @@ class MPPlanDetailVC : UIViewController {
         planDetailView.configureViewWithPlan()
         
         if (Int(plan.planType) ==  2) {
-            planDetailTableVC!.tableView.contentInset = UIEdgeInsetsMake(CGFloat(planDetailView.viewHeight - 64.0), 0, 0, 0);
+            planDetailTableVC!.tableView.contentInset = UIEdgeInsetsMake(CGFloat(planDetailView.viewHeight), 0, 0, 0);
         } else {
-            planExecutionListVC!.tableView.contentInset = UIEdgeInsetsMake(CGFloat(planDetailView.viewHeight - 64.0), 0, 0, 0);
+            planExecutionListVC!.tableView.contentInset = UIEdgeInsetsMake(CGFloat(planDetailView.viewHeight), 0, 0, 0);
         }
         planDetailView.alpha = 0.94
     }

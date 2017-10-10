@@ -76,7 +76,7 @@ public final class EKColorPickRow: Row<EKColorPickCell>, RowType    {
     }
 }
 
-// MARK: Selector Row.
+// MARK: Selector Row.   里面左边显示颜色的供选择的 Row
 public final class EKColorCheckRow: Row<EKColorCheckCell>, SelectableRowType {
     public var selectableValue: UIColor?
     public required init(tag: String?) {
@@ -87,16 +87,26 @@ public final class EKColorCheckRow: Row<EKColorCheckCell>, SelectableRowType {
 
 // MARK: SelectorViewController:
 // a subclass of _SelectorViewController with custom row type as generic parameter
-open class EKColorSelectorViewController : _SelectorViewController<EKColorCheckRow>  {
-}
+//open class EKColorSelectorViewController : _SelectorViewController<EKColorCheckRow, EKColorPickRow>  {
+//}
+//open class EKColorSelectorViewController<OptionsRow: OptionsProviderRow>: _SelectorViewController<EKColorCheckRow, OptionsRow> {
+//}
 
 // MARK: 
 // A subclass of SelectorRow with this controller as its generic parameter.
 // Types hierarchy should be basically the same as for PushRow just with your custom selector controller in place.
-open class _EKColorPushSelectRow<Cell: CellType>: SelectorRow<Cell, EKColorSelectorViewController> where Cell: BaseCell, Cell.Value == UIColor {
+//open class _EKColorPushSelectRow<Cell: CellType>: SelectorRow<Cell, EKColorSelectorViewController> where Cell: BaseCell, Cell.Value == UIColor {
+//    public required init(tag: String?) {
+//        super.init(tag: tag)
+//        presentationMode = .show(controllerProvider: ControllerProvider.callback { return EKColorSelectorViewController(){ _ in } }, onDismiss: { vc in
+//            let _ = vc.navigationController?.popViewController(animated: true) })
+//    }
+//}
+open class _EKColorPushSelectRow<Cell: CellType>: SelectorRow<Cell> where Cell: BaseCell, Cell.Value == UIColor {
     public required init(tag: String?) {
         super.init(tag: tag)
-        presentationMode = .show(controllerProvider: ControllerProvider.callback { return EKColorSelectorViewController(){ _ in } }, onDismiss: { vc in
+//        presentationMode = .show(controllerProvider: ControllerProvider.callback { return EKColorSelectorViewController(){ _ in } }, onDismiss: { vc in
+        presentationMode = .show(controllerProvider: ControllerProvider.callback { return SelectorViewController(){ _ in } }, onDismiss: { vc in
             let _ = vc.navigationController?.popViewController(animated: true) })
     }
 }
