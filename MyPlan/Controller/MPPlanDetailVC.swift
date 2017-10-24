@@ -32,6 +32,7 @@ class MPPlanDetailVC : UIViewController {
         if (Int(plan.planType) ==  2) {
             //下面的列表初始化
             let planDetailTableVC = MPPlanInfoTVC()
+            planDetailTableVC.delegate = self
             self.planDetailTableVC = planDetailTableVC
             planDetailTVC = planDetailTableVC
             planDetailTableVC.plan = plan
@@ -102,13 +103,19 @@ extension MPPlanDetailVC : MPAddPlanProgressPopVCDelegate {
     func didAddExecution() {
         planDetailView.configureViewWithPlan()
         planDetailView.animateProgress()
+        planDetailTableVC?.tableView.reloadData()
+        planExecutionListVC?.tableView.reloadData()
     }
 }
 
-extension MPPlanDetailVC : MPAddTodoPopVCDelegate {
+extension MPPlanDetailVC : MPAddTodoPopVCDelegate, MPPlanInfoTVCDelegate {
     func didAddTodo() {
         // ToDo 点击添加 ToDo 之后的操作 （肯定存在 planDetailTableVC）
         planDetailTableVC!.tableView.reloadData()
+    }
+    
+    func didUpdateTodo() {
+        planDetailView.configureViewWithPlan()
     }
 }
 

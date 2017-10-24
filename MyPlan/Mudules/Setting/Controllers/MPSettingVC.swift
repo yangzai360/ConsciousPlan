@@ -40,14 +40,16 @@ class MPSettingVC : FormViewController{
 //                $0.title = "计划名称"
                 $0.value = $0.tag
                 }.onChange{ row in
-        }
+                }.onCellSelection({ [weak self] (cell, row) in
+                    self?.sendMail()
+                })
         
         form +++ Section("")
             <<< ButtonRow("推荐给朋友") {
                 $0.title = $0.tag
             }
             .onCellSelection { [weak self] (cell, row) in
-            self?.sendMail()
+//            self?.sendMail()
         }
     }
     
@@ -60,7 +62,7 @@ class MPSettingVC : FormViewController{
         let mailVC = MFMailComposeViewController()
         mailVC.mailComposeDelegate = self
         mailVC.setSubject("自觉计划用户问题反馈：")
-        mailVC.setToRecipients(["yangzai360@icloud.com"])
+        mailVC.setToRecipients(["consciousplanhelp@icloud.com"])
         mailVC.setMessageBody("在使用中遇到的问题如下：\n", isHTML: false)
         present(mailVC, animated: true, completion: nil)
     }

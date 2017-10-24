@@ -9,7 +9,14 @@
 import UIKit
 import CoreData
 
+protocol MPPlanInfoTVCDelegate: class {
+    func didUpdateTodo()
+}
+
 class MPPlanInfoTVC: UITableViewController {
+    
+    weak var delegate: MPPlanInfoTVCDelegate?
+
     var managedObjectContext: NSManagedObjectContext?
     var plan: MPPlan!
 
@@ -66,12 +73,12 @@ class MPPlanInfoTVC: UITableViewController {
         }
         
 //        tableView.beginUpdates()
-        tableView.moveRow(at: indexPath, to: IndexPath(row: numberOfUnselectedTodo, section: indexPath.section))
+//        tableView.moveRow(at: indexPath, to: IndexPath(row: numberOfUnselectedTodo, section: indexPath.section))
 //        tableView.endUpdates()
         
 //        tableView.reloadRows(at: [indexPath], with: .automatic)
         
-        //tableView.reloadData()
+        tableView.reloadData()
         
         do {
             try managedObjectContext?.save()

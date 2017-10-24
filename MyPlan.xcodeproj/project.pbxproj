@@ -142,7 +142,7 @@
 		D541DEBF1E8CA5BA00FFFC88 /* EKColorPickCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EKColorPickCell.xib; sourceTree = "<group>"; };
 		D541DEC21E8CAB7000FFFC88 /* EKColorPickRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKColorPickRow.swift; sourceTree = "<group>"; };
 		D54EFDBA1E8BA2A70030A6E8 /* NSDate+MPPlanDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+MPPlanDate.swift"; sourceTree = "<group>"; };
-		D54EFDBC1E8BA39F0030A6E8 /* MPPlanCodePG.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MPPlanCodePG.playground; sourceTree = "<group>"; };
+		D54EFDBC1E8BA39F0030A6E8 /* MPPlanCodePG.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MPPlanCodePG.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D5737B0A1F2BAA1B009E4240 /* MPPlanTypeValueView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MPPlanTypeValueView.xib; sourceTree = "<group>"; };
 		D5737B0C1F2BAEE0009E4240 /* MPPlanTypeTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanTypeTimeView.swift; sourceTree = "<group>"; };
 		D5737B0E1F2BAEFA009E4240 /* MPPlanTypeTimeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MPPlanTypeTimeView.xib; sourceTree = "<group>"; };

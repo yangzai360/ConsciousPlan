@@ -31,3 +31,24 @@ msets.sortedArray(comparator: { (a1, a2) -> ComparisonResult in
 
 //let double = Double("1")
 //print(double)
+
+
+func test() -> String {
+    
+    
+    print("A")
+    return ""
+}
+
+func test2() -> String {
+    print("1")
+//    let _ = test()
+    
+    print("A")
+
+    
+    print("2")
+    return ""
+}
+
+let _ = test2()

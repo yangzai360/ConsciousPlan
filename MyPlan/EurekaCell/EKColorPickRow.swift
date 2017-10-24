@@ -69,7 +69,7 @@ public class EKColorCheckCell : Cell<UIColor>, CellType {
 }
 
 // MARK: Normal Row.
-public final class EKColorPickRow: Row<EKColorPickCell>, RowType    {
+public final class EKColorPickRow: Row<EKColorPickCell>, RowType {   // Warning: 应该是在这里添加 OptionsProviderRow 协议
     public required init(tag: String?) {
         super.init(tag: tag)
         cellProvider = CellProvider<EKColorPickCell>(nibName: "EKColorPickCell")
@@ -89,7 +89,7 @@ public final class EKColorCheckRow: Row<EKColorCheckCell>, SelectableRowType {
 // a subclass of _SelectorViewController with custom row type as generic parameter
 //open class EKColorSelectorViewController : _SelectorViewController<EKColorCheckRow, EKColorPickRow>  {
 //}
-//open class EKColorSelectorViewController<OptionsRow: OptionsProviderRow>: _SelectorViewController<EKColorCheckRow, OptionsRow> {
+//open class EKColorSelectorViewController: _SelectorViewController<EKColorCheckRow, EKColorPickRow> {
 //}
 
 // MARK: 
@@ -102,6 +102,7 @@ public final class EKColorCheckRow: Row<EKColorCheckCell>, SelectableRowType {
 //            let _ = vc.navigationController?.popViewController(animated: true) })
 //    }
 //}
+
 open class _EKColorPushSelectRow<Cell: CellType>: SelectorRow<Cell> where Cell: BaseCell, Cell.Value == UIColor {
     public required init(tag: String?) {
         super.init(tag: tag)
