@@ -54,12 +54,7 @@ extension MPPlanExecutionListVC: UITableViewDelegate {
             let deleteExecutionItem = plan.executions![indexPath.row] as! Execution
             plan.value -= deleteExecutionItem.value
             plan.removeFromExecutions(at: indexPath.row)
-            do {
-                try self.managedObjectContext.save()
-            } catch let error as NSError {
-                print("error:\(errno), \(error.userInfo).")
-            }
-            
+            managedObjectContext.trySave()
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }

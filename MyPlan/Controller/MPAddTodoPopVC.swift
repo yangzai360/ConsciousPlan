@@ -43,11 +43,8 @@ class MPAddTodoPopVC: MPPopView {
             newTodo.name = nameTextField.text!
             newTodo.plan = plan
             
-            do {
-                try managedObjectContext.save()
-            } catch let error as NSError {
-                print("Error when save a new Plan, error: \(error), \(error.userInfo)")
-            }
+            managedObjectContext.trySave()
+            
             delegate?.didAddTodo()
         }
         close()

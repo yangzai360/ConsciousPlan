@@ -44,11 +44,8 @@ class MPAddPlanProgressPopVC : MPPopView {
         if execution.value != 0 {
             plan.addToExecutions(execution)
             plan.value += execution.value
-            do {
-                try managedObjectContext.save()
-            } catch let error as NSError {
-                print("Error when save a new Plan, error: \(error), \(error.userInfo)")
-            }
+            
+            managedObjectContext.trySave()
             delegate.didAddExecution()
         }
         close()

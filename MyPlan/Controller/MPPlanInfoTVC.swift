@@ -26,14 +26,8 @@ class MPPlanInfoTVC: UITableViewController {
         self.tableView.delegate = self
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let todos = plan.subTodos {
-            return todos.count
-        }
-        return 0
+        return plan.subTodos?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,14 +35,12 @@ class MPPlanInfoTVC: UITableViewController {
         cell.selectionStyle = .none
 
         let todo = plan.subTodos![indexPath.row] as! SubTodo
-        
         cell.textLabel?.text = todo.name ?? ""
         cell.accessoryType =  todo.value ? .checkmark : .none
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let todo = plan.subTodos![indexPath.row] as! SubTodo
         todo.value = !todo.value
         todo.doneTime = NSDate()
@@ -71,21 +63,12 @@ class MPPlanInfoTVC: UITableViewController {
                 break
             }
         }
-        
-//        tableView.beginUpdates()
 //        tableView.moveRow(at: indexPath, to: IndexPath(row: numberOfUnselectedTodo, section: indexPath.section))
-//        tableView.endUpdates()
-//        tableView.reloadRows(at: [indexPath], with: .automatic)
-        
         tableView.reloadData()
         //更新数据
         delegate?.didUpdateTodo()
         
-        do {
-            try managedObjectContext?.save()
-        } catch let error as NSError {
-            print("Error when save a new Plan, error: \(error), \(error.userInfo)")
-        }
+        managedObjectContext?.trySave()
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -101,35 +84,9 @@ class MPPlanInfoTVC: UITableViewController {
             todos.remove(plan.subTodos![indexPath.row])
             plan.subTodos = todos.copy() as? NSOrderedSet
             
-            do {
-                try self.managedObjectContext?.save()
-            } catch let error as NSError {
-                print("error:\(errno), \(error.userInfo).")
-            }
+            managedObjectContext?.trySave()
+            
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
-    //move row test
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        print("Hello")
-    }
 }
-
-//extension MPPlanDetailVC: UITableViewDataSource {
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 5
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = UITableViewCell()
-//        
-//        cell.textLabel?.text = "HelloTest"
-//        
-//        return cell
-//    }
-//    
-//}

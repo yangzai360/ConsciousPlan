@@ -115,13 +115,6 @@ extension MPPlanListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let plan = fetchResult[indexPath.row]
         self.performSegue(withIdentifier:"planDetailSegue", sender: plan)
-        
-//        do {
-//            plan.planType = Int32(0)  //测试代码，强行转换成 定量计划
-//            try managedContext?.save()
-//        } catch let error as NSError {
-//            print("Error when save a new Plan, error: \(error), \(error.userInfo)")
-//        }
     }
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true

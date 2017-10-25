@@ -335,12 +335,7 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
         
         plan.createDate = NSDate()
         plan.lastUpdate = NSDate()
-        do {
-            try managedObjectContext?.save()
-        } catch let error as NSError {
-            print("Error when save a new Plan, error: \(error), \(error.userInfo)")
-        }
-        
+        managedObjectContext?.trySave()
         self.performSegue(withIdentifier:"unwindToPlansList", sender: self);
     }
     

@@ -17,6 +17,7 @@
 		33C6E1B41F3B4AF000399343 /* YZMonthGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C6E1AF1F3B4AF000399343 /* YZMonthGridView.swift */; };
 		33C6E1B51F3B4AF000399343 /* YZMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C6E1B01F3B4AF000399343 /* YZMonthView.swift */; };
 		33C6E1B61F3B4AF000399343 /* YZYearlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C6E1B11F3B4AF000399343 /* YZYearlyView.swift */; };
+		8F023CD51FA0E23200B3DBCB /* NSManagedObjectContext+MPAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F023CD41FA0E23200B3DBCB /* NSManagedObjectContext+MPAddition.swift */; };
 		8F52E8201E87B5C500E41627 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52E81F1E87B5C500E41627 /* AppDelegate.swift */; };
 		8F52E8251E87B5C500E41627 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F52E8231E87B5C500E41627 /* Main.storyboard */; };
 		8F52E8281E87B5C500E41627 /* MyPlan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F52E8261E87B5C500E41627 /* MyPlan.xcdatamodeld */; };
@@ -96,6 +97,7 @@
 		33C6E1AF1F3B4AF000399343 /* YZMonthGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZMonthGridView.swift; sourceTree = "<group>"; };
 		33C6E1B01F3B4AF000399343 /* YZMonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZMonthView.swift; sourceTree = "<group>"; };
 		33C6E1B11F3B4AF000399343 /* YZYearlyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZYearlyView.swift; sourceTree = "<group>"; };
+		8F023CD41FA0E23200B3DBCB /* NSManagedObjectContext+MPAddition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+MPAddition.swift"; sourceTree = "<group>"; };
 		8F52E81C1E87B5C500E41627 /* MyPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F52E81F1E87B5C500E41627 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F52E8241E87B5C500E41627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				8FC3B8161E8A93B800E9E5A1 /* CoreDataStack.swift */,
 				D54EFDBA1E8BA2A70030A6E8 /* NSDate+MPPlanDate.swift */,
 				8FC3B81B1E902F3B00E9E5A1 /* UIViewControlelr+MPAppearance.swift */,
+				8F023CD41FA0E23200B3DBCB /* NSManagedObjectContext+MPAddition.swift */,
 				8F52E8231E87B5C500E41627 /* Main.storyboard */,
 				D54EFDBC1E8BA39F0030A6E8 /* MPPlanCodePG.playground */,
 				8F52E8291E87B5C500E41627 /* Assets.xcassets */,
@@ -646,6 +649,7 @@
 				D520F0801F7F932F001DFACE /* FadeOutAnimationController.swift in Sources */,
 				8FA16C501F61A8DC00FEAFEF /* MPAddTodoPopVC.swift in Sources */,
 				33C6E1B51F3B4AF000399343 /* YZMonthView.swift in Sources */,
+				8F023CD51FA0E23200B3DBCB /* NSManagedObjectContext+MPAddition.swift in Sources */,
 				8FBA6DFA1F04E82D007E4B93 /* MPPlanListCell.swift in Sources */,
 				8FC3B8171E8A93B800E9E5A1 /* CoreDataStack.swift in Sources */,
 				D52ED39A1E94A37300ED23FA /* MPAddPlanProgressPopVC.swift in Sources */,
