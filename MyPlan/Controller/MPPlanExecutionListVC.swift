@@ -22,7 +22,7 @@ class MPPlanExecutionListVC : UIViewController {
 // MARK: - UITableViewDataSource
 extension MPPlanExecutionListVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return plan.executions!.count;
+        return plan.executions!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

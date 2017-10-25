@@ -12,6 +12,9 @@ import CoreData
 @objc(MPPlan)
 public class MPPlan: NSManagedObject {
     
+    /// 创建或编辑计划的时候检查项目合法
+    ///
+    /// - Returns: nil is right, else return the error alert string.
     func checkForCreatPlan() -> String? {
         if planName == nil || planName?.characters.count == 0 { return "请输入计划名称"}
 //        if beginTime!.compare(endTime! as Date) == .orderedAscending { return "请修正结束时间"}
@@ -29,14 +32,17 @@ public class MPPlan: NSManagedObject {
         return dateFormatter
     }
     
+    /// 开始结束时间的供显示的字符串
+    ///
+    /// - Returns: the showing string after formatter.
     func beginTimeStr() -> String {
         return getDateFormatter().string(from: (beginTime! as Date ))
     }
-    
     func endTimeStr() -> String {
         return getDateFormatter().string(from: (endTime! as Date ))
     }
     
+    //暂时没有被调用
     func recaculateValue() -> Double {
         var newValue : Double = 0
         newValue += self.startValue
@@ -47,6 +53,22 @@ public class MPPlan: NSManagedObject {
             }
         }
         return newValue
+    }
+    
+    func recaculateTodoValue() {
+        //确保为 Todo
+        guard Int(planType) == 2 else { return }
+        
+        var numOfDonesTodd = 0
+        for item in self.subTodos! {
+            if let todo = item as? SubTodo {
+                if todo.value {
+                    numOfDonesTodd += 1
+                }
+            }
+        }
+        tergetValue = Double(subTodos?.count ?? 0)
+        value = Double(numOfDonesTodd)
     }
 }
 

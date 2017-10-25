@@ -8,6 +8,7 @@
 
 import Foundation
 
+//类型枚举
 enum PlanType : String, CustomStringConvertible {
     case CountType = "定量计划"
     case TimeType = "定时任务"
@@ -16,6 +17,7 @@ enum PlanType : String, CustomStringConvertible {
     static let allValues = [CountType, TimeType, ToDoType]
 }
 
+//单位枚举
 enum PlanValueUnit : String, CustomStringConvertible {
     case PlanValueUnit1 = "个"
     case PlanValueUnit2 = "页"
@@ -30,6 +32,7 @@ enum PlanValueUnit : String, CustomStringConvertible {
     static let allValues = [PlanValueUnit1, PlanValueUnit2, PlanValueUnit3, PlanValueUnit4, PlanValueUnit5, PlanValueUnit6, PlanValueUnit7, PlanValueUnit8, PlanValueUnit9]
 }
 
+//时间单位枚举
 enum PlanTimeUnit : String, CustomStringConvertible {
     //秒 分 时 天 周 月 年
     case PlanTimeUnit1 = "秒"

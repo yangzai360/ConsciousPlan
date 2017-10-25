@@ -36,6 +36,9 @@ class MPPlanTypeToDoView: MPPlanDetailView {
     
     //Load Data
     override func configureViewWithPlan() {
+//        更新Todo的数据背后的计算
+        plan.recaculateTodoValue()
+        
         tintColorView.backgroundColor = plan.tintColor as? UIColor
         planNameLabel.text = plan.planName
 //        containLabel.text = NSString(format: "已完成：%.2f%%", (self.plan.value/self.plan.tergetValue)*100) as String

@@ -75,10 +75,11 @@ class MPPlanInfoTVC: UITableViewController {
 //        tableView.beginUpdates()
 //        tableView.moveRow(at: indexPath, to: IndexPath(row: numberOfUnselectedTodo, section: indexPath.section))
 //        tableView.endUpdates()
-        
 //        tableView.reloadRows(at: [indexPath], with: .automatic)
         
         tableView.reloadData()
+        //更新数据
+        delegate?.didUpdateTodo()
         
         do {
             try managedObjectContext?.save()

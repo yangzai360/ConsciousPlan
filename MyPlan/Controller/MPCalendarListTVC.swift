@@ -27,7 +27,6 @@ class MPCalendarListTVC: UITableViewController {
 //        tableView.reloadData()
     }
     
-    
     struct CalendarListCellIDs {
         static let executionCell = "MPCalendarExecutionCell"
         //        static let noPlanCell = "NothingFoundCell"

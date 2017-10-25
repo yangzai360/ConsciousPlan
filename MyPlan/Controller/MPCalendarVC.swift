@@ -9,17 +9,15 @@
 import UIKit
 import CoreData
 
-
 class MPCalendarVC: UIViewController, YZDatePickerControllerDelegate, YZDatePickerControllerDataSource {
-    
-    //UI
+    // UI
     var datePickerController = YZDatePickerController()
     var calendarListTVC :MPCalendarListTVC!
     
     var managedObjectContext: NSManagedObjectContext?
-    //获取的所有的执行记录
+    // 获取的所有的执行记录
     var fetchResult : [Execution]!
-    //    所有结果的分类
+    // 所有结果的分类
     var fetchResultDict : [Int: [Execution]]!
     
     override func viewDidLoad() {
@@ -38,7 +36,7 @@ class MPCalendarVC: UIViewController, YZDatePickerControllerDelegate, YZDatePick
     }
     
     func addSubViews() {
-        //Add Subview
+        // Add Subview
         calendarListTVC = MPCalendarListTVC()
         view.addSubview(calendarListTVC.view)
         
@@ -54,8 +52,8 @@ class MPCalendarVC: UIViewController, YZDatePickerControllerDelegate, YZDatePick
             make.centerX.equalTo(self.view)
         }
         
-        datePickerController.view.backgroundColor = UIColor.init(colorLiteralRed: 0.9922, green: 0.9922, blue: 0.9922, alpha: 1.0)
-        
+        datePickerController.view.backgroundColor = UIColor(red: 0.9922, green: 0.9922, blue: 0.9922, alpha: 1.0)
+
         let line = UIView()
         line.backgroundColor = UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.0)
         view.addSubview(line)
@@ -83,7 +81,7 @@ class MPCalendarVC: UIViewController, YZDatePickerControllerDelegate, YZDatePick
         }
         print("number of execution is \(fetchResult.count)")
         
-        //      一遍循环 进行 分类
+        // 一遍循环 进行 分类
         fetchResultDict = [Int: [Execution]]()
         for execution in fetchResult {
             guard execution.plan != nil else {  // 过滤掉没有 计划 的执行结果
@@ -92,7 +90,7 @@ class MPCalendarVC: UIViewController, YZDatePickerControllerDelegate, YZDatePick
             
             if var executionsAry = fetchResultDict[execution.dateFormatterIntKey()] {
                 executionsAry.append(execution)
-                fetchResultDict[execution.dateFormatterIntKey()] = executionsAry  //有没有必要回写
+                fetchResultDict[execution.dateFormatterIntKey()] = executionsAry  // 有没有必要回写
             } else {
                 var newExecutions = [Execution]()
                 newExecutions.append(execution)
