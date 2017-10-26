@@ -62,7 +62,7 @@ public class MPPlan: NSManagedObject {
         var numOfDonesTodd = 0
         for item in self.subTodos! {
             if let todo = item as? SubTodo {
-                if todo¡.value {
+                if todo.value {
                     numOfDonesTodd += 1
                 }
             }
