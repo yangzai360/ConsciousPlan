@@ -62,6 +62,7 @@
 		D5737B0F1F2BAEFA009E4240 /* MPPlanTypeTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5737B0E1F2BAEFA009E4240 /* MPPlanTypeTimeView.xib */; };
 		D5737B111F2BB331009E4240 /* MPPlanTypeToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5737B101F2BB331009E4240 /* MPPlanTypeToDoView.swift */; };
 		D5737B131F2BB343009E4240 /* MPPlanTypeToDoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5737B121F2BB343009E4240 /* MPPlanTypeToDoView.xib */; };
+		D57683B11FA1D34A0087978C /* EKColorPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57683B01FA1D34A0087978C /* EKColorPickerVC.swift */; };
 		D5CA5B7D1EA38CCD00960944 /* MPEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CA5B7C1EA38CCD00960944 /* MPEnums.swift */; };
 		D5CA5B821EA3C37300960944 /* SubTodo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CA5B7F1EA3C37300960944 /* SubTodo+CoreDataClass.swift */; };
 		D5CA5B831EA3C37300960944 /* SubTodo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CA5B801EA3C37300960944 /* SubTodo+CoreDataProperties.swift */; };
@@ -150,6 +151,7 @@
 		D5737B0E1F2BAEFA009E4240 /* MPPlanTypeTimeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MPPlanTypeTimeView.xib; sourceTree = "<group>"; };
 		D5737B101F2BB331009E4240 /* MPPlanTypeToDoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanTypeToDoView.swift; sourceTree = "<group>"; };
 		D5737B121F2BB343009E4240 /* MPPlanTypeToDoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MPPlanTypeToDoView.xib; sourceTree = "<group>"; };
+		D57683B01FA1D34A0087978C /* EKColorPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKColorPickerVC.swift; sourceTree = "<group>"; };
 		D5CA5B7C1EA38CCD00960944 /* MPEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPEnums.swift; sourceTree = "<group>"; };
 		D5CA5B7F1EA3C37300960944 /* SubTodo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SubTodo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D5CA5B801EA3C37300960944 /* SubTodo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SubTodo+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				D534BEE21E95F304007CED1E /* MPPlanExecutionListVC.swift */,
 				33C6E1A91F3B4A3700399343 /* MPCalendarVC.swift */,
 				33A9B6D91F3B5890002346A2 /* MPCalendarListTVC.swift */,
+				D57683B01FA1D34A0087978C /* EKColorPickerVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				33C6E1B51F3B4AF000399343 /* YZMonthView.swift in Sources */,
 				8F023CD51FA0E23200B3DBCB /* NSManagedObjectContext+MPAddition.swift in Sources */,
 				8FBA6DFA1F04E82D007E4B93 /* MPPlanListCell.swift in Sources */,
+				D57683B11FA1D34A0087978C /* EKColorPickerVC.swift in Sources */,
 				8FC3B8171E8A93B800E9E5A1 /* CoreDataStack.swift in Sources */,
 				D52ED39A1E94A37300ED23FA /* MPAddPlanProgressPopVC.swift in Sources */,
 			);

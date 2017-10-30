@@ -72,34 +72,15 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
                 }
         
         form +++ self.formSection()
-            <<< EKColorPushSelectRow() {
-                $0.title = "主题色"
+            
+            <<< EKColorNormalRow("TintColor") {
+                $0.title = "主题"
                 $0.value = plan.tintColor as? UIColor
-                $0.options = [
-                    
-                    UIColor.init(red: 50/255, green: 191/255, blue: 254/255, alpha: 1.0), // DO blue.
-                    UIColor.init(red: 245/255, green: 122/255, blue: 130/255, alpha: 1.0),
-                    UIColor.init(red: 250/255, green: 190/255, blue: 130/255, alpha: 1.0),
-                    UIColor.init(red: 250/255, green: 220/255, blue: 130/255, alpha: 1.0),
-                    UIColor.init(red: 230/255, green: 240/255, blue: 150/255, alpha: 1.0),
-                    UIColor.init(red: 150/255, green: 240/255, blue: 240/255, alpha: 1.0),
-                    UIColor.init(red: 160/255, green: 190/255, blue: 240/255, alpha: 1.0),
-                    UIColor.init(red: 190/255, green: 170/255, blue: 225/255, alpha: 1.0),
-                    
-                    UIColor.init(red: 200/255, green: 190/255, blue: 160/255, alpha: 1.0),
-                    UIColor.init(red: 140/255, green: 110/255, blue: 85/255, alpha: 1.0),
-                    UIColor.init(red: 170/255, green: 75/255, blue: 75/255, alpha: 1.0),
-                    UIColor.init(red: 235/255, green: 190/255, blue: 180/255, alpha: 1.0),
-                    UIColor.init(red: 220/255, green: 190/255, blue: 110/255, alpha: 1.0),
-                    UIColor.init(red: 140/255, green: 140/255, blue: 100/255, alpha: 1.0),
-                    UIColor.init(red: 180/255, green: 200/255, blue: 190/255, alpha: 1.0),
-                    UIColor.init(red: 100/255, green: 95/255, blue: 120/255, alpha: 1.0)
-                    
-//                    UIColor.init(red: 230/255, green: 200/255, blue: 160/255, alpha: 1.0),
-//                    UIColor.init(red: 90/255, green: 80/255, blue: 75/255, alpha: 1.0),
-//                    UIColor.init(red: 250/255, green: 180/255, blue: 5/255, alpha: 1.0)
-                ]
-                }.onChange { row in
+                $0.onCellSelection({ (cell, row) in
+                    let colorPickerVC = EKColorPickerVC()
+                    colorPickerVC.row = row
+                    self.navigationController?.pushViewController(colorPickerVC, animated: true)
+                }).onChange({ (row) in
                     if row.value == nil {
                         row.value = self.plan.tintColor as? UIColor
                         return
@@ -107,7 +88,8 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
                     self.plan.tintColor = row.value
                     self.updateAppearance(tintColor: self.plan.tintColor as! UIColor)
                     row.updateCell()
-                }
+                })
+            }
     
         form +++ self.formSection()
             <<< SwitchRow("全天") {
