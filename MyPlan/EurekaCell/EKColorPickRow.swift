@@ -35,7 +35,7 @@ public final class EKColorNormalRow: Row<EKColorPickCell>, RowType {
     }
 }
 
-// MARK: - 下面是内页面使用的 Cell
+// MARK: - 下面是内页面使用的 Cell -
 
 // MARK: Custom Cell
 public class EKColorCheckCell : Cell<UIColor>, CellType {
@@ -53,9 +53,9 @@ public class EKColorCheckCell : Cell<UIColor>, CellType {
 //        } else {
 //            tintColor = UIColor(red: red, green: green, blue: blue, alpha: 1)
 //        }
-        guard let row = self.row as? EKColorCheckRow else {
-            return
-        }
+//        guard let row = self.row as? EKColorCheckRow else {
+//            return
+//        }
         colorView.backgroundColor = row.selectableValue
     }
     
