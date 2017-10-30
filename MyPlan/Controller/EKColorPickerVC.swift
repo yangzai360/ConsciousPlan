@@ -44,10 +44,9 @@ class EKColorPickerVC: FormViewController {
     }
     
     func initializeForm() {
-        form +++ SelectableSection<EKColorCheckRow>() { section in
+        form +++ Section() { section in
             section.header = HeaderFooterView(title: "选择主体颜色")
         }
-        
         for option in optionsColor {
             form.last! <<< EKColorCheckRow(){
                 $0.selectableValue = option

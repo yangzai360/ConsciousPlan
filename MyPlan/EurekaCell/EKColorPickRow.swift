@@ -53,9 +53,9 @@ public class EKColorCheckCell : Cell<UIColor>, CellType {
 //        } else {
 //            tintColor = UIColor(red: red, green: green, blue: blue, alpha: 1)
 //        }
-//        guard let row = self.row as? EKColorCheckRow else {
-//            return
-//        }
+        guard let row = self.row as? EKColorCheckRow else {
+            return
+        }
         colorView.backgroundColor = row.selectableValue
     }
     
@@ -63,14 +63,15 @@ public class EKColorCheckCell : Cell<UIColor>, CellType {
         super.setup()
         height = { 44 }
         row.title? = ""
-        accessoryType =  .checkmark
+        accessoryType = .checkmark
         editingAccessoryType = accessoryType
     }
     
-    open override func didSelect() {
-        row.deselect()
-        row.updateCell()
-    }
+//    open override func didSelect() {
+//        super.didSelect()
+//        row.deselect()
+//        row.updateCell()
+//    }
 }
 
 // MARK: Selector Row.   里面左边显示颜色的供选择的 Row
