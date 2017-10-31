@@ -18,6 +18,9 @@ class MPSettingVC : FormViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
          initializeForm()
+        
+        //Tint color.
+        updateAppearance(tintColor: self.defaultTintColor())
     }
     
     func initializeForm() {

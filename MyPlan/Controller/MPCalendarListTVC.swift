@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol MPCalendarListTVCDelegate : class{
+    func didSelectPlan(plan: MPPlan)
+}
+
 class MPCalendarListTVC: UITableViewController {
+    
+    var delegate: MPCalendarListTVCDelegate?
+
+    
     //目前要展示的
     var showResult : [Execution]! = [Execution]() {
         didSet {
@@ -57,10 +65,17 @@ class MPCalendarListTVC: UITableViewController {
         dateFormatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
         
         cell.executionDateLabel.text = dateFormatter.string(from: execution.date as! Date)
-        
-        cell.valueLabel.text = execution.value > 0 ? "+ \(execution.value)" : "- \(execution.value)"
+        cell.valueLabel.text = execution.value > 0 ? "+ \(execution.value)" : "- \(abs(execution.value))"
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let execution = showResult[indexPath.row]
+        guard let plan = execution.plan else {
+            return
+        }
+        delegate?.didSelectPlan(plan: plan)
     }
     
 }

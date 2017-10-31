@@ -50,7 +50,7 @@
         <scene sceneID="73d-qd-jQ4">
             <objects>
                 <navigationController id="GZS-Qw-wRP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="计划列表" id="vlq-xD-YEz"/>
+                    <tabBarItem key="tabBarItem" title="计划列表" image="PlanIcon" id="vlq-xD-YEz"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AhM-vE-IJ6">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -92,7 +92,7 @@
                             <constraint firstItem="6r8-fb-7r0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="goT-jy-2a4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="计划列表" id="b7q-5d-S1L"/>
+                    <tabBarItem key="tabBarItem" title="计划列表" image="Calendar" id="b7q-5d-S1L"/>
                     <navigationItem key="navigationItem" title="计划列表" id="DsO-qx-axi">
                         <barButtonItem key="leftBarButtonItem" image="Setting" id="XaI-NV-3U2">
                             <connections>
@@ -162,7 +162,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="计划" id="Bdf-4i-uoR"/>
+                    <navigationItem key="navigationItem" title="计划" id="Bdf-4i-uoR">
+                        <barButtonItem key="rightBarButtonItem" title="编辑" id="Cdg-34-ieq">
+                            <connections>
+                                <segue destination="iJf-We-cqg" kind="popoverPresentation" identifier="createPlanSegue" popoverAnchorBarButtonItem="Cdg-34-ieq" id="Nyr-a0-6Ng">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="gh8-8J-e47" kind="show" identifier="planExecutionListSegue" id="z6h-D7-Zyv"/>
                         <segue destination="pq4-Lh-PcS" kind="presentation" identifier="addNewValueSegue" id="b91-ud-cn7"/>
@@ -226,7 +234,7 @@
                                 <rect key="frame" x="24" y="132" width="327" height="203"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ypb-ei-IfK">
-                                        <rect key="frame" x="134" y="35" width="100" height="30"/>
+                                        <rect key="frame" x="128" y="35" width="100" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="rJY-5G-m2p"/>
                                         </constraints>
@@ -238,7 +246,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sej-aI-2WV">
-                                        <rect key="frame" x="134" y="100" width="100" height="30"/>
+                                        <rect key="frame" x="128" y="100" width="100" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="uSk-os-iNx"/>
                                         </constraints>
@@ -249,15 +257,22 @@
                                             <outlet property="delegate" destination="pq4-Lh-PcS" id="MBB-Uk-LHp"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新执行" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ij-YB-KSF">
-                                        <rect key="frame" x="66" y="40" width="52" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新增加" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ij-YB-KSF">
+                                        <rect key="frame" x="60" y="40" width="52" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="总执行" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhE-gZ-C4z">
-                                        <rect key="frame" x="66" y="105" width="52" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="总完成" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhE-gZ-C4z">
+                                        <rect key="frame" x="60" y="105" width="52" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="单位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ssi-WS-PV4">
+                                        <rect key="frame" x="236" y="40" width="59" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -283,13 +298,20 @@
                                             <action selector="add:" destination="pq4-Lh-PcS" eventType="touchUpInside" id="J14-id-1Sh"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="单位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fu2-oG-Y3F">
+                                        <rect key="frame" x="236" y="105" width="59" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="203" id="Diw-nM-cDs"/>
-                                    <constraint firstItem="ypb-ei-IfK" firstAttribute="centerX" secondItem="FW8-4k-Du2" secondAttribute="centerX" constant="20.5" id="PgU-NI-eoW"/>
+                                    <constraint firstItem="ypb-ei-IfK" firstAttribute="centerX" secondItem="FW8-4k-Du2" secondAttribute="centerX" constant="14.5" id="PgU-NI-eoW"/>
                                     <constraint firstAttribute="width" constant="327" id="Q1E-gr-cc1"/>
-                                    <constraint firstItem="sej-aI-2WV" firstAttribute="centerX" secondItem="FW8-4k-Du2" secondAttribute="centerX" constant="20.5" id="TBG-hj-FUi"/>
+                                    <constraint firstItem="sej-aI-2WV" firstAttribute="centerX" secondItem="FW8-4k-Du2" secondAttribute="centerX" constant="14.5" id="TBG-hj-FUi"/>
                                     <constraint firstItem="ypb-ei-IfK" firstAttribute="top" secondItem="FW8-4k-Du2" secondAttribute="top" constant="35" id="Vy4-FM-kZQ"/>
                                     <constraint firstAttribute="bottom" secondItem="Tqs-1I-38a" secondAttribute="bottom" constant="14" id="XYD-Sg-eJ1"/>
                                     <constraint firstItem="sej-aI-2WV" firstAttribute="top" secondItem="ypb-ei-IfK" secondAttribute="bottom" constant="35" id="jW0-68-uOd"/>
@@ -309,13 +331,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="countLabel" destination="Ssi-WS-PV4" id="VRe-Ux-tSx"/>
+                        <outlet property="countLabel2" destination="Fu2-oG-Y3F" id="hlV-Ms-zba"/>
                         <outlet property="newValueTextField" destination="ypb-ei-IfK" id="jVL-Qy-gGT"/>
                         <outlet property="totalValueTextField" destination="sej-aI-2WV" id="x4N-CO-mN7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gd9-fK-Xwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3580" y="808"/>
+            <point key="canvasLocation" x="3580" y="807.34632683658174"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3VD-Iq-1x8">
@@ -369,6 +393,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="日历" id="ihP-4D-jkE"/>
+                    <connections>
+                        <segue destination="zOJ-7t-Sar" kind="show" identifier="planDetailSegue" id="HDo-Ur-NCM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mr7-dF-GG7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -378,7 +405,7 @@
         <scene sceneID="xP7-F1-Ihl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y2q-6d-jRV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="日历" id="chS-D3-low"/>
+                    <tabBarItem key="tabBarItem" title="日历" image="Calendar" id="chS-D3-low"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YLH-Ly-69W">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -498,6 +525,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Calendar" width="30" height="30"/>
+        <image name="PlanIcon" width="30" height="30"/>
         <image name="Setting" width="23" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dON-6D-sXm"/>
+        <segue reference="lH5-j7-LWM"/>
+    </inferredMetricsTieBreakers>
 </document>

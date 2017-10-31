@@ -20,6 +20,10 @@ class MPAddPlanProgressPopVC : MPPopView {
     var managedObjectContext: NSManagedObjectContext!
     var plan: MPPlan!
     
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var countLabel2: UILabel!
+    
+    
     lazy var execution : Execution = {
         let execution = Execution(context: self.managedObjectContext)
         execution.date = NSDate()
@@ -32,10 +36,16 @@ class MPAddPlanProgressPopVC : MPPopView {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        //设置单位
+        countLabel.text = self.plan.valueUnit()
+        countLabel2.text = countLabel.text
+        
         totalValueTextField.text = NSString(format: "%.2f", plan.value) as String
         newValueTextField.becomeFirstResponder()
         
         totalValueTextField.text =  NSString(format: "%.2f", plan.value) as String
+        
     }
     
     @IBAction func add(_ sender: Any) {
@@ -68,5 +78,18 @@ extension MPAddPlanProgressPopVC : UITextFieldDelegate {
             newValueTextField.text = NSString(format: "%.2f", execution.value) as String
             textField.text =  NSString(format: "%.2f", execution.value + plan.value) as String
         }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
+        
+        //实现动态显示另一个数据
+        if textField == newValueTextField {
+            totalValueTextField.text =  NSString(format: "%.2f", (Double(newText) ?? 0.00) + plan.value) as String
+        } else if textField == totalValueTextField {
+            newValueTextField.text = NSString(format: "%.2f", (Double(newText) ?? 0.00) - plan.value) as String
+        }
+        return true
     }
 }

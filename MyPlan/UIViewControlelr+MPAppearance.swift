@@ -24,6 +24,8 @@ extension UIViewController {
         navController.navigationBar.tintColor = fontColor
         let attr: [String : Any]! = [NSForegroundColorAttributeName: fontColor]
         navController.navigationBar.titleTextAttributes = attr
+        
+        UIApplication.shared.statusBarStyle = yValue > 0.8 ? .default : .lightContent
     }
     
     func alertWithMessage(msg: String) {

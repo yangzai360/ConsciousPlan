@@ -32,6 +32,8 @@ class MPCalendarVC: UIViewController, YZDatePickerControllerDelegate, YZDatePick
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //Tint color.
+        updateAppearance(tintColor: self.defaultTintColor())
         prepareExecutionsData()
     }
     
@@ -103,6 +105,7 @@ class MPCalendarVC: UIViewController, YZDatePickerControllerDelegate, YZDatePick
         print("New date is \(date)")
         let executionDate = Int(Execution.dayDateFormatter().string(from: date))
         calendarListTVC.showResult = fetchResultDict[executionDate!] ?? []
+        calendarListTVC.delegate = self
     }
     
     func colorAryInDate(date: Date) -> [UIColor] {
@@ -116,5 +119,19 @@ class MPCalendarVC: UIViewController, YZDatePickerControllerDelegate, YZDatePick
             }
         }
         return colors
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let planDetailVC = segue.destination as? MPPlanDetailVC {
+            planDetailVC.managedObjectContext = managedObjectContext
+            planDetailVC.plan = sender as? MPPlan
+        }
+    }
+}
+
+extension MPCalendarVC : MPCalendarListTVCDelegate {
+    func didSelectPlan(plan: MPPlan) {
+        self.performSegue(withIdentifier:"planDetailSegue", sender: plan)
     }
 }

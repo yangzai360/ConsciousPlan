@@ -70,6 +70,13 @@ public class MPPlan: NSManagedObject {
         tergetValue = Double(subTodos?.count ?? 0)
         value = Double(numOfDonesTodd)
     }
+    
+    func valueUnit() -> String {
+        let valueUnit = Int(unit) != PlanValueUnit.allValues.count - 1 ?
+            PlanValueUnit.allValues[Int(unit)].description :
+            customUnit ?? ""
+        return valueUnit
+    }
 }
 
 /*

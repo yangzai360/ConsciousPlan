@@ -315,10 +315,17 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
         
         //删掉无用数据
         
-        plan.createDate = NSDate()
+        
         plan.lastUpdate = NSDate()
-        managedObjectContext?.trySave()
-        self.performSegue(withIdentifier:"unwindToPlansList", sender: self);
+        //判断是否是新创建的计划
+        if( plan.createDate != nil ) {//已经有了创建时间，是旧计划
+            managedObjectContext?.trySave()
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            plan.createDate = NSDate()
+            managedObjectContext?.trySave()
+            self.performSegue(withIdentifier:"unwindToPlansList", sender: self);
+        }
     }
     
     func formSection() -> Section {

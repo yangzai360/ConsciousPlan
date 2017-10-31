@@ -21,7 +21,6 @@ class MPPlanDetailVC : UIViewController {
     var planDetailTableVC :MPPlanInfoTVC?
     var planExecutionListVC :MPPlanExecutionListVC?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateAppearance(tintColor: plan.tintColor as! UIColor)
@@ -96,7 +95,15 @@ class MPPlanDetailVC : UIViewController {
             addTodoVC.delegate = self
             addTodoVC.plan = plan!
         }
+        
+        //编辑计划
+        if let navController = segue.destination as? UINavigationController,
+            let viewController = navController.topViewController as? MPCreatePlanVC {
+            viewController.plan = self.plan
+            viewController.managedObjectContext = managedObjectContext!
+        }
     }
+    
 }
 
 extension MPPlanDetailVC : MPAddPlanProgressPopVCDelegate {
