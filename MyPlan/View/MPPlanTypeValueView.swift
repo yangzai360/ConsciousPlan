@@ -40,9 +40,7 @@ class MPPlanTypeValueView: MPPlanDetailView {
         planNameLabel.text = plan.planName
         containLabel.text = NSString(format: "总进度：%.2f%%", (self.plan.value/self.plan.tergetValue)*100) as String
         //        "计划进度："
-        let valueUnit = Int(plan.unit) != PlanValueUnit.allValues.count - 1 ?
-            PlanValueUnit.allValues[Int(plan.unit)].description :
-            plan.customUnit ?? ""
+        let valueUnit = plan.valueUnit()  //单位，选择的或者自定义的
         
         targetLabel.text = "目标值：\(plan.tergetValue) " + valueUnit
         valueLabel.text = "已完成：\(plan.value) " + valueUnit
