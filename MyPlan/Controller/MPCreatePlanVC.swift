@@ -41,6 +41,9 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = plan.createDate == nil ? "创建计划" : "编辑计划"
+        
         self.updateAppearance(tintColor: plan.tintColor as! UIColor)
         self.initializeForm()
         self.navigationController?.delegate = self
@@ -265,7 +268,7 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
             $0.tag = "TodoSection"
             //ToDo 时候才展示
             $0.hidden = Condition.function(["planType"], { form in
-                return Int(self.plan.planType) != 2
+                return Int(self.plan.planType) != 2 || self.plan.createDate != nil
             })
             $0.addButtonProvider = { section in
                 return ButtonRow(){
@@ -278,7 +281,6 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
                 }
             }
         }
-        
         
         form +++ self.formSection()
             <<< TextAreaRow() {
@@ -315,17 +317,20 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
         
         //删掉无用数据
         
-        
         plan.lastUpdate = NSDate()
         //判断是否是新创建的计划
         if( plan.createDate != nil ) {//已经有了创建时间，是旧计划
             managedObjectContext?.trySave()
-            self.navigationController?.popViewController(animated: true)
+            dismiss(animated:true , completion: nil)
         } else {
             plan.createDate = NSDate()
             managedObjectContext?.trySave()
-            self.performSegue(withIdentifier:"unwindToPlansList", sender: self);
+            performSegue(withIdentifier:"unwindToPlansList", sender: self);
         }
+    }
+    
+    @IBAction func cancelBtnClicked(_ sender: UIBarButtonItem) {
+        dismiss(animated:true , completion: nil)
     }
     
     func formSection() -> Section {

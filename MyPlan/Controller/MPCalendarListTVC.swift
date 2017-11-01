@@ -65,7 +65,8 @@ class MPCalendarListTVC: UITableViewController {
         dateFormatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
         
         cell.executionDateLabel.text = dateFormatter.string(from: execution.date as! Date)
-        cell.valueLabel.text = execution.value > 0 ? "+ \(execution.value)" : "- \(abs(execution.value))"
+        cell.valueLabel.text = (execution.value > 0 ? "+ \(execution.value) " : "- \(abs(execution.value)) ")
+            + execution.plan!.valueUnit()
         
         return cell
     }
