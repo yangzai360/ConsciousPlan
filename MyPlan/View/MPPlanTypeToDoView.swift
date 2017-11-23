@@ -23,12 +23,6 @@ class MPPlanTypeToDoView: MPPlanDetailView {
 //    @IBOutlet weak var progressView: UIView!
 //    @IBOutlet weak var progressViewWidthCons: NSLayoutConstraint!
     
-//    weak override var plan: MPPlan! {
-//        didSet {
-//            self.progressViewWidthCons.constant = 0
-//        }
-//    }
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         viewHeight = 175.0
@@ -65,5 +59,4 @@ class MPPlanTypeToDoView: MPPlanDetailView {
         delegate.didClickedExecutionListBtn()
     }
     
-
 }

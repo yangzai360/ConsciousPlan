@@ -47,7 +47,9 @@ class MPPlanListVC : UIViewController {
         }
         //Tint color.
         updateAppearance(tintColor: self.defaultTintColor())
-        fetchPlanData()
+        if (fetchResult == nil) { // 为空的时候请求数据，有数据的时候不请求
+            fetchPlanData()
+        }
         tableView.reloadData()
     }
     
