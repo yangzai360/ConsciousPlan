@@ -9,17 +9,16 @@
 import Foundation
 import CoreData
 
-
 extension MPPlan {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<MPPlan> {
         return NSFetchRequest<MPPlan>(entityName: "MPPlan")
     }
-
+    
     @NSManaged public var beginTime: NSDate?
+    @NSManaged public var endTime: NSDate?
     @NSManaged public var createDate: NSDate?
     @NSManaged public var customUnit: String?
-    @NSManaged public var endTime: NSDate?
     @NSManaged public var isAllDayTime: Bool
     @NSManaged public var lastUpdate: NSDate?
     @NSManaged public var parentID: Int32
@@ -37,6 +36,29 @@ extension MPPlan {
     @NSManaged public var value: Double
     @NSManaged public var executions: NSOrderedSet?
     @NSManaged public var subTodos: NSOrderedSet?
+    
+    /*
+     let planID      : Int       //计划ID
+     var planName    : String    //计划名称
+     var parentID    : Int       //父ID
+     var planCategory: Int       //分类
+     var planType    : Int       //类型
+     var tintColor   : Int       //主体颜色
+     var planIcon    : String    //Icon
+     let createDate  : NSDate    //创建时间
+     var lastUpdate  : NSDate    //更新时间
+     
+     var beginTime   : NSDate    //开始时间
+     var endTime     : NSDate    //结束时间
+     
+     var startValue  : Int       //其实值
+     var tergetValue : Int       //目标值
+     var value       : Int       //当前值
+     
+     var userValue   : Int       //用户干预值
+     
+     //自增量集合
+     */
 }
 
 // MARK: Generated accessors for executions

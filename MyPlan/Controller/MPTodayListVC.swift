@@ -1,38 +1,28 @@
 //
-//  MPPlanListVC.swift
+//  MPTodayListVC.swift
 //  MyPlan
 //
-//  Created by jieyang on 17/3/26.
+//  Created by Sean.Jie on 2017/11/23.
 //  Copyright © 2017年 Sean.Jie. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class MPPlanListVC : UIViewController {
+class MPTodayListVC: UIViewController {
 
-    // MARK: - Properties
-    var stack : CoreDataStack!
     var managedContext: NSManagedObjectContext!
-    
     var fetchResult : [MPPlan]!
-    
     @IBOutlet weak var tableView: UITableView!
-    
-    public enum PlanListCellIDs {
-        static let planCell = "MPPlanListCell"
-//        static let noPlanCell = "NothingFoundCell"
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         managedContext = appDelegate.coreDataStack.managedContext
-        stack = appDelegate.coreDataStack
-
+        
         self.automaticallyAdjustsScrollViewInsets = false
-        let cellNib = UINib(nibName: PlanListCellIDs.planCell, bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: PlanListCellIDs.planCell)
+        let cellNib = UINib(nibName: "MPPlanListCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "MPPlanListCell")
         tableView.rowHeight = 80
     }
     
@@ -40,12 +30,15 @@ class MPPlanListVC : UIViewController {
         super.viewWillAppear(animated)
         //Tint color.
         updateAppearance(tintColor: self.defaultTintColor())
-        fetchPlanData()
+        fetchTodayPlans()
         tableView.reloadData()
     }
     
-    func fetchPlanData() {
+    func fetchTodayPlans() {
         let fetchRequest = NSFetchRequest<MPPlan>(entityName: "MPPlan")
+        //查询计划列表，筛选条件为「计划的时间范围 包含当前时间」
+        let nowDate = NSDate();
+        fetchRequest.predicate = NSPredicate.init(format: "beginTime < %@ AND endTime > %@", nowDate, nowDate)
         do {
             fetchResult = try managedContext.fetch(fetchRequest)
         } catch let error as NSError {
@@ -56,58 +49,40 @@ class MPPlanListVC : UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let navController = segue.destination as? UINavigationController,
             let viewController = navController.topViewController as? MPCreatePlanVC {
-            viewController.managedObjectContext = stack.managedContext
+            viewController.managedObjectContext = managedContext
         } else if let planDetailVC = segue.destination as? MPPlanDetailVC {
-            planDetailVC.managedObjectContext = stack.managedContext
+            planDetailVC.managedObjectContext = managedContext
             planDetailVC.plan = sender as? MPPlan
         }
     }
     
-    @IBAction func unwindToPlansList(_ segue: UIStoryboardSegue) {
-        print("Unwinding to Plans List")
+    @IBAction func unwindToTodayList(_ segue: UIStoryboardSegue) {
+        print("Unwinding to Today List")
     }
 }
 
 // MARK: - UITableViewDataSource
-extension MPPlanListVC : UITableViewDataSource {
+extension MPTodayListVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if fetchResult == nil { return 0 }
         return fetchResult.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PlanListCellIDs.planCell, for: indexPath) as! MPPlanListCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MPPlanListCell", for: indexPath) as! MPPlanListCell
         let plan = fetchResult[indexPath.row]
         cell.configureCell(plan: plan)
         return cell
     }
 }
 
-extension MPPlanListVC: UITableViewDelegate {
-
+extension MPTodayListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let plan = fetchResult[indexPath.row]
         self.performSegue(withIdentifier:"planDetailSegue", sender: plan)
     }
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
     
-    // Delete plan row and data.
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            self.managedContext.delete(self.fetchResult[indexPath.row])
-            self.fetchResult.remove(at: indexPath.row)
-            do {
-                try self.managedContext.save()
-            } catch let error as NSError {
-                print("error:\(errno), \(error.userInfo).")
-            }
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-    }
-    
-    // Header height & view.
+    // Header's height & view.
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 4.0;
     }

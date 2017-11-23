@@ -20,23 +20,13 @@
                     <view key="view" contentMode="scaleToFill" id="WHq-x2-ETK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HT4-I2-dVj">
-                                <rect key="frame" x="322" y="94" width="37" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Done"/>
-                                <connections>
-                                    <segue destination="mRs-ol-WrW" kind="unwind" unwindAction="unwindToPlansList:" id="Qi5-md-LzM"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="信息" id="Bn0-qG-wlU">
                         <barButtonItem key="rightBarButtonItem" title="完成" id="HUq-mD-uPb">
                             <connections>
                                 <action selector="doneItemBtnClicked:" destination="tsS-KZ-fp5" id="sUC-3I-lbp"/>
-                                <segue destination="mRs-ol-WrW" kind="unwind" unwindAction="unwindToPlansList:" id="934-SK-Uf8"/>
+                                <segue destination="mRs-ol-WrW" kind="unwind" unwindAction="unwindToTodayList:" id="TGU-7q-jCa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -44,7 +34,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEq-MF-JZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="mRs-ol-WrW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2608.8000000000002" y="-699.40029985007504"/>
+            <point key="canvasLocation" x="3447" y="-1354"/>
         </scene>
         <!--计划列表-->
         <scene sceneID="73d-qd-jQ4">
@@ -61,7 +51,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t38-mR-VHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="652" y="139"/>
+            <point key="canvasLocation" x="886" y="1082"/>
         </scene>
         <!--计划列表-->
         <scene sceneID="tne-QT-ifu">
@@ -94,13 +84,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="计划列表" image="Calendar" id="b7q-5d-S1L"/>
                     <navigationItem key="navigationItem" title="计划列表" id="DsO-qx-axi">
-                        <barButtonItem key="leftBarButtonItem" image="Setting" id="XaI-NV-3U2">
-                            <connections>
-                                <segue destination="h0D-qF-vJ5" kind="popoverPresentation" popoverAnchorBarButtonItem="XaI-NV-3U2" id="O3G-HW-rdF">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gkf-33-LZ9">
                             <connections>
                                 <segue destination="iJf-We-cqg" kind="popoverPresentation" identifier="createPlanSegue" popoverAnchorBarButtonItem="Gkf-33-LZ9" id="dON-6D-sXm">
@@ -117,7 +100,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="rpk-NK-R3S" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="139"/>
+            <point key="canvasLocation" x="1670" y="1082"/>
         </scene>
         <!--创建计划-->
         <scene sceneID="Tb3-4a-dam">
@@ -146,11 +129,12 @@
                     </navigationItem>
                     <connections>
                         <segue destination="rpk-NK-R3S" kind="unwind" identifier="unwindToPlansList" unwindAction="unwindToPlansList:" id="D3u-we-2d3"/>
+                        <segue destination="Z54-1m-D9c" kind="unwind" identifier="unwindToTodayList" unwindAction="unwindToTodayList:" id="Fed-c0-ibd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVT-w0-zOX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3391.1999999999998" y="138.98050974512745"/>
+            <point key="canvasLocation" x="5046" y="-542"/>
         </scene>
         <!--计划-->
         <scene sceneID="SST-yu-Lro">
@@ -182,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TK0-AG-xcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2608.8000000000002" y="900.89955022488766"/>
+            <point key="canvasLocation" x="3372" y="663"/>
         </scene>
         <!--Plan Execution ListVC-->
         <scene sceneID="vsg-zW-pmD">
@@ -219,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A11-0m-wzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2608.8000000000002" y="1691.6041979010497"/>
+            <point key="canvasLocation" x="2665" y="1499"/>
         </scene>
         <!--Add Plan Progress PopVC-->
         <scene sceneID="mcY-jo-01S">
@@ -342,7 +326,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gd9-fK-Xwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3580" y="807.34632683658174"/>
+            <point key="canvasLocation" x="3369" y="1498"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3VD-Iq-1x8">
@@ -360,7 +344,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAL-jV-I62" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2608.8000000000002" y="138.98050974512745"/>
+            <point key="canvasLocation" x="4262" y="-542"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="CNC-7E-Pe6">
@@ -374,13 +358,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="GZS-Qw-wRP" kind="relationship" relationship="viewControllers" id="sLs-w1-eiC"/>
+                        <segue destination="vRU-AJ-td5" kind="relationship" relationship="viewControllers" id="wGV-KK-XER"/>
                         <segue destination="y2q-6d-jRV" kind="relationship" relationship="viewControllers" id="SFY-dp-Bun"/>
+                        <segue destination="GZS-Qw-wRP" kind="relationship" relationship="viewControllers" id="sLs-w1-eiC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="014-PX-DVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-470" y="309"/>
+            <point key="canvasLocation" x="-553" y="538"/>
         </scene>
         <!--日历-->
         <scene sceneID="hEe-8I-ZMp">
@@ -402,7 +387,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mr7-dF-GG7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1432.8" y="1071.8140929535234"/>
+            <point key="canvasLocation" x="1670" y="177"/>
         </scene>
         <!--日历-->
         <scene sceneID="xP7-F1-Ihl">
@@ -421,7 +406,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tD-gn-fHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="493.60000000000002" y="1071.8140929535234"/>
+            <point key="canvasLocation" x="887" y="177"/>
         </scene>
         <!--Add Todo PopVC-->
         <scene sceneID="Hjk-Ue-gjl">
@@ -506,7 +491,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h59-8d-m3j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4245.6000000000004" y="1136.5817091454273"/>
+            <point key="canvasLocation" x="4078" y="1497"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9vi-7X-E08">
@@ -524,16 +509,91 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4K-Ns-lfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1669.5999999999999" y="-699.40029985007504"/>
+            <point key="canvasLocation" x="2665" y="-1354"/>
+        </scene>
+        <!--今日计划-->
+        <scene sceneID="1om-6z-Nv1">
+            <objects>
+                <viewController id="OgZ-0N-OOz" customClass="MPTodayListVC" customModule="MyPlan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KPo-In-04M"/>
+                        <viewControllerLayoutGuide type="bottom" id="QUO-WI-d7y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hU4-2C-QpP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Agd-DK-ivd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="OgZ-0N-OOz" id="axt-Jc-WFk"/>
+                                    <outlet property="delegate" destination="OgZ-0N-OOz" id="1se-oS-fWj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Agd-DK-ivd" firstAttribute="top" secondItem="KPo-In-04M" secondAttribute="bottom" id="2kp-2Z-mtt"/>
+                            <constraint firstAttribute="trailing" secondItem="Agd-DK-ivd" secondAttribute="trailing" id="5Ac-CD-yGB"/>
+                            <constraint firstItem="QUO-WI-d7y" firstAttribute="top" secondItem="Agd-DK-ivd" secondAttribute="bottom" id="GTo-WW-T9V"/>
+                            <constraint firstItem="Agd-DK-ivd" firstAttribute="leading" secondItem="hU4-2C-QpP" secondAttribute="leading" id="sCh-Lj-Srl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="今日计划" id="hME-cD-hfc">
+                        <barButtonItem key="leftBarButtonItem" image="Setting" id="EzD-5V-bSc">
+                            <connections>
+                                <segue destination="h0D-qF-vJ5" kind="popoverPresentation" popoverAnchorBarButtonItem="EzD-5V-bSc" id="CYt-QJ-heA">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gli-dn-pZs">
+                            <connections>
+                                <segue destination="iJf-We-cqg" kind="popoverPresentation" identifier="createPlanSegue" popoverAnchorBarButtonItem="gli-dn-pZs" id="xKb-LJ-A80">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Agd-DK-ivd" id="pnr-7f-Q8T"/>
+                        <segue destination="zOJ-7t-Sar" kind="show" identifier="planDetailSegue" id="BjB-eg-aTQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qsR-QB-GE1" sceneMemberID="firstResponder"/>
+                <exit id="Z54-1m-D9c" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1670" y="-812"/>
+        </scene>
+        <!--今天-->
+        <scene sceneID="yXc-KR-QKd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vRU-AJ-td5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="今天" image="ic_Today" id="XRh-80-OCc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2ke-Cf-ix9">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OgZ-0N-OOz" kind="relationship" relationship="rootViewController" id="gO3-ZG-aJp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xn1-V8-u24" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="-813"/>
         </scene>
     </scenes>
     <resources>
         <image name="Calendar" width="30" height="30"/>
         <image name="PlanIcon" width="30" height="30"/>
         <image name="Setting" width="23" height="23"/>
+        <image name="ic_Today" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dON-6D-sXm"/>
+        <segue reference="Nyr-a0-6Ng"/>
         <segue reference="lH5-j7-LWM"/>
     </inferredMetricsTieBreakers>
 </document>

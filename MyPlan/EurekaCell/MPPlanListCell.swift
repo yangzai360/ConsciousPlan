@@ -30,4 +30,17 @@ class MPPlanListCell: UITableViewCell {
         contentCardView.layer.borderWidth = 0.5
         contentCardView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
     }
+    
+    func configureCell(plan: MPPlan) {
+        tintColorView.backgroundColor = plan.tintColor as? UIColor
+        planNameLabel.text = plan.planName
+        progressLabel.text = NSString(format:"已完成: %.2f%%", (plan.value/plan.tergetValue)*100) as String
+        
+        progressView.backgroundColor = plan.tintColor as? UIColor
+        progressViewWidthCons.constant = CGFloat(Double(progressBackView.frame.width) * (plan.value/plan.tergetValue))
+        
+        planTypeLabel.text = PlanType.allValues[Int(plan.planType)].description
+        planTimeLabel.text = plan.beginTimeStr() + " - " + plan.endTimeStr()
+    }
+    
 }

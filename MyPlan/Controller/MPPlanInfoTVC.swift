@@ -67,7 +67,6 @@ class MPPlanInfoTVC: UITableViewController {
         tableView.reloadData()
         //更新数据
         delegate?.didUpdateTodo()
-        
         managedObjectContext?.trySave()
     }
     

@@ -14,39 +14,17 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
     
 // MARK: - Properties
     var managedObjectContext: NSManagedObjectContext?
+    
     lazy var plan: MPPlan = {
 //MARK: - 初始化 - 计划 对象
-        let plan = MPPlan(context: self.managedObjectContext!)
-        plan.planName = ""
-        // 先不维护ID 值 试试
-        // newPlan.planID = 0
-        // ID 根据取出来的数据的最大值 +1 来处理
-        plan.tintColor = UIColor.init(red: 50/255, green: 191/255, blue: 254/255, alpha: 1.0)
-        plan.planType = 0
-        
-//        plan.isAllDayTime = true   //这里直接改为 true，会有问题
-        plan.beginTime = NSDate()
-        plan.endTime = NSDate().addingTimeInterval(60 * 60 * 24 * 1)
-        
-        plan.unit = 0
-        plan.customUnit = ""
-        plan.timeUnit = 1
-        
-        plan.startValue = 0
-        plan.tergetValue = 100.0
-        
-        plan.planRemarks = ""
-        return plan
+        return MPPlan.newPlan(context: self.managedObjectContext!)
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         title = plan.createDate == nil ? "创建计划" : "编辑计划"
-        
         self.updateAppearance(tintColor: plan.tintColor as! UIColor)
         self.initializeForm()
-        self.navigationController?.delegate = self
     }
 
     func initializeForm() {
@@ -75,7 +53,6 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
                 }
         
         form +++ self.formSection()
-            
             <<< EKColorNormalRow("TintColor") {
                 $0.title = "主题"
                 $0.value = plan.tintColor as? UIColor
@@ -325,7 +302,7 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
         } else {
             plan.createDate = NSDate()
             managedObjectContext?.trySave()
-            performSegue(withIdentifier:"unwindToPlansList", sender: self);
+            navigationController?.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -343,16 +320,6 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
             var footer = HeaderFooterView(.class)
             footer.height = {0.1}
             section.footer = footer
-        }
-    }
-}
-
-extension MPCreatePlanVC : UINavigationControllerDelegate {
-    public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        if !navigationController.viewControllers.contains(self) {
-//            if let context = managedObjectContext {
-//                context.rollback()
-//            }
         }
     }
 }

@@ -7,10 +7,39 @@
 //
 
 import Foundation
+import UIKit
 import CoreData
 
 @objc(MPPlan)
 public class MPPlan: NSManagedObject {
+    
+    /// 创建一个新的计划
+    ///
+    /// - Returns: new Plan With the context
+    static func newPlan(context: NSManagedObjectContext) -> MPPlan {
+        let plan = MPPlan(context: context)
+        plan.planName = ""
+        // 先不维护ID 值 试试
+        // newPlan.planID = 0
+        // ID 根据取出来的数据的最大值 +1 来处理
+        plan.tintColor = UIColor.init(red: 50/255, green: 191/255, blue: 254/255, alpha: 1.0)
+        plan.planType = 0
+        
+        //        plan.isAllDayTime = true   //这里直接改为 true，会有问题
+        plan.beginTime = NSDate()
+        plan.endTime = NSDate().addingTimeInterval(60 * 60 * 24 * 1)
+        
+        plan.unit = 0
+        plan.customUnit = ""
+        plan.timeUnit = 1
+        
+        plan.startValue = 0
+        plan.tergetValue = 100.0
+        
+        plan.planRemarks = ""
+        return plan
+    }
+    
     
     /// 创建或编辑计划的时候检查项目合法
     ///
@@ -78,26 +107,3 @@ public class MPPlan: NSManagedObject {
         return valueUnit
     }
 }
-
-/*
- let planID      : Int       //计划ID
- var planName    : String    //计划名称
- var parentID    : Int       //父ID
- var planCategory: Int       //分类
- var planType    : Int       //类型
- var tintColor   : Int       //主体颜色
- var planIcon    : String    //Icon
- let createDate  : NSDate    //创建时间
- var lastUpdate  : NSDate    //更新时间
- 
- var beginTime   : NSDate    //开始时间
- var endTime     : NSDate    //结束时间
- 
- var startValue  : Int       //其实值
- var tergetValue : Int       //目标值
- var value       : Int       //当前值
- 
- var userValue   : Int       //用户干预值
- 
- //自增量集合
- */
