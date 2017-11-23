@@ -121,7 +121,6 @@ class MPCalendarVC: UIViewController, YZDatePickerControllerDelegate, YZDatePick
         return colors
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let planDetailVC = segue.destination as? MPPlanDetailVC {
             planDetailVC.managedObjectContext = managedObjectContext
