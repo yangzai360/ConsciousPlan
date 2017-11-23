@@ -78,6 +78,10 @@ class MPPlanDetailVC : UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        //因为左滑手势的原因，如果画了一半没有退出，再次更新一个 Navigator 的Appearance
+        updateAppearance(tintColor: plan.tintColor as! UIColor)
+        
         planDetailView.configureViewWithPlan()
         planDetailView.animateProgress()
     }

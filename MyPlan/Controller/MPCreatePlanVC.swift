@@ -330,6 +330,7 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
     }
     
     @IBAction func cancelBtnClicked(_ sender: UIBarButtonItem) {
+        managedObjectContext!.rollback()
         dismiss(animated:true , completion: nil)
     }
     
@@ -349,9 +350,9 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
 extension MPCreatePlanVC : UINavigationControllerDelegate {
     public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         if !navigationController.viewControllers.contains(self) {
-            if let context = managedObjectContext {
-                context.rollback()
-            }
+//            if let context = managedObjectContext {
+//                context.rollback()
+//            }
         }
     }
 }

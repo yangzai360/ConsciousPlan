@@ -32,24 +32,17 @@ class MPPlanListVC : UIViewController {
 
         self.automaticallyAdjustsScrollViewInsets = false
         
-
         let cellNib = UINib(nibName: PlanListCellIDs.planCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: PlanListCellIDs.planCell)
         
         tableView.rowHeight = 80
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if managedContext.hasChanges {
-            managedContext.reset()
-        }
         //Tint color.
         updateAppearance(tintColor: self.defaultTintColor())
-        if (fetchResult == nil) { // 为空的时候请求数据，有数据的时候不请求
-            fetchPlanData()
-        }
+        fetchPlanData()
         tableView.reloadData()
     }
     
