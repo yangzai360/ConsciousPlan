@@ -17,6 +17,8 @@ class MPPlanDetailVC : UIViewController {
     var plan: MPPlan!
     var planDetailView: MPPlanDetailView!
     
+    let remarkSegue = "planRemarksSegue"
+    
     //下面的列表
     var planDetailTableVC :MPPlanInfoTVC?
     var planExecutionListVC :MPPlanExecutionListVC?
@@ -98,6 +100,9 @@ class MPPlanDetailVC : UIViewController {
             addTodoVC.managedObjectContext = managedObjectContext!
             addTodoVC.delegate = self
             addTodoVC.plan = plan!
+        } else if let addTodoVC = segue.destination as? MPPlanRemarkVC {
+            addTodoVC.managedObjectContext = managedObjectContext!
+            addTodoVC.plan = plan!
         }
         
         //编辑计划
@@ -141,5 +146,9 @@ extension MPPlanDetailVC : MPPlanDetailViewDelegate {
     
     func didClickedExecutionListBtn() {
         performSegue(withIdentifier: "planExecutionListSegue", sender: nil)
+    }
+    
+    func didTapEditRemark() {
+        performSegue(withIdentifier: "planRemarksSegue", sender: nil)
     }
 }

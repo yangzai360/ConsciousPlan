@@ -19,13 +19,22 @@ class MPPlanTypeToDoView: MPPlanDetailView {
     @IBOutlet weak var leftLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
+    @IBOutlet weak var remarkView: UIView!
+    @IBOutlet weak var remarkLabel: UILabel!
+    
 //    @IBOutlet weak var progressBackView: UIView!
 //    @IBOutlet weak var progressView: UIView!
 //    @IBOutlet weak var progressViewWidthCons: NSLayoutConstraint!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        viewHeight = 175.0
+        viewHeight = 180.0
+    }
+    
+    override func awakeFromNib() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(remarkViewTapped))
+        tap.numberOfTapsRequired = 1
+        remarkView.addGestureRecognizer(tap)
     }
     
     //Load Data
@@ -41,6 +50,10 @@ class MPPlanTypeToDoView: MPPlanDetailView {
         valueLabel.text = "已完成：\(plan.value)"
         leftLabel.text = "剩余数：\(plan.tergetValue - plan.value)"
         timeLabel.text = "从 \(plan.beginTimeStr()) 至 \(plan.endTimeStr())"
+        
+        remarkLabel.text = plan.planRemarks ?? "填写备注..."
+        remarkLabel.textColor = plan.planRemarks?.count ?? 0 > 0 ? UIColor.black : UIColor.gray
+        
 //        progressView.backgroundColor = plan.tintColor as? UIColor
     }
     
@@ -57,6 +70,10 @@ class MPPlanTypeToDoView: MPPlanDetailView {
     
     @IBAction func executionListBtnTapped(_ sender: UIButton) {
         delegate.didClickedExecutionListBtn()
+    }
+    
+    func remarkViewTapped() {
+        delegate.didTapEditRemark()
     }
     
 }

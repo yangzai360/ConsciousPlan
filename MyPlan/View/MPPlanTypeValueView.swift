@@ -19,6 +19,9 @@ class MPPlanTypeValueView: MPPlanDetailView {
     @IBOutlet weak var leftLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
+    @IBOutlet weak var remarkView: UIView!
+    @IBOutlet weak var remarkLabel: UILabel!
+    
     @IBOutlet weak var progressBackView: UIView!
     @IBOutlet weak var progressView: UIView!
     @IBOutlet weak var progressViewWidthCons: NSLayoutConstraint!
@@ -34,6 +37,12 @@ class MPPlanTypeValueView: MPPlanDetailView {
         viewHeight = 280.0
     }
     
+    override func awakeFromNib() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(remarkViewTapped))
+        tap.numberOfTapsRequired = 1
+        remarkView.addGestureRecognizer(tap)
+    }
+    
     //Load Data
     override func configureViewWithPlan() {
         tintColorView.backgroundColor = plan.tintColor as? UIColor
@@ -46,6 +55,10 @@ class MPPlanTypeValueView: MPPlanDetailView {
         valueLabel.text = "已完成：\(plan.value) " + valueUnit
         leftLabel.text = "剩余量：\(plan.tergetValue - plan.value) " + valueUnit
         timeLabel.text = "从 \(plan.beginTimeStr()) 至 \(plan.endTimeStr())"
+        
+        remarkLabel.text = plan.planRemarks?.count ?? 0 > 0 ? plan.planRemarks! : "请填写备注..."
+        remarkLabel.textColor = plan.planRemarks?.count ?? 0 > 0 ? UIColor.black : UIColor.gray
+        
         progressView.backgroundColor = plan.tintColor as? UIColor
     }
 
@@ -62,6 +75,10 @@ class MPPlanTypeValueView: MPPlanDetailView {
     
     @IBAction func executionListBtnTapped(_ sender: UIButton) {
         delegate.didClickedExecutionListBtn()
+    }
+    
+    func remarkViewTapped() {
+        delegate.didTapEditRemark()
     }
     
 }

@@ -15,5 +15,7 @@ protocol MPPlanDetailViewDelegate {
     func didClickedExecutionListBtn()
     
     func didClickedAddTodoBtn()
+    
+    func didTapEditRemark()
 }
 
