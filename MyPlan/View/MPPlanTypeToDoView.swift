@@ -14,9 +14,9 @@ class MPPlanTypeToDoView: MPPlanDetailView {
     @IBOutlet weak var planNameLabel: UILabel!
     
 //    @IBOutlet weak var containLabel: UILabel!
-    @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var leftLabel: UILabel!
+    @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
     @IBOutlet weak var remarkView: UIView!
@@ -28,7 +28,7 @@ class MPPlanTypeToDoView: MPPlanDetailView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        viewHeight = 180.0
+        viewHeight = 217.0
     }
     
     override func awakeFromNib() {
@@ -46,9 +46,10 @@ class MPPlanTypeToDoView: MPPlanDetailView {
         planNameLabel.text = plan.planName
 //        containLabel.text = NSString(format: "已完成：%.2f%%", (self.plan.value/self.plan.tergetValue)*100) as String
         //        "计划进度："
-        targetLabel.text = "总项目：\(plan.tergetValue)"
-        valueLabel.text = "已完成：\(plan.value)"
-        leftLabel.text = "剩余数：\(plan.tergetValue - plan.value)"
+        valueLabel.text = "\(plan.value)"
+        leftLabel.text = "\(plan.tergetValue - plan.value)"
+        targetLabel.text = "\(plan.tergetValue)"
+        
         timeLabel.text = "从 \(plan.beginTimeStr()) 至 \(plan.endTimeStr())"
         
         remarkLabel.text = plan.planRemarks ?? "填写备注..."

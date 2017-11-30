@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnY-B1-dTM">
@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvC-3A-HzN">
-                                <rect key="frame" x="91" y="46.5" width="208" height="15"/>
+                                <rect key="frame" x="100" y="46" width="31" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.33725490196078434" green="0.33725490196078434" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -56,11 +56,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="定量计划计划" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3Z-NI-LeX">
-                                <rect key="frame" x="8" y="47" width="75" height="14.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="Fwx-KN-kjZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <rect key="frame" x="12" y="45.5" width="80" height="16"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <color key="textColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -102,13 +99,12 @@
                             <constraint firstItem="5Mu-nZ-G4p" firstAttribute="leading" secondItem="NnY-B1-dTM" secondAttribute="leading" constant="10" id="DPu-ax-va9"/>
                             <constraint firstItem="xvC-3A-HzN" firstAttribute="leading" secondItem="J3Z-NI-LeX" secondAttribute="trailing" constant="8" id="M5d-Kb-0VK"/>
                             <constraint firstItem="OfJ-cP-QyK" firstAttribute="top" secondItem="NnY-B1-dTM" secondAttribute="top" constant="6" id="T46-jI-JcP"/>
-                            <constraint firstItem="J3Z-NI-LeX" firstAttribute="leading" secondItem="NnY-B1-dTM" secondAttribute="leading" constant="8" id="TBa-YG-Ctz"/>
+                            <constraint firstItem="J3Z-NI-LeX" firstAttribute="leading" secondItem="NnY-B1-dTM" secondAttribute="leading" constant="12" id="TBa-YG-Ctz"/>
                             <constraint firstItem="E4C-Pz-8L4" firstAttribute="leading" secondItem="OfJ-cP-QyK" secondAttribute="leading" id="TXh-It-Zr6"/>
                             <constraint firstAttribute="trailing" secondItem="E4C-Pz-8L4" secondAttribute="trailing" constant="8" id="TsR-rQ-Gm0"/>
                             <constraint firstItem="E4C-Pz-8L4" firstAttribute="top" secondItem="OfJ-cP-QyK" secondAttribute="bottom" constant="4" id="Ugq-NJ-VhW"/>
                             <constraint firstItem="RVn-2B-8Ok" firstAttribute="centerY" secondItem="5Mu-nZ-G4p" secondAttribute="centerY" id="cmn-AV-Dru"/>
                             <constraint firstItem="RVn-2B-8Ok" firstAttribute="leading" secondItem="5Mu-nZ-G4p" secondAttribute="trailing" constant="5" id="f4V-xl-I0U"/>
-                            <constraint firstAttribute="trailing" secondItem="xvC-3A-HzN" secondAttribute="trailing" constant="5" id="v2C-4x-BlF"/>
                             <constraint firstItem="5Mu-nZ-G4p" firstAttribute="top" secondItem="NnY-B1-dTM" secondAttribute="top" constant="10" id="xol-hu-KKs"/>
                             <constraint firstAttribute="trailing" secondItem="OfJ-cP-QyK" secondAttribute="trailing" constant="5" id="yi2-Jj-gQu"/>
                         </constraints>

@@ -34,7 +34,7 @@ class MPPlanTypeValueView: MPPlanDetailView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        viewHeight = 280.0
+        viewHeight = 250.0
     }
     
     override func awakeFromNib() {
@@ -51,9 +51,14 @@ class MPPlanTypeValueView: MPPlanDetailView {
         //        "计划进度："
         let valueUnit = plan.valueUnit()  //单位，选择的或者自定义的
         
-        targetLabel.text = "目标值：\(plan.tergetValue) " + valueUnit
-        valueLabel.text = "已完成：\(plan.value) " + valueUnit
-        leftLabel.text = "剩余量：\(plan.tergetValue - plan.value) " + valueUnit
+//        targetLabel.text = "目标值：\(plan.tergetValue) " + valueUnit
+//        valueLabel.text = "已完成：\(plan.value) " + valueUnit
+//        leftLabel.text = "剩余量：\(plan.tergetValue - plan.value) " + valueUnit
+        
+        targetLabel.text = "\(plan.tergetValue) " + valueUnit
+        valueLabel.text = "\(plan.value) " + valueUnit
+        leftLabel.text = "\(plan.tergetValue - plan.value) " + valueUnit
+
         timeLabel.text = "从 \(plan.beginTimeStr()) 至 \(plan.endTimeStr())"
         
         remarkLabel.text = plan.planRemarks?.count ?? 0 > 0 ? plan.planRemarks! : "请填写备注..."
