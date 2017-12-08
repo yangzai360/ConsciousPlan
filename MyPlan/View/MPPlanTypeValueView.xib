@@ -230,7 +230,7 @@
                 <outlet property="tintColorView" destination="njP-hz-qVc" id="IFs-zg-CNR"/>
                 <outlet property="valueLabel" destination="2JO-Jj-Sm2" id="2aj-X2-eRa"/>
             </connections>
-            <point key="canvasLocation" x="-54.5" y="-26.5"/>
+            <point key="canvasLocation" x="-96" y="22"/>
         </view>
     </objects>
     <resources>
