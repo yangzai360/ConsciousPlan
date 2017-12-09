@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class MPPlanListVC : UIViewController {
+class MPPlanListVC : UIViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
     // MARK: - Properties
     var stack : CoreDataStack!
@@ -29,7 +29,9 @@ class MPPlanListVC : UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         managedContext = appDelegate.coreDataStack.managedContext
         stack = appDelegate.coreDataStack
+        
 
+        
         self.automaticallyAdjustsScrollViewInsets = false
         let cellNib = UINib(nibName: PlanListCellIDs.planCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: PlanListCellIDs.planCell)
