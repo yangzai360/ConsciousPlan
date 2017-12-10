@@ -46,9 +46,13 @@ class MPPlanTypeToDoView: MPPlanDetailView {
         planNameLabel.text = plan.planName
 //        containLabel.text = NSString(format: "已完成：%.2f%%", (self.plan.value/self.plan.tergetValue)*100) as String
         //        "计划进度："
-        valueLabel.text = "\(plan.value)"
-        leftLabel.text = "\(plan.tergetValue - plan.value)"
-        targetLabel.text = "\(plan.tergetValue)"
+        
+        valueLabel.setDouble(double: plan.value, count:nil)
+        leftLabel.setDouble(double: plan.tergetValue - plan.value, count: nil)
+        targetLabel.setDouble(double: plan.tergetValue, count: nil)
+//        valueLabel.text = "\(plan.value)"
+//        leftLabel.text = "\(plan.tergetValue - plan.value)"
+//        targetLabel.text = "\(plan.tergetValue)"
         
         timeLabel.text = "从 \(plan.beginTimeStr()) 至 \(plan.endTimeStr())"
         

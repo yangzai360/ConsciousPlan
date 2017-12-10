@@ -27,6 +27,7 @@
 		8F52E8431E87B5C500E41627 /* MyPlanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52E8421E87B5C500E41627 /* MyPlanUITests.swift */; };
 		8F52E8541E87B7DB00E41627 /* MPPlanListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52E8531E87B7DB00E41627 /* MPPlanListVC.swift */; };
 		8F52E8561E87B80300E41627 /* MPCreatePlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52E8551E87B80300E41627 /* MPCreatePlanVC.swift */; };
+		8F6FCAEB1FDD82E000FDD01A /* YZDigitalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6FCAEA1FDD82E000FDD01A /* YZDigitalTextField.swift */; };
 		8F7DB7721FCDB17100AE24B9 /* MPPlanRemarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB7711FCDB17100AE24B9 /* MPPlanRemarkVC.swift */; };
 		8FA16C501F61A8DC00FEAFEF /* MPAddTodoPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA16C4F1F61A8DC00FEAFEF /* MPAddTodoPopVC.swift */; };
 		8FBA6DFA1F04E82D007E4B93 /* MPPlanListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA6DF81F04E82D007E4B93 /* MPPlanListCell.swift */; };
@@ -117,6 +118,7 @@
 		8F52E8531E87B7DB00E41627 /* MPPlanListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanListVC.swift; sourceTree = "<group>"; };
 		8F52E8551E87B80300E41627 /* MPCreatePlanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCreatePlanVC.swift; sourceTree = "<group>"; };
 		8F6FCAE51FDBC36900FDD01A /* MyPlan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyPlan-Bridging-Header.h"; sourceTree = "<group>"; };
+		8F6FCAEA1FDD82E000FDD01A /* YZDigitalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YZDigitalTextField.swift; sourceTree = "<group>"; };
 		8F7DB7711FCDB17100AE24B9 /* MPPlanRemarkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPPlanRemarkVC.swift; sourceTree = "<group>"; };
 		8FA16C4F1F61A8DC00FEAFEF /* MPAddTodoPopVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPAddTodoPopVC.swift; sourceTree = "<group>"; };
 		8FBA6DF81F04E82D007E4B93 /* MPPlanListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanListCell.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 		33C6E1AB1F3B4AB800399343 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				8F6FCAE91FDD710900FDD01A /* YZTextField */,
 				D520F0791F7F932F001DFACE /* MPProgress */,
 				33C6E1AC1F3B4ADB00399343 /* YZDatePicker */,
 			);
@@ -318,6 +321,14 @@
 				D5CA5B7C1EA38CCD00960944 /* MPEnums.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8F6FCAE91FDD710900FDD01A /* YZTextField */ = {
+			isa = PBXGroup;
+			children = (
+				8F6FCAEA1FDD82E000FDD01A /* YZDigitalTextField.swift */,
+			);
+			path = YZTextField;
 			sourceTree = "<group>";
 		};
 		D520F0791F7F932F001DFACE /* MPProgress */ = {
@@ -655,6 +666,7 @@
 				8F52E8541E87B7DB00E41627 /* MPPlanListVC.swift in Sources */,
 				8FBB53DF1F892A81004465AE /* EKSettingSelectCell.swift in Sources */,
 				33A416991F2A37BB00F829F3 /* MPPlanTypeValueView.swift in Sources */,
+				8F6FCAEB1FDD82E000FDD01A /* YZDigitalTextField.swift in Sources */,
 				D534BEE31E95F304007CED1E /* MPPlanExecutionListVC.swift in Sources */,
 				D5CA5B7D1EA38CCD00960944 /* MPEnums.swift in Sources */,
 				D520F07F1F7F932F001DFACE /* BounceAnimationController.swift in Sources */,

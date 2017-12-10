@@ -80,6 +80,13 @@ extension MPAddPlanProgressPopVC : UITextFieldDelegate {
         }
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // 如果开始编辑的时候是0，那就清空
+        if NSString(string: textField.text!).floatValue == 0 {
+            textField.text = ""
+        }
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentText = textField.text ?? ""
         let newText = (currentText as NSString).replacingCharacters(in: range, with: string)

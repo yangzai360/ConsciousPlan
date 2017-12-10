@@ -52,3 +52,9 @@ func test2() -> String {
 }
 
 let _ = test2()
+
+let nf = NumberFormatter()
+nf.numberStyle = .decimal
+
+print(nf.number(from: "") ?? "" + "ge")
+

@@ -262,7 +262,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FW8-4k-Du2">
                                 <rect key="frame" x="24" y="132" width="327" height="203"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ypb-ei-IfK">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ypb-ei-IfK" customClass="YZDigitalTextField" customModule="MyPlan" customModuleProvider="target">
                                         <rect key="frame" x="128" y="35" width="100" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="rJY-5G-m2p"/>
@@ -274,7 +274,7 @@
                                             <outlet property="delegate" destination="pq4-Lh-PcS" id="TEI-cd-RZE"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sej-aI-2WV">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sej-aI-2WV" customClass="YZDigitalTextField" customModule="MyPlan" customModuleProvider="target">
                                         <rect key="frame" x="128" y="100" width="100" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="uSk-os-iNx"/>
@@ -635,7 +635,7 @@
         <image name="ic_Today" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Nyr-a0-6Ng"/>
-        <segue reference="lH5-j7-LWM"/>
+        <segue reference="dON-6D-sXm"/>
+        <segue reference="BjB-eg-aTQ"/>
     </inferredMetricsTieBreakers>
 </document>

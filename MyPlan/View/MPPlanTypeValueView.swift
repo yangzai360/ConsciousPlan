@@ -48,16 +48,16 @@ class MPPlanTypeValueView: MPPlanDetailView {
         tintColorView.backgroundColor = plan.tintColor as? UIColor
         planNameLabel.text = plan.planName
         containLabel.text = NSString(format: "总进度：%.2f%%", (self.plan.value/self.plan.tergetValue)*100) as String
-        //        "计划进度："
+
         let valueUnit = plan.valueUnit()  //单位，选择的或者自定义的
         
-//        targetLabel.text = "目标值：\(plan.tergetValue) " + valueUnit
-//        valueLabel.text = "已完成：\(plan.value) " + valueUnit
-//        leftLabel.text = "剩余量：\(plan.tergetValue - plan.value) " + valueUnit
+        targetLabel.setDouble(double: plan.tergetValue, count: valueUnit)
+        valueLabel.setDouble(double: plan.value, count: valueUnit)
+        leftLabel.setDouble(double: plan.tergetValue - plan.value, count: valueUnit)
         
-        targetLabel.text = "\(plan.tergetValue) " + valueUnit
-        valueLabel.text = "\(plan.value) " + valueUnit
-        leftLabel.text = "\(plan.tergetValue - plan.value) " + valueUnit
+//        targetLabel.text = "\(plan.tergetValue) " + valueUnit
+//        valueLabel.text = "\(plan.value) " + valueUnit
+//        leftLabel.text = "\(plan.tergetValue - plan.value) " + valueUnit
 
         timeLabel.text = "从 \(plan.beginTimeStr()) 至 \(plan.endTimeStr())"
         
