@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
 protocol MPCalendarListTVCDelegate : class{
     func didSelectPlan(plan: MPPlan)
@@ -15,7 +16,6 @@ protocol MPCalendarListTVCDelegate : class{
 class MPCalendarListTVC: UITableViewController {
     
     var delegate: MPCalendarListTVCDelegate?
-
     
     //目前要展示的
     var showResult : [Execution]! = [Execution]() {
@@ -27,6 +27,11 @@ class MPCalendarListTVC: UITableViewController {
     override func viewDidLoad() {
         let cellNib = UINib(nibName: CalendarListCellIDs.executionCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: CalendarListCellIDs.executionCell)
+
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        
+        tableView.tableFooterView = UIView() //去掉表格视图中多余的线
     }
     
     func loadDataWithDate(activeDate: Date) {
@@ -78,5 +83,35 @@ class MPCalendarListTVC: UITableViewController {
         }
         delegate?.didSelectPlan(plan: plan)
     }
-    
+}
+
+// MARK: - DZNEmptyDataSet.
+extension MPCalendarListTVC : DZNEmptyDataSetSource {
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "这一天没有执行记录"
+        let attributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: CGFloat(16.0)),
+                          NSForegroundColorAttributeName: UIColor.darkGray]
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "这里展示了你在这一天的所有执行记录"
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = .byWordWrapping
+        paragraph.alignment = .center
+        let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: CGFloat(14.0)),
+                          NSForegroundColorAttributeName: UIColor.lightGray,
+                          NSParagraphStyleAttributeName: paragraph]
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.white
+    }
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+        return false
+    }
+}
+extension MPCalendarListTVC : DZNEmptyDataSetDelegate {
 }

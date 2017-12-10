@@ -9,6 +9,7 @@
 
 import UIKit
 import CoreData
+import DZNEmptyDataSet
 
 class MPPlanExecutionListVC : UIViewController {
     
@@ -17,6 +18,14 @@ class MPPlanExecutionListVC : UIViewController {
     var plan: MPPlan!
     
     @IBOutlet weak var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        
+        tableView.tableFooterView = UIView() //去掉表格视图中多余的线
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -56,6 +65,32 @@ extension MPPlanExecutionListVC: UITableViewDelegate {
             plan.removeFromExecutions(at: indexPath.row)
             managedObjectContext.trySave()
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            if plan.executions?.count == 0 {  //如果没有
+                tableView.reloadData()
+            }
         }
     }
+}
+
+// MARK: - DZNEmptyDataSet.
+extension MPPlanExecutionListVC : DZNEmptyDataSetSource {
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "此计划没有执行记录"
+        let attributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: CGFloat(16.0)),
+                          NSForegroundColorAttributeName: UIColor.darkGray]
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "这里显示了此计划的所有执行记录"
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = .byWordWrapping
+        paragraph.alignment = .center
+        let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: CGFloat(14.0)),
+                          NSForegroundColorAttributeName: UIColor.lightGray,
+                          NSParagraphStyleAttributeName: paragraph]
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+}
+extension MPPlanExecutionListVC : DZNEmptyDataSetDelegate {
 }

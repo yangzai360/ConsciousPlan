@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import DZNEmptyDataSet
 
 protocol MPPlanInfoTVCDelegate: class {
     func didUpdateTodo()
@@ -24,6 +25,11 @@ class MPPlanInfoTVC: UITableViewController {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        
+        tableView.tableFooterView = UIView() //去掉表格视图中多余的线
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -86,6 +92,36 @@ class MPPlanInfoTVC: UITableViewController {
             managedObjectContext?.trySave()
             
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            if todos.count == 0 {  //如果没有
+                tableView.reloadData()
+            }
         }
     }
+}
+
+// MARK: - DZNEmptyDataSet.
+extension MPPlanInfoTVC : DZNEmptyDataSetSource {
+        func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+            let text = "此计划没有任何任务"
+            let attributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: CGFloat(16.0)),
+                              NSForegroundColorAttributeName: UIColor.darkGray]
+            return NSAttributedString(string: text, attributes: attributes)
+        }
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "这里显示了此 ToDo 计划的所有任务"
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = .byWordWrapping
+        paragraph.alignment = .center
+        let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: CGFloat(14.0)),
+                          NSForegroundColorAttributeName: UIColor.lightGray,
+                          NSParagraphStyleAttributeName: paragraph]
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.white
+    }
+}
+extension MPPlanInfoTVC : DZNEmptyDataSetDelegate {
 }

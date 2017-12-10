@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import DZNEmptyDataSet
 
-class MPPlanListVC : UIViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+class MPPlanListVC : UIViewController {
 
     // MARK: - Properties
     var stack : CoreDataStack!
@@ -30,12 +31,13 @@ class MPPlanListVC : UIViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDel
         managedContext = appDelegate.coreDataStack.managedContext
         stack = appDelegate.coreDataStack
         
-
-        
         self.automaticallyAdjustsScrollViewInsets = false
         let cellNib = UINib(nibName: PlanListCellIDs.planCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: PlanListCellIDs.planCell)
         tableView.rowHeight = 80
+        
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,6 +87,7 @@ extension MPPlanListVC : UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension MPPlanListVC: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -106,6 +109,10 @@ extension MPPlanListVC: UITableViewDelegate {
                 print("error:\(errno), \(error.userInfo).")
             }
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            if self.fetchResult.count == 0 {  //如果没有
+                tableView.reloadData()
+            }
         }
     }
     
@@ -117,5 +124,41 @@ extension MPPlanListVC: UITableViewDelegate {
         let view = UIView()
         view.backgroundColor = UIColor.clear
         return view
+    }
+}
+
+// MARK: - DZNEmptyDataSet.
+extension MPPlanListVC : DZNEmptyDataSetSource {
+    //实现第三方库协议的方法
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "你还没有任何计划~"
+        let attributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: CGFloat(18.0)),
+                          NSForegroundColorAttributeName: UIColor.darkGray]
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "这里列举了你的所有计划"
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = .byWordWrapping
+        paragraph.alignment = .center
+        let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: CGFloat(14.0)),
+                          NSForegroundColorAttributeName: UIColor.lightGray,
+                          NSParagraphStyleAttributeName: paragraph]
+        return NSAttributedString(string: text, attributes: attributes)
+        
+    }
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControlState) -> NSAttributedString! {
+        let attributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: CGFloat(18.0)),
+                          NSForegroundColorAttributeName: self.defaultTintColor()]
+        return NSAttributedString(string: "创建新计划", attributes: attributes)
+        
+    }
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.white
+    }
+}
+extension MPPlanListVC : DZNEmptyDataSetDelegate {
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        performSegue(withIdentifier: "createPlanSegue", sender: nil)
     }
 }

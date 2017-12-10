@@ -34,10 +34,18 @@ class MPPlanListCell: UITableViewCell {
     func configureCell(plan: MPPlan) {
         tintColorView.backgroundColor = plan.tintColor as? UIColor
         planNameLabel.text = plan.planName
-        progressLabel.text = NSString(format:"已完成: %.2f%%", (plan.value/plan.tergetValue)*100) as String
         
         progressView.backgroundColor = plan.tintColor as? UIColor
-        progressViewWidthCons.constant = CGFloat(Double(progressBackView.frame.width) * (plan.value/plan.tergetValue))
+        
+        
+        
+        if plan.tergetValue == 0 {
+            progressLabel.text = "已完成: 0.00%"
+            progressViewWidthCons.constant = 0
+        } else {
+            progressLabel.text = NSString(format:"已完成: %.2f%%", (plan.value/plan.tergetValue)*100) as String
+            progressViewWidthCons.constant = CGFloat(Double(progressBackView.frame.width) * (plan.value/plan.tergetValue))
+        }
         
         planTypeLabel.text = PlanType.allValues[Int(plan.planType)].description
         planTimeLabel.text = plan.beginTimeStr() + " - " + plan.endTimeStr()
