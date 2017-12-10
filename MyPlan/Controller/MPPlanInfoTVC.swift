@@ -17,10 +17,9 @@ protocol MPPlanInfoTVCDelegate: class {
 class MPPlanInfoTVC: UITableViewController {
     
     weak var delegate: MPPlanInfoTVCDelegate?
-
+    
     var managedObjectContext: NSManagedObjectContext?
     var plan: MPPlan!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
@@ -39,7 +38,7 @@ class MPPlanInfoTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.selectionStyle = .none
-
+        
         let todo = plan.subTodos![indexPath.row] as! SubTodo
         cell.textLabel?.text = todo.name ?? ""
         cell.accessoryType =  todo.value ? .checkmark : .none
@@ -58,7 +57,7 @@ class MPPlanInfoTVC: UITableViewController {
             }
             return !todo1.value && todo2.value
         })
-       plan.subTodos = NSOrderedSet(array: orderdTodosAry)
+        plan.subTodos = NSOrderedSet(array: orderdTodosAry)
         
         var numberOfUnselectedTodo = 0
         for item in orderdTodosAry {
@@ -69,7 +68,7 @@ class MPPlanInfoTVC: UITableViewController {
                 break
             }
         }
-//        tableView.moveRow(at: indexPath, to: IndexPath(row: numberOfUnselectedTodo, section: indexPath.section))
+        //        tableView.moveRow(at: indexPath, to: IndexPath(row: numberOfUnselectedTodo, section: indexPath.section))
         tableView.reloadData()
         //更新数据
         delegate?.didUpdateTodo()
@@ -102,12 +101,12 @@ class MPPlanInfoTVC: UITableViewController {
 
 // MARK: - DZNEmptyDataSet.
 extension MPPlanInfoTVC : DZNEmptyDataSetSource {
-        func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-            let text = "此计划没有任何任务"
-            let attributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: CGFloat(16.0)),
-                              NSForegroundColorAttributeName: UIColor.darkGray]
-            return NSAttributedString(string: text, attributes: attributes)
-        }
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "此计划没有任何任务"
+        let attributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: CGFloat(16.0)),
+                          NSForegroundColorAttributeName: UIColor.darkGray]
+        return NSAttributedString(string: text, attributes: attributes)
+    }
     func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let text = "这里显示了此 ToDo 计划的所有任务"
         let paragraph = NSMutableParagraphStyle()
@@ -118,7 +117,7 @@ extension MPPlanInfoTVC : DZNEmptyDataSetSource {
                           NSParagraphStyleAttributeName: paragraph]
         return NSAttributedString(string: text, attributes: attributes)
     }
-
+    
     func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
         return UIColor.white
     }
