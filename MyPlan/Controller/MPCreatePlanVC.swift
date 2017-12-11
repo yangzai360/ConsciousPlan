@@ -84,8 +84,7 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
                     startDate.dateFormatter?.timeStyle = .none
                     endDate.dateFormatter?.dateStyle = .medium
                     endDate.dateFormatter?.timeStyle = .none
-                }
-                else {
+                } else {
                     startDate.dateFormatter?.dateStyle = .short
                     startDate.dateFormatter?.timeStyle = .short
                     endDate.dateFormatter?.dateStyle = .short
@@ -102,6 +101,7 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
             <<< DateTimeInlineRow("开始时间") {
                 $0.title = $0.tag
                 $0.value = self.plan.beginTime as Date?
+                $0.dateFormatter?.locale = Locale(identifier: "zh_CN")
                 }.onChange { [weak self] row in
                     //更新结束时间的 Validation
                     let endRow: DateTimeInlineRow! = self?.form.rowBy(tag: "结束时间")
@@ -113,6 +113,7 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
                     self?.plan.beginTime = row.value as NSDate?;
                 }.onExpandInlineRow { cell, row, inlineRow in
                     inlineRow.cellUpdate { [weak self] cell, dateRow in
+                        cell.datePicker.locale = Locale(identifier: "zh_CN")
                         let allRow: SwitchRow! = self?.form.rowBy(tag: "全天")
                         if allRow.value ?? false {
                             cell.datePicker.datePickerMode = .date
@@ -131,6 +132,7 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
             <<< DateTimeInlineRow("结束时间") {
                 $0.title = $0.tag
                 $0.value = self.plan.endTime as Date?
+                $0.dateFormatter?.locale = Locale(identifier: "zh_CN")
                 }.onChange { [weak self] row in
                     let startRow: DateTimeInlineRow! = self?.form.rowBy(tag: "开始时间")
                     if row.value?.compare(startRow.value!) == .orderedAscending {
@@ -142,6 +144,7 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
                     self?.plan.endTime = row.value as NSDate?;
                 }.onExpandInlineRow { cell, row, inlineRow in
                     inlineRow.cellUpdate { [weak self] cell, dateRow in
+                        cell.datePicker.locale = Locale(identifier: "zh_CN")
                         let allRow: SwitchRow! = self?.form.rowBy(tag: "全天")
                         if allRow.value ?? false {
                             cell.datePicker.datePickerMode = .date
