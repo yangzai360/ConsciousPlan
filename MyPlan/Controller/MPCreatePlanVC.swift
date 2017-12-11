@@ -40,7 +40,8 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
         form +++ self.formSection()
             <<< PushRow<PlanType>("planType") {
                 $0.title = "计划类型"
-                $0.options = PlanType.allValues
+                let options = [PlanType.CountType, PlanType.ToDoType] //暂时关掉 定时任务
+                $0.options = options
                 $0.value = PlanType.allValues[Int(self.plan.planType)]
                 $0.selectorTitle = "选择计划类型"
                 }.onChange { row in
@@ -70,7 +71,7 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
                     row.updateCell()
                 })
             }
-    
+        
         form +++ self.formSection()
             <<< SwitchRow("全天") {
             $0.title = $0.tag
