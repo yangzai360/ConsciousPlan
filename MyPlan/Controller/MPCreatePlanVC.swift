@@ -117,8 +117,7 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
                         let allRow: SwitchRow! = self?.form.rowBy(tag: "全天")
                         if allRow.value ?? false {
                             cell.datePicker.datePickerMode = .date
-                        }
-                        else {
+                        } else {
                             cell.datePicker.datePickerMode = .dateAndTime
                         }
                     }
@@ -148,8 +147,7 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
                         let allRow: SwitchRow! = self?.form.rowBy(tag: "全天")
                         if allRow.value ?? false {
                             cell.datePicker.datePickerMode = .date
-                        }
-                        else {
+                        } else {
                             cell.datePicker.datePickerMode = .dateAndTime
                         }
                     }
