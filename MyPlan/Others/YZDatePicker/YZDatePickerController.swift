@@ -40,12 +40,12 @@ class YZDatePickerController: UIViewController, YZYearlyViewDelegate, YZMonthVie
     override func viewDidLoad() {
         super.viewDidLoad()
         yearlyView = YZYearlyView(frame: CGRect(x: 0, y: 0, width: 320, height: 270))
-        yearlyView.isHidden = true
+        yearlyView.alpha = 0
         yearlyView.delegate = self
         view.addSubview(yearlyView)
         
         monthView = YZMonthView(frame: CGRect(x: 0, y: 0, width: 320, height: 270))
-        monthView.isHidden = false
+        monthView.alpha = 1
         monthView.delegate = self
         monthView.activeDate = activeDate
         view.addSubview(monthView)
@@ -77,14 +77,17 @@ class YZDatePickerController: UIViewController, YZYearlyViewDelegate, YZMonthVie
         }
         monthView.initDays()
         
-        monthView.isHidden = false
-        yearlyView.isHidden = true
+        UIView.animate(withDuration: 0.5) { [weak self] in
+            self!.monthView.alpha = 1
+            self!.yearlyView.alpha = 0
+        }
     }
     
     func didTouchMonthButton() {
-
-        monthView.isHidden = true
-        yearlyView.isHidden = false
+        UIView.animate(withDuration: 0.5) { [weak self] in
+            self!.monthView.alpha = 0
+            self!.yearlyView.alpha = 1
+        }
     }
     
     func didUpdateActiveDate() {

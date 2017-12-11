@@ -76,7 +76,11 @@ class YZYearlyView: UIView {
         var dateComp = calendar.dateComponents([.year, .month, .day, .weekOfMonth, .weekday ] , from: activeDate)
         dateComp.year = dateComp.year! + changeValue
         activeDate = calendar.date(from: dateComp)!
-        initMonthsWithYear(year: dateComp.year!)
+        
+        UIView.transition(with: self, duration: 0.5, options: changeValue > 0 ? .transitionFlipFromLeft : .transitionFlipFromRight, animations: {
+            self.initMonthsWithYear(year: dateComp.year!)
+        }, completion: nil)
+        
     
         yearLabel.text = "\(dateComp.year!)"
         yearLabel.sizeToFit()
