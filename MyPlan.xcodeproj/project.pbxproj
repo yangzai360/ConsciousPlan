@@ -38,6 +38,8 @@
 		8FC3B8141E894A4400E9E5A1 /* MPPlan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC3B8121E894A4400E9E5A1 /* MPPlan+CoreDataClass.swift */; };
 		8FC3B8171E8A93B800E9E5A1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC3B8161E8A93B800E9E5A1 /* CoreDataStack.swift */; };
 		8FC3B81C1E902F3B00E9E5A1 /* UIViewControlelr+MPAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC3B81B1E902F3B00E9E5A1 /* UIViewControlelr+MPAppearance.swift */; };
+		8FEC2E4C1FEAB25300EEE124 /* MPTodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEC2E4B1FEAB25300EEE124 /* MPTodoCell.swift */; };
+		8FEC2E4E1FEAB25D00EEE124 /* MPTodoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FEC2E4D1FEAB25D00EEE124 /* MPTodoCell.xib */; };
 		D520F07F1F7F932F001DFACE /* BounceAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520F07A1F7F932F001DFACE /* BounceAnimationController.swift */; };
 		D520F0801F7F932F001DFACE /* FadeOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520F07B1F7F932F001DFACE /* FadeOutAnimationController.swift */; };
 		D520F0811F7F932F001DFACE /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520F07C1F7F932F001DFACE /* DimmingPresentationController.swift */; };
@@ -128,6 +130,8 @@
 		8FC3B8121E894A4400E9E5A1 /* MPPlan+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MPPlan+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8FC3B8161E8A93B800E9E5A1 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		8FC3B81B1E902F3B00E9E5A1 /* UIViewControlelr+MPAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControlelr+MPAppearance.swift"; sourceTree = "<group>"; };
+		8FEC2E4B1FEAB25300EEE124 /* MPTodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPTodoCell.swift; sourceTree = "<group>"; };
+		8FEC2E4D1FEAB25D00EEE124 /* MPTodoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPTodoCell.xib; sourceTree = "<group>"; };
 		AC6AEDD082A5F5D669D509FF /* Pods-MyPlan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlan.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlan/Pods-MyPlan.release.xcconfig"; sourceTree = "<group>"; };
 		D520F07A1F7F932F001DFACE /* BounceAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimationController.swift; sourceTree = "<group>"; };
 		D520F07B1F7F932F001DFACE /* FadeOutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeOutAnimationController.swift; sourceTree = "<group>"; };
@@ -410,6 +414,8 @@
 				8FBA6DF91F04E82D007E4B93 /* MPPlanListCell.xib */,
 				D5CBBA271F444EFC0021FFEA /* MPCalendarExecutionCell.swift */,
 				D5CBBA281F444EFC0021FFEA /* MPCalendarExecutionCell.xib */,
+				8FEC2E4B1FEAB25300EEE124 /* MPTodoCell.swift */,
+				8FEC2E4D1FEAB25D00EEE124 /* MPTodoCell.xib */,
 			);
 			path = EurekaCell;
 			sourceTree = "<group>";
@@ -546,6 +552,7 @@
 				D52ED3861E8D072B00ED23FA /* EKColorCheckCell.xib in Resources */,
 				D520F08C1F7F9F46001DFACE /* MPSettingHeaderView.xib in Resources */,
 				D541DEC01E8CA5BA00FFFC88 /* EKColorPickCell.xib in Resources */,
+				8FEC2E4E1FEAB25D00EEE124 /* MPTodoCell.xib in Resources */,
 				8FBA6DFB1F04E82D007E4B93 /* MPPlanListCell.xib in Resources */,
 				D5737B0F1F2BAEFA009E4240 /* MPPlanTypeTimeView.xib in Resources */,
 				8F52E8251E87B5C500E41627 /* Main.storyboard in Resources */,
@@ -661,6 +668,7 @@
 				D536006C1F2744CA0054B0E3 /* MPPlanDetailView.swift in Sources */,
 				8F52E8541E87B7DB00E41627 /* MPPlanListVC.swift in Sources */,
 				8FBB53DF1F892A81004465AE /* EKSettingSelectCell.swift in Sources */,
+				8FEC2E4C1FEAB25300EEE124 /* MPTodoCell.swift in Sources */,
 				33A416991F2A37BB00F829F3 /* MPPlanTypeValueView.swift in Sources */,
 				8F6FCAEB1FDD82E000FDD01A /* YZDigitalTextField.swift in Sources */,
 				D534BEE31E95F304007CED1E /* MPPlanExecutionListVC.swift in Sources */,

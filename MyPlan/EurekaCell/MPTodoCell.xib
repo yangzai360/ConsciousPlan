@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MPTodoCell" rowHeight="60" id="5FC-LF-W9a" customClass="MPTodoCell" customModule="MyPlan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5FC-LF-W9a" id="cPx-pw-U7U">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_select" translatesAutoresizingMaskIntoConstraints="NO" id="H2E-ip-jUF">
+                        <rect key="frame" x="20" y="15" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="WLT-lM-B9a"/>
+                            <constraint firstAttribute="height" constant="20" id="fU0-Z8-Jt7"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="项目" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDB-0H-wZV">
+                        <rect key="frame" x="60" y="14.5" width="220" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.26274509800000001" green="0.20000000000000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="H2E-ip-jUF" firstAttribute="leading" secondItem="cPx-pw-U7U" secondAttribute="leading" constant="20" id="1ca-Ay-FiK"/>
+                    <constraint firstAttribute="trailing" secondItem="RDB-0H-wZV" secondAttribute="trailing" constant="40" id="3xc-ge-l0k"/>
+                    <constraint firstItem="H2E-ip-jUF" firstAttribute="centerY" secondItem="cPx-pw-U7U" secondAttribute="centerY" id="mQG-zb-s3w"/>
+                    <constraint firstItem="RDB-0H-wZV" firstAttribute="leading" secondItem="H2E-ip-jUF" secondAttribute="trailing" constant="20" id="o72-tk-ZqW"/>
+                    <constraint firstItem="RDB-0H-wZV" firstAttribute="centerY" secondItem="cPx-pw-U7U" secondAttribute="centerY" id="xoP-6Y-g01"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="name" destination="RDB-0H-wZV" id="Jzj-yu-kmh"/>
+                <outlet property="selectImageView" destination="H2E-ip-jUF" id="uaW-qs-I92"/>
+            </connections>
+            <point key="canvasLocation" x="-17" y="87"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_select" width="30" height="30"/>
+    </resources>
+</document>

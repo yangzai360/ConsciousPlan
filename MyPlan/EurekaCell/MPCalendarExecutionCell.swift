@@ -15,5 +15,4 @@ class MPCalendarExecutionCell: UITableViewCell {
     @IBOutlet weak var planNameLabel: UILabel!
     @IBOutlet weak var executionDateLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
-    
 }

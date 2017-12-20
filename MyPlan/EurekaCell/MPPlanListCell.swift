@@ -37,8 +37,6 @@ class MPPlanListCell: UITableViewCell {
         
         progressView.backgroundColor = plan.tintColor as? UIColor
         
-        
-        
         if plan.tergetValue == 0 {
             progressLabel.text = "已完成: 0.00%"
             progressViewWidthCons.constant = 0

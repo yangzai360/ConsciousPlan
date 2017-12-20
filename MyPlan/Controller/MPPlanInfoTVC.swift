@@ -16,9 +16,15 @@ protocol MPPlanInfoTVCDelegate: class {
     func didUpdateTodo()
 }
 
+//MPTodoCell
+
 class MPPlanInfoTVC: UITableViewController {
     
     weak var delegate: MPPlanInfoTVCDelegate?
+    
+    public enum PlanInfoCellIDs {
+        static let todoCell = "MPTodoCell"
+    }
     
     var managedObjectContext: NSManagedObjectContext?
     var plan: MPPlan!
@@ -31,6 +37,10 @@ class MPPlanInfoTVC: UITableViewController {
         tableView.emptyDataSetDelegate = self
         
         tableView.tableFooterView = UIView() //去掉表格视图中多余的线
+        tableView.rowHeight = 50
+        //Regist cell.
+        let cellNib = UINib(nibName: PlanInfoCellIDs.todoCell, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: PlanInfoCellIDs.todoCell)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,12 +48,10 @@ class MPPlanInfoTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.selectionStyle = .none
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: PlanInfoCellIDs.todoCell, for: indexPath) as! MPTodoCell
         let todo = plan.subTodos![indexPath.row] as! SubTodo
-        cell.textLabel?.text = todo.name ?? ""
-        cell.accessoryType =  todo.value ? .checkmark : .none
+        cell.isDone = todo.value
+        cell.name.text = todo.name ?? ""
         return cell
     }
     
