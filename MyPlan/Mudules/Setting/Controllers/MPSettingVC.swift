@@ -10,21 +10,14 @@ import Eureka
 import MessageUI
 
 class MPSettingVC : FormViewController{
-    
-    @IBAction func doneItemBtnClicked(_ sender: UIBarButtonItem) {
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
          initializeForm()
-        
         //Tint color.
         updateAppearance(tintColor: self.defaultTintColor())
     }
     
     func initializeForm() {
-        
         form +++ Section () { section in
             let header = HeaderFooterView<UIView>(.callback({ return UIView(frame: CGRect()) }))
             section.header = header
@@ -52,8 +45,10 @@ class MPSettingVC : FormViewController{
                 $0.title = $0.tag
             }
             .onCellSelection { [weak self] (cell, row) in
-//            self?.sendMail()
         }
+    }
+    
+    @IBAction func doneItemBtnClicked(_ sender: UIBarButtonItem) {
     }
     
     //MARK: 发送邮件

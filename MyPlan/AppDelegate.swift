@@ -17,22 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var coreDataStack = CoreDataStack(modelName:"MyPlan")
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-//        guard let tabbarController = window?.rootViewController as? UITabBarController else {
-//            return true
-//        }
-//        print("\(tabbarController)")
-        
-//        guard let tabbarController = window?.rootViewController as? UITabBarController,
-//            let navController = tabbarController.viewControllers?.first as? UINavigationController,
-//            let viewcontroller = navController.topViewController as? MPPlanListVC else {
-//                return true
-//        }
-//        viewcontroller.managedContext = coreDataStack.managedContext
-//        viewcontroller.stack = coreDataStack
-        
         return true
-
     }
 }
-

@@ -55,7 +55,6 @@
 		D534BEFB1E978D01007CED1E /* EKStartUnitValueRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D534BEFA1E978D01007CED1E /* EKStartUnitValueRow.swift */; };
 		D536006C1F2744CA0054B0E3 /* MPPlanDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536006B1F2744CA0054B0E3 /* MPPlanDetailView.swift */; };
 		D53600721F27C5870054B0E3 /* MPPlanInfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53600711F27C5870054B0E3 /* MPPlanInfoTVC.swift */; };
-		D53D05001F5E46A000B071CD /* MPPlanTodoListEuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53D04FF1F5E46A000B071CD /* MPPlanTodoListEuVC.swift */; };
 		D541DEC01E8CA5BA00FFFC88 /* EKColorPickCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D541DEBF1E8CA5BA00FFFC88 /* EKColorPickCell.xib */; };
 		D541DEC31E8CAB7000FFFC88 /* EKColorPickRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D541DEC21E8CAB7000FFFC88 /* EKColorPickRow.swift */; };
 		D54EFDBB1E8BA2A70030A6E8 /* NSDate+MPPlanDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54EFDBA1E8BA2A70030A6E8 /* NSDate+MPPlanDate.swift */; };
@@ -147,7 +146,6 @@
 		D534BEFA1E978D01007CED1E /* EKStartUnitValueRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKStartUnitValueRow.swift; sourceTree = "<group>"; };
 		D536006B1F2744CA0054B0E3 /* MPPlanDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanDetailView.swift; sourceTree = "<group>"; };
 		D53600711F27C5870054B0E3 /* MPPlanInfoTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanInfoTVC.swift; sourceTree = "<group>"; };
-		D53D04FF1F5E46A000B071CD /* MPPlanTodoListEuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanTodoListEuVC.swift; sourceTree = "<group>"; };
 		D541DEBF1E8CA5BA00FFFC88 /* EKColorPickCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EKColorPickCell.xib; sourceTree = "<group>"; };
 		D541DEC21E8CAB7000FFFC88 /* EKColorPickRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKColorPickRow.swift; sourceTree = "<group>"; };
 		D54EFDBA1E8BA2A70030A6E8 /* NSDate+MPPlanDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+MPPlanDate.swift"; sourceTree = "<group>"; };
@@ -295,16 +293,15 @@
 				8F52E8531E87B7DB00E41627 /* MPPlanListVC.swift */,
 				D58FD3961FC670A60097A3AD /* MPTodayListVC.swift */,
 				8F52E8551E87B80300E41627 /* MPCreatePlanVC.swift */,
+				D57683B01FA1D34A0087978C /* EKColorPickerVC.swift */,
 				D52ED3871E8FA09300ED23FA /* MPPlanDetailVC.swift */,
 				D52ED3991E94A37300ED23FA /* MPAddPlanProgressPopVC.swift */,
 				8FA16C4F1F61A8DC00FEAFEF /* MPAddTodoPopVC.swift */,
 				D53600711F27C5870054B0E3 /* MPPlanInfoTVC.swift */,
-				D53D04FF1F5E46A000B071CD /* MPPlanTodoListEuVC.swift */,
 				D534BEE21E95F304007CED1E /* MPPlanExecutionListVC.swift */,
 				33C6E1A91F3B4A3700399343 /* MPCalendarVC.swift */,
 				33A9B6D91F3B5890002346A2 /* MPCalendarListTVC.swift */,
 				8F7DB7711FCDB17100AE24B9 /* MPPlanRemarkVC.swift */,
-				D57683B01FA1D34A0087978C /* EKColorPickerVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -649,7 +646,6 @@
 				D52ED3881E8FA09300ED23FA /* MPPlanDetailVC.swift in Sources */,
 				D534BEFB1E978D01007CED1E /* EKStartUnitValueRow.swift in Sources */,
 				D53600721F27C5870054B0E3 /* MPPlanInfoTVC.swift in Sources */,
-				D53D05001F5E46A000B071CD /* MPPlanTodoListEuVC.swift in Sources */,
 				8F52E8561E87B80300E41627 /* MPCreatePlanVC.swift in Sources */,
 				8FBB53E21F892DCC004465AE /* MPSettingVC.swift in Sources */,
 				D520F0831F7F932F001DFACE /* MPPopView.swift in Sources */,
