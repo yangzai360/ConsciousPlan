@@ -22,8 +22,11 @@ class MPPlanInfoTVC: UITableViewController {
     
     weak var delegate: MPPlanInfoTVCDelegate?
     
+    var isShowSeletedTodos = false
+    
     public enum PlanInfoCellIDs {
         static let todoCell = "MPTodoCell"
+        static let tagCell = "MPTodoTagCell"
     }
     
     var managedObjectContext: NSManagedObjectContext?
@@ -39,24 +42,80 @@ class MPPlanInfoTVC: UITableViewController {
         tableView.tableFooterView = UIView() //去掉表格视图中多余的线
         tableView.rowHeight = 50
         //Regist cell.
-        let cellNib = UINib(nibName: PlanInfoCellIDs.todoCell, bundle: nil)
+        var cellNib = UINib(nibName: PlanInfoCellIDs.todoCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: PlanInfoCellIDs.todoCell)
+        cellNib = UINib(nibName: PlanInfoCellIDs.tagCell, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: PlanInfoCellIDs.tagCell)
+        
+        prepareData()
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        if selectedTodos.count == 0 {
+            return 1
+        }
+        return isShowSeletedTodos ? 3 : 2
+    }
+    
+    // MARK: -  UITableView Data Source.
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return plan.subTodos?.count ?? 0
+//        如果有数据，那就返回数据 +1，否则返回 0
+        if section == 0 {
+//            return plan.subTodos?.count ?? 0
+            return self.unselectedTodos.count
+        } else if section == 1 {
+            return 1
+        } else if section == 2 {
+            return isShowSeletedTodos ? self.selectedTodos.count : 0
+        }
+        return 0
+    }
+    
+    func todoForIndexPath(indexPath: IndexPath) -> SubTodo? {
+        if indexPath.section == 0 {
+            return unselectedTodos[indexPath.row]
+        } else if indexPath.section == 1 {
+            return nil
+        } else if indexPath.section == 2 {
+            return selectedTodos[indexPath.row]
+        }
+        return nil
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PlanInfoCellIDs.todoCell, for: indexPath) as! MPTodoCell
-        let todo = plan.subTodos![indexPath.row] as! SubTodo
-        cell.isDone = todo.value
-        cell.name.text = todo.name ?? ""
-        return cell
+        if let todo = todoForIndexPath(indexPath: indexPath) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: PlanInfoCellIDs.todoCell, for: indexPath) as! MPTodoCell
+            cell.conigureCell(withToDo: todo)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: PlanInfoCellIDs.tagCell, for: indexPath) as! MPTodoTagCell
+            cell.tagLabel.text = "\(isShowSeletedTodos ? "隐藏" : "显示")已完成任务(\(selectedTodos.count)个已完成)"
+            cell.setTagColor(color: plan.tintColor as! UIColor)
+            return cell
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.section == 1 { return false }
+        return true
     }
     
+    // MARK: -  UITableView Delegate.
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let todo = plan.subTodos![indexPath.row] as! SubTodo
+        
+        guard let todo = todoForIndexPath(indexPath: indexPath) else {
+            isShowSeletedTodos = !isShowSeletedTodos
+            if isShowSeletedTodos {
+                tableView.insertSections([2], with: .middle)
+            } else {
+                tableView.deleteSections([2], with: .middle)
+            }
+            tableView.reloadRows(at: [indexPath], with: .fade)
+            return //点击收起展开不影响排序
+        }
+        
         todo.value = !todo.value
         todo.doneTime = NSDate()
         
@@ -69,41 +128,78 @@ class MPPlanInfoTVC: UITableViewController {
         })
         plan.subTodos = NSOrderedSet(array: orderdTodosAry)
         
-        var numberOfUnselectedTodo = 0
-        for item in orderdTodosAry {
-            let todo = item as! SubTodo
-            if !todo.value {
-                numberOfUnselectedTodo += 1
-            } else {
-                break
-            }
-        }
-        //        tableView.moveRow(at: indexPath, to: IndexPath(row: numberOfUnselectedTodo, section: indexPath.section))
-        tableView.reloadData()
         //更新数据
         delegate?.didUpdateTodo()
         managedObjectContext?.trySave()
-    }
-    
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        
+        prepareData()
+        if todo.value {
+            //上面删
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            if selectedTodos.count == 1 { //如果第一个完成项出现的话，加中间的 Section
+                tableView.insertSections([1], with: .fade)
+                if isShowSeletedTodos { //加中间Section的时候，如果下面打开，也插入下面的 Section
+                    tableView.insertSections([2], with: .fade)
+                }
+            } else if isShowSeletedTodos { //正常完成添加，下面首行插入。并刷新中间的section
+                tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .fade)
+                tableView.insertRows(at: [IndexPath(row: 0, section: 2)], with: .fade)
+            } else {
+                //不是第一个添加，中间的section存在，刷新中间的section
+                tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .fade)
+            }
+            tableView.endUpdates()
+        } else {
+            //下面删
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.insertRows(at: [IndexPath(row: unselectedTodos.count-1, section: 0)], with: .fade)
+            if selectedTodos.count == 0 { // 下面删完了，1、2两个section删掉
+                tableView.deleteSections([1,2], with: .fade)
+            } else { //正常删除，刷新中间的section
+                tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .fade)
+            }
+            tableView.endUpdates()
+        }
     }
     
     // Delete todo
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            managedObjectContext?.delete(plan.subTodos![indexPath.row] as! NSManagedObject)
+            
+            guard let todo = todoForIndexPath(indexPath: indexPath) else {
+                return //  // 不可能到这里
+            }
+            managedObjectContext?.delete(todo)
             
             let todos = plan.subTodos!.mutableCopy() as! NSMutableOrderedSet
-            todos.remove(plan.subTodos![indexPath.row])
-            plan.subTodos = todos.copy() as? NSOrderedSet
+                            todos.remove(todo)
             
+            plan.subTodos = todos.copy() as? NSOrderedSet
             managedObjectContext?.trySave()
             
+            prepareData()
             tableView.deleteRows(at: [indexPath], with: .fade)
             
-            if todos.count == 0 {  //如果没有
+            if todos.count == 0 {  //如果没有，刷出 emptySet 页面
                 tableView.reloadData()
+            }
+        }
+    }
+    
+    // MARK: - 整理数据的方法
+    var unselectedTodos = [SubTodo]()       // 待完成的 Todo
+    var selectedTodos = [SubTodo]()         // 已完成的 Todo
+    func prepareData() {
+        unselectedTodos.removeAll()
+        selectedTodos.removeAll()
+        let todos = self.plan.subTodos!.array as! [SubTodo]
+        for todo in todos {
+            if todo.value {
+                selectedTodos.append(todo)
+            } else {
+                unselectedTodos.append(todo)
             }
         }
     }
@@ -127,7 +223,6 @@ extension MPPlanInfoTVC : DZNEmptyDataSetSource {
                           NSParagraphStyleAttributeName: paragraph]
         return NSAttributedString(string: text, attributes: attributes)
     }
-    
     func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
         return UIColor.white
     }

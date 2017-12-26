@@ -40,6 +40,7 @@
 		8FC3B81C1E902F3B00E9E5A1 /* UIViewControlelr+MPAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC3B81B1E902F3B00E9E5A1 /* UIViewControlelr+MPAppearance.swift */; };
 		8FEC2E4C1FEAB25300EEE124 /* MPTodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEC2E4B1FEAB25300EEE124 /* MPTodoCell.swift */; };
 		8FEC2E4E1FEAB25D00EEE124 /* MPTodoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FEC2E4D1FEAB25D00EEE124 /* MPTodoCell.xib */; };
+		D508F10D1FED4B9A00A29218 /* MPTodoTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D508F10C1FED4B9A00A29218 /* MPTodoTagCell.xib */; };
 		D520F07F1F7F932F001DFACE /* BounceAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520F07A1F7F932F001DFACE /* BounceAnimationController.swift */; };
 		D520F0801F7F932F001DFACE /* FadeOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520F07B1F7F932F001DFACE /* FadeOutAnimationController.swift */; };
 		D520F0811F7F932F001DFACE /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D520F07C1F7F932F001DFACE /* DimmingPresentationController.swift */; };
@@ -133,6 +134,7 @@
 		8FEC2E4B1FEAB25300EEE124 /* MPTodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPTodoCell.swift; sourceTree = "<group>"; };
 		8FEC2E4D1FEAB25D00EEE124 /* MPTodoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPTodoCell.xib; sourceTree = "<group>"; };
 		AC6AEDD082A5F5D669D509FF /* Pods-MyPlan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlan.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlan/Pods-MyPlan.release.xcconfig"; sourceTree = "<group>"; };
+		D508F10C1FED4B9A00A29218 /* MPTodoTagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPTodoTagCell.xib; sourceTree = "<group>"; };
 		D520F07A1F7F932F001DFACE /* BounceAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimationController.swift; sourceTree = "<group>"; };
 		D520F07B1F7F932F001DFACE /* FadeOutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeOutAnimationController.swift; sourceTree = "<group>"; };
 		D520F07C1F7F932F001DFACE /* DimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 				D5CBBA281F444EFC0021FFEA /* MPCalendarExecutionCell.xib */,
 				8FEC2E4B1FEAB25300EEE124 /* MPTodoCell.swift */,
 				8FEC2E4D1FEAB25D00EEE124 /* MPTodoCell.xib */,
+				D508F10C1FED4B9A00A29218 /* MPTodoTagCell.xib */,
 			);
 			path = EurekaCell;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				D52ED3861E8D072B00ED23FA /* EKColorCheckCell.xib in Resources */,
 				D520F08C1F7F9F46001DFACE /* MPSettingHeaderView.xib in Resources */,
 				D541DEC01E8CA5BA00FFFC88 /* EKColorPickCell.xib in Resources */,
+				D508F10D1FED4B9A00A29218 /* MPTodoTagCell.xib in Resources */,
 				8FEC2E4E1FEAB25D00EEE124 /* MPTodoCell.xib in Resources */,
 				8FBA6DFB1F04E82D007E4B93 /* MPPlanListCell.xib in Resources */,
 				D5737B0F1F2BAEFA009E4240 /* MPPlanTypeTimeView.xib in Resources */,
