@@ -13,6 +13,8 @@ import CoreData
 @objc(MPPlan)
 public class MPPlan: NSManagedObject {
     
+    // MARK: - Create
+    
     /// 创建一个新的计划
     ///
     /// - Returns: new Plan With the context
@@ -40,7 +42,6 @@ public class MPPlan: NSManagedObject {
         return plan
     }
     
-    
     /// 创建或编辑计划的时候检查项目合法
     ///
     /// - Returns: nil is right, else return the error alert string.
@@ -50,6 +51,8 @@ public class MPPlan: NSManagedObject {
         return nil
     }
 
+    // MARK: - Get
+    
     func getDateFormatter() -> DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.locale     = Locale(identifier: "zh")
@@ -70,6 +73,8 @@ public class MPPlan: NSManagedObject {
     func endTimeStr() -> String {
         return getDateFormatter().string(from: (endTime! as Date ))
     }
+    
+    // MARK: - Action.
     
     //暂时没有被调用
     func recaculateValue() -> Double {
@@ -99,6 +104,17 @@ public class MPPlan: NSManagedObject {
         tergetValue = Double(subTodos?.count ?? 0)
         value = Double(numOfDonesTodd)
     }
+    
+    func addSubTodo(todo: SubTodo) {
+        var todoArrays = self.subTodos?.array as! [SubTodo]
+        todoArrays.insert(todo, at: 0)
+        self.subTodos = NSOrderedSet(array: todoArrays)
+
+        todo.plan = self
+        todo.plan?.createDate = NSDate()
+    }
+    
+    // MARK: - Caculate Get
     
     func valueUnit() -> String {
         let valueUnit = Int(unit) != PlanValueUnit.allValues.count - 1 ?

@@ -128,9 +128,9 @@ class MPPlanInfoTVC: UITableViewController {
         })
         plan.subTodos = NSOrderedSet(array: orderdTodosAry)
         
+        managedObjectContext?.trySave()
         //更新数据
         delegate?.didUpdateTodo()
-        managedObjectContext?.trySave()
         
         prepareData()
         if todo.value {
@@ -180,11 +180,27 @@ class MPPlanInfoTVC: UITableViewController {
             managedObjectContext?.trySave()
             
             prepareData()
-            tableView.deleteRows(at: [indexPath], with: .fade)
             
-            if todos.count == 0 {  //如果没有，刷出 emptySet 页面
-                tableView.reloadData()
+            tableView.beginUpdates()
+            if selectedTodos.count == 0 && indexPath.section == 2 {         //加入 section 的判断，如果是删除第一行的时候，不删除后面两个 section
+                tableView.deleteSections([1,2], with: .fade)
+            } else {
+                tableView.deleteRows(at: [indexPath], with: .fade)
             }
+            tableView.endUpdates()
+            
+            if todos.count == 0 {  //如果没有，刷出 EmptySet 页面
+                tableView.reloadEmptyDataSet()
+            }
+            delegate?.didUpdateTodo()
+        }
+    }
+    
+    //动画方法
+    func insertNewTodoAnimation() {
+        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+        if plan.subTodos?.count == 1 {
+            tableView.reloadEmptyDataSet()
         }
     }
     

@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 protocol MPAddTodoPopVCDelegate: class {
-    func didAddTodo()
+    func didAddTodo(todo: SubTodo)
 }
 
 class MPAddTodoPopVC: MPPopView {
@@ -41,11 +41,12 @@ class MPAddTodoPopVC: MPPopView {
         
         if nameTextField.text!.characters.count > 0 {
             newTodo.name = nameTextField.text!
-            newTodo.plan = plan
-            
+//            newTodo.plan = plan
+//            newTodo.createTime = NSDate()
+            plan.addSubTodo(todo: newTodo)
             managedObjectContext.trySave()
             
-            delegate?.didAddTodo()
+            delegate?.didAddTodo(todo: newTodo)
         }
         close()
     }

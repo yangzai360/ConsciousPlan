@@ -125,9 +125,12 @@ extension MPPlanDetailVC : MPAddPlanProgressPopVCDelegate {
 }
 
 extension MPPlanDetailVC : MPAddTodoPopVCDelegate, MPPlanInfoTVCDelegate {
-    func didAddTodo() {
+    func didAddTodo(todo: SubTodo) {
         // ToDo 点击添加 ToDo 之后的操作 （肯定存在 planDetailTableVC）
-        planDetailTableVC!.tableView.reloadData()
+//        planDetailTableVC!.tableView.reloadData()
+        planDetailTableVC?.prepareData()
+        planDetailTableVC?.insertNewTodoAnimation()
+        planDetailView.configureViewWithPlan() // 更新上面的页面
     }
     
     func didUpdateTodo() {
