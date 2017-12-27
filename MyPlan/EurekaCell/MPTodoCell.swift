@@ -13,14 +13,24 @@ class MPTodoCell: UITableViewCell {
     @IBOutlet weak var selectImageView: UIImageView!
     @IBOutlet weak var name: UILabel!
     
+    @IBOutlet weak var nameCenterYCons: NSLayoutConstraint!
     @IBOutlet weak var deleteLineWidth: NSLayoutConstraint!
     @IBOutlet weak var deleteLineView: UIView!
+    @IBOutlet weak var doneTimeLabel: UILabel!
     
+    var isDone = false
     
-    var isDone = false {
-        didSet {
-            selectImageView.image = UIImage.init(named: isDone ? "ic_selected" : "ic_select")
-        }
+    static var dateFormatter: DateFormatter = {
+        let newDateFormatter = DateFormatter()
+        newDateFormatter.locale     = Locale(identifier: "zh")
+        newDateFormatter.dateStyle  = DateFormatter.Style.long
+        newDateFormatter.dateFormat = newDateFormatter.dateFormat + " HH:mm"
+        return newDateFormatter
+    }()
+    
+    override func awakeFromNib() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(selectTodo))
+        selectImageView.addGestureRecognizer(tap)
     }
     
     func conigureCell(withToDo todo: SubTodo) {
@@ -29,8 +39,17 @@ class MPTodoCell: UITableViewCell {
         
         selectImageView.image = UIImage.init(named: isDone ? "ic_selected" : "ic_select")
         name.sizeToFit()
-        deleteLineView.isHidden = !isDone
         deleteLineWidth.constant = name.frame.size.width + 6.0
+        nameCenterYCons.constant = isDone ? -8 : 0
+        doneTimeLabel.text = MPTodoCell.dateFormatter.string(for: todo.doneTime)
+        doneTimeLabel.isHidden = !isDone
+        deleteLineView.isHidden = !isDone
+    }
+    
+    //MARK: - Target.
+    
+    func selectTodo() {
+        print("Select")
     }
 }
 

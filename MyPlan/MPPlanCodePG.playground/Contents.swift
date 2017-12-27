@@ -8,6 +8,30 @@ msets.sortedArray(comparator: { (a1, a2) -> ComparisonResult in
     return ComparisonResult.orderedDescending
 })
 
+func test() -> String {
+    print("A")
+    return ""
+}
+
+func test2() -> String {
+    print("1")
+//    let _ = test()
+    
+    print("A")
+
+    
+    print("2")
+    return ""
+}
+
+let _ = test2()
+
+let nf = NumberFormatter()
+nf.numberStyle = .decimal
+
+print(nf.number(from: "") ?? "" + "ge")
+
+
 //let now = Date()
 //let dateFormatter = DateFormatter()
 //dateFormatter.locale = Locale(identifier: "zh")
@@ -31,30 +55,3 @@ msets.sortedArray(comparator: { (a1, a2) -> ComparisonResult in
 
 //let double = Double("1")
 //print(double)
-
-
-func test() -> String {
-    
-    
-    print("A")
-    return ""
-}
-
-func test2() -> String {
-    print("1")
-//    let _ = test()
-    
-    print("A")
-
-    
-    print("2")
-    return ""
-}
-
-let _ = test2()
-
-let nf = NumberFormatter()
-nf.numberStyle = .decimal
-
-print(nf.number(from: "") ?? "" + "ge")
-

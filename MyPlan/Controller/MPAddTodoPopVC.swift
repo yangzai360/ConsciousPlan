@@ -41,8 +41,6 @@ class MPAddTodoPopVC: MPPopView {
         
         if nameTextField.text!.characters.count > 0 {
             newTodo.name = nameTextField.text!
-//            newTodo.plan = plan
-//            newTodo.createTime = NSDate()
             plan.addSubTodo(todo: newTodo)
             managedObjectContext.trySave()
             

@@ -44,6 +44,9 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
                 $0.options = options
                 $0.value = PlanType.allValues[Int(self.plan.planType)]
                 $0.selectorTitle = "选择计划类型"
+                $0.disabled = Condition.function([], { (form) -> Bool in
+                    return self.plan.createDate != nil
+                })
                 }.onChange { row in
                     if row.value == nil {
                         row.value = PlanType.allValues[Int(self.plan.planType)]

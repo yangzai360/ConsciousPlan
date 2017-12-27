@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -26,37 +26,51 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="项目" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDB-0H-wZV">
-                        <rect key="frame" x="58" y="14.5" width="222" height="20.5"/>
+                        <rect key="frame" x="58" y="6.5" width="222" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.26274509800000001" green="0.20000000000000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXy-GT-OOj">
-                        <rect key="frame" x="56" y="24" width="100" height="1"/>
+                        <rect key="frame" x="56" y="16.5" width="100" height="1"/>
                         <color key="backgroundColor" red="0.34509803919999998" green="0.34509803919999998" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="HDF-cX-cIS"/>
                             <constraint firstAttribute="width" constant="100" id="LHM-iy-MKs"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4x-ue-8Cu">
+                        <rect key="frame" x="58" y="30" width="222" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="frz-NV-UU2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                        <color key="textColor" red="0.4039215686" green="0.4039215686" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="dXy-GT-OOj" firstAttribute="leading" secondItem="cPx-pw-U7U" secondAttribute="leading" constant="56" id="18E-6Z-eHa"/>
                     <constraint firstItem="H2E-ip-jUF" firstAttribute="leading" secondItem="cPx-pw-U7U" secondAttribute="leading" constant="20" id="1ca-Ay-FiK"/>
+                    <constraint firstItem="dXy-GT-OOj" firstAttribute="centerY" secondItem="RDB-0H-wZV" secondAttribute="centerY" id="3W0-Iv-nxq"/>
                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="RDB-0H-wZV" secondAttribute="trailing" constant="40" id="3xc-ge-l0k"/>
-                    <constraint firstItem="dXy-GT-OOj" firstAttribute="centerY" secondItem="cPx-pw-U7U" secondAttribute="centerY" id="FVx-53-6ab"/>
+                    <constraint firstAttribute="bottom" secondItem="n4x-ue-8Cu" secondAttribute="bottom" constant="5.5" id="PG8-Bl-aoD"/>
+                    <constraint firstAttribute="trailing" secondItem="n4x-ue-8Cu" secondAttribute="trailing" constant="40" id="c0w-A9-PzW"/>
                     <constraint firstItem="H2E-ip-jUF" firstAttribute="centerY" secondItem="cPx-pw-U7U" secondAttribute="centerY" id="mQG-zb-s3w"/>
+                    <constraint firstItem="n4x-ue-8Cu" firstAttribute="leading" secondItem="H2E-ip-jUF" secondAttribute="trailing" constant="20" id="mcC-mN-SLz"/>
                     <constraint firstItem="RDB-0H-wZV" firstAttribute="leading" secondItem="H2E-ip-jUF" secondAttribute="trailing" constant="20" id="o72-tk-ZqW"/>
-                    <constraint firstItem="RDB-0H-wZV" firstAttribute="centerY" secondItem="cPx-pw-U7U" secondAttribute="centerY" id="xoP-6Y-g01"/>
+                    <constraint firstItem="RDB-0H-wZV" firstAttribute="centerY" secondItem="cPx-pw-U7U" secondAttribute="centerY" constant="-8" id="xoP-6Y-g01"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="deleteLineView" destination="dXy-GT-OOj" id="yo2-wx-JSh"/>
                 <outlet property="deleteLineWidth" destination="LHM-iy-MKs" id="aLs-UO-iiQ"/>
+                <outlet property="doneTimeLabel" destination="n4x-ue-8Cu" id="52J-wD-148"/>
                 <outlet property="name" destination="RDB-0H-wZV" id="Jzj-yu-kmh"/>
+                <outlet property="nameCenterYCons" destination="xoP-6Y-g01" id="rjc-mk-AUT"/>
                 <outlet property="selectImageView" destination="H2E-ip-jUF" id="uaW-qs-I92"/>
             </connections>
-            <point key="canvasLocation" x="-17" y="87"/>
+            <point key="canvasLocation" x="-17" y="111"/>
         </tableViewCell>
     </objects>
     <resources>
