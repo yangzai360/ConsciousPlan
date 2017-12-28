@@ -18,7 +18,7 @@ protocol MPPlanInfoTVCDelegate: class {
 
 //MPTodoCell
 
-class MPPlanInfoTVC: UITableViewController {
+class MPPlanInfoTVC: UITableViewController, MPTodoCellDelegate, MPTodoTagCellDelegate {
     
     weak var delegate: MPPlanInfoTVCDelegate?
     
@@ -86,11 +86,13 @@ class MPPlanInfoTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let todo = todoForIndexPath(indexPath: indexPath) {
             let cell = tableView.dequeueReusableCell(withIdentifier: PlanInfoCellIDs.todoCell, for: indexPath) as! MPTodoCell
+            cell.delegate = self
             cell.conigureCell(withToDo: todo)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: PlanInfoCellIDs.tagCell, for: indexPath) as! MPTodoTagCell
-            cell.tagLabel.text = "\(isShowSeletedTodos ? "隐藏" : "显示")已完成任务(\(selectedTodos.count)个已完成)"
+            cell.delegate = self
+            cell.tagButton.setTitle("\(isShowSeletedTodos ? "隐藏" : "显示")已完成任务(\(selectedTodos.count)个已完成)", for: .normal)
             cell.setTagColor(color: plan.tintColor as! UIColor)
             return cell
         }
@@ -104,18 +106,13 @@ class MPPlanInfoTVC: UITableViewController {
     // MARK: -  UITableView Delegate.
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+    }
+    
+    func didSelectTodoCell(sender: MPTodoCell) {
+        let indexPath = tableView.indexPath(for: sender)!
         guard let todo = todoForIndexPath(indexPath: indexPath) else {
-            isShowSeletedTodos = !isShowSeletedTodos
-            if isShowSeletedTodos {
-                tableView.insertSections([2], with: .middle)
-            } else {
-                tableView.deleteSections([2], with: .middle)
-            }
-            tableView.reloadRows(at: [indexPath], with: .fade)
-            return //点击收起展开不影响排序
+            return
         }
-        
         todo.value = !todo.value
         todo.doneTime = NSDate()
         
@@ -162,6 +159,16 @@ class MPPlanInfoTVC: UITableViewController {
             }
             tableView.endUpdates()
         }
+    }
+    
+    func didClickTagButton() {
+        isShowSeletedTodos = !isShowSeletedTodos
+        if isShowSeletedTodos {
+            tableView.insertSections([2], with: .middle)
+        } else {
+            tableView.deleteSections([2], with: .middle)
+        }
+        tableView.reloadRows(at:[IndexPath(row: 0, section: 1)], with: .fade)
     }
     
     // Delete todo

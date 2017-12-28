@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol MPTodoCellDelegate: class {
+    func didSelectTodoCell(sender: MPTodoCell)
+}
 class MPTodoCell: UITableViewCell {
     
-    @IBOutlet weak var selectImageView: UIImageView!
+    weak var delegate: MPTodoCellDelegate?
+
+    @IBOutlet weak var selectImageButton: UIButton!
     @IBOutlet weak var name: UILabel!
     
     @IBOutlet weak var nameCenterYCons: NSLayoutConstraint!
@@ -28,16 +33,11 @@ class MPTodoCell: UITableViewCell {
         return newDateFormatter
     }()
     
-    override func awakeFromNib() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(selectTodo))
-        selectImageView.addGestureRecognizer(tap)
-    }
-    
     func conigureCell(withToDo todo: SubTodo) {
         isDone = todo.value
         name.text = todo.name ?? ""
         
-        selectImageView.image = UIImage.init(named: isDone ? "ic_selected" : "ic_select")
+        selectImageButton.setImage(UIImage.init(named: isDone ? "ic_selected" : "ic_select"), for: .normal)
         name.sizeToFit()
         deleteLineWidth.constant = name.frame.size.width + 6.0
         nameCenterYCons.constant = isDone ? -8 : 0
@@ -48,17 +48,28 @@ class MPTodoCell: UITableViewCell {
     
     //MARK: - Target.
     
-    func selectTodo() {
-        print("Select")
+    @IBAction func selectBtnClicked(_ sender: Any) {
+        print("sleect taptaptap")
+        delegate?.didSelectTodoCell(sender: self)
     }
 }
 
+
+protocol MPTodoTagCellDelegate: class {
+    func didClickTagButton()
+}
 class MPTodoTagCell: UITableViewCell {
-    @IBOutlet weak var tagLabel: UILabel!
+    
+    weak var delegate: MPTodoTagCellDelegate?
+    @IBOutlet weak var tagButton: UIButton!
     
     func setTagColor(color: UIColor) {
         let rgbColours = color.cgColor.components
         let lightColor = UIColor(red: rgbColours![0]*0.7, green: rgbColours![1]*0.7, blue: rgbColours![2]*0.7, alpha: 1)
-        tagLabel?.backgroundColor = lightColor
+        tagButton?.backgroundColor = lightColor
+    }
+    
+    @IBAction func tagButtonClicked(_ sender: Any) {
+        delegate?.didClickTagButton()
     }
 }

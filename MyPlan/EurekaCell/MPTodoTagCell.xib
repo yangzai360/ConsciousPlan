@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,30 +18,34 @@
                 <rect key="frame" x="0.0" y="0.0" width="325" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="显示已完成任务(0个已完成)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMd-i3-HQK">
-                        <rect key="frame" x="63" y="6.5" width="200" height="30"/>
-                        <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="koc-VR-CV1">
+                        <rect key="frame" x="62" y="6" width="200" height="30"/>
+                        <color key="backgroundColor" red="0.2470588235" green="0.40784313729999999" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="gSS-Xz-KfP"/>
-                            <constraint firstAttribute="width" constant="200" id="gmp-8n-txt"/>
+                            <constraint firstAttribute="width" constant="200" id="6Vx-Wm-QeV"/>
+                            <constraint firstAttribute="height" constant="30" id="jd9-GJ-6Zl"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
+                        <state key="normal" title=".">
+                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="6"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
-                    </label>
+                        <connections>
+                            <action selector="tagButtonClicked:" destination="vSt-Jz-Ftk" eventType="touchUpInside" id="faT-oH-471"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="kMd-i3-HQK" firstAttribute="centerX" secondItem="ffV-88-BLB" secondAttribute="centerX" id="iFX-uX-RLO"/>
-                    <constraint firstItem="kMd-i3-HQK" firstAttribute="centerY" secondItem="ffV-88-BLB" secondAttribute="centerY" id="shB-0c-lvf"/>
+                    <constraint firstItem="koc-VR-CV1" firstAttribute="centerY" secondItem="ffV-88-BLB" secondAttribute="centerY" id="WUi-0X-KPE"/>
+                    <constraint firstItem="koc-VR-CV1" firstAttribute="centerX" secondItem="ffV-88-BLB" secondAttribute="centerX" id="Xtr-bN-mZ0"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="tagLabel" destination="kMd-i3-HQK" id="pl6-xP-olT"/>
+                <outlet property="tagButton" destination="koc-VR-CV1" id="DLY-wn-dBT"/>
             </connections>
             <point key="canvasLocation" x="-13.5" y="10"/>
         </tableViewCell>
