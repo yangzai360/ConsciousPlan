@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0F2F827921C8A01E84322E89 /* Pods_MyPlan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC244AF85381AC65B679FF4A /* Pods_MyPlan.framework */; };
+		33525030200C6C400011C950 /* MPExecutionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3352502E200C6C400011C950 /* MPExecutionCell.swift */; };
+		33525031200C6C400011C950 /* MPExecutionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3352502F200C6C400011C950 /* MPExecutionCell.xib */; };
 		33A416971F2A367000F829F3 /* MPPlanDetailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A416961F2A367000F829F3 /* MPPlanDetailViewDelegate.swift */; };
 		33A416991F2A37BB00F829F3 /* MPPlanTypeValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A416981F2A37BB00F829F3 /* MPPlanTypeValueView.swift */; };
 		33A9B6DA1F3B5890002346A2 /* MPCalendarListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A9B6D91F3B5890002346A2 /* MPCalendarListTVC.swift */; };
@@ -94,6 +96,8 @@
 
 /* Begin PBXFileReference section */
 		28CF0099B453A85892A44F96 /* Pods-MyPlan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlan/Pods-MyPlan.debug.xcconfig"; sourceTree = "<group>"; };
+		3352502E200C6C400011C950 /* MPExecutionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPExecutionCell.swift; sourceTree = "<group>"; };
+		3352502F200C6C400011C950 /* MPExecutionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPExecutionCell.xib; sourceTree = "<group>"; };
 		33A416961F2A367000F829F3 /* MPPlanDetailViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanDetailViewDelegate.swift; sourceTree = "<group>"; };
 		33A416981F2A37BB00F829F3 /* MPPlanTypeValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanTypeValueView.swift; sourceTree = "<group>"; };
 		33A9B6D91F3B5890002346A2 /* MPCalendarListTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCalendarListTVC.swift; sourceTree = "<group>"; };
@@ -419,6 +423,8 @@
 				8FEC2E4B1FEAB25300EEE124 /* MPTodoCell.swift */,
 				8FEC2E4D1FEAB25D00EEE124 /* MPTodoCell.xib */,
 				D508F10C1FED4B9A00A29218 /* MPTodoTagCell.xib */,
+				3352502E200C6C400011C950 /* MPExecutionCell.swift */,
+				3352502F200C6C400011C950 /* MPExecutionCell.xib */,
 			);
 			path = EurekaCell;
 			sourceTree = "<group>";
@@ -550,6 +556,7 @@
 				8FBB53E01F892A81004465AE /* EKSettingSelectCell.xib in Resources */,
 				D5CBBA2A1F444EFC0021FFEA /* MPCalendarExecutionCell.xib in Resources */,
 				D5737B0B1F2BAA1B009E4240 /* MPPlanTypeValueView.xib in Resources */,
+				33525031200C6C400011C950 /* MPExecutionCell.xib in Resources */,
 				8F52E82D1E87B5C500E41627 /* LaunchScreen.storyboard in Resources */,
 				8F52E82A1E87B5C500E41627 /* Assets.xcassets in Resources */,
 				D52ED3861E8D072B00ED23FA /* EKColorCheckCell.xib in Resources */,
@@ -666,6 +673,7 @@
 				D5737B0D1F2BAEE0009E4240 /* MPPlanTypeTimeView.swift in Sources */,
 				D520F0821F7F932F001DFACE /* GradientView.swift in Sources */,
 				33C6E1AA1F3B4A3700399343 /* MPCalendarVC.swift in Sources */,
+				33525030200C6C400011C950 /* MPExecutionCell.swift in Sources */,
 				D5CA5B821EA3C37300960944 /* SubTodo+CoreDataClass.swift in Sources */,
 				D520F0811F7F932F001DFACE /* DimmingPresentationController.swift in Sources */,
 				33A9B6DA1F3B5890002346A2 /* MPCalendarListTVC.swift in Sources */,

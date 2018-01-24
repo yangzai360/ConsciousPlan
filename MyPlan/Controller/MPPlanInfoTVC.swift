@@ -181,7 +181,7 @@ class MPPlanInfoTVC: UITableViewController, MPTodoCellDelegate, MPTodoTagCellDel
             managedObjectContext?.delete(todo)
             
             let todos = plan.subTodos!.mutableCopy() as! NSMutableOrderedSet
-                            todos.remove(todo)
+            todos.remove(todo)
             
             plan.subTodos = todos.copy() as? NSOrderedSet
             managedObjectContext?.trySave()

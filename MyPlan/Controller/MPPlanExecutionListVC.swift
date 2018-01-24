@@ -19,12 +19,21 @@ class MPPlanExecutionListVC : UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    public enum PlanExecutionCellIs {
+        static let executionCell = "MPExecutionCell"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
         
         tableView.tableFooterView = UIView() //去掉表格视图中多余的线
+        
+        tableView.rowHeight = 50
+        //Regist cell.
+        let cellNib = UINib(nibName: PlanExecutionCellIs.executionCell, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: PlanExecutionCellIs.executionCell)
     }
 }
 
@@ -36,15 +45,16 @@ extension MPPlanExecutionListVC : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let execution : Execution = plan.executions![indexPath.row] as! Execution
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "executionCell")
-        cell.textLabel?.text = NSString(format: "%.2f", execution.value) as String
+        let cell = tableView.dequeueReusableCell(withIdentifier: PlanExecutionCellIs.executionCell, for: indexPath) as! MPExecutionCell
+        let valueUnit = plan.valueUnit()  //单位，选择的或者自定义的
+        cell.executionLabel.setDouble(double: execution.value, count: valueUnit)
         
         let dateFormatter = DateFormatter()
             dateFormatter.locale     = Locale(identifier: "zh")
             dateFormatter.dateStyle  = DateFormatter.Style.long
             dateFormatter.dateFormat = dateFormatter.dateFormat + " HH:mm"
         
-        cell.detailTextLabel?.text = dateFormatter.string(for: execution.date) ?? ""
+        cell.timeLabel.text = dateFormatter.string(for: execution.date) ?? ""
         return cell
     }
 }
