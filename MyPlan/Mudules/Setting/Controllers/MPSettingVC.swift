@@ -45,10 +45,23 @@ class MPSettingVC : FormViewController{
                 $0.title = $0.tag
             }
             .onCellSelection { [weak self] (cell, row) in
+                self?.activityShare()
         }
     }
     
     @IBAction func doneItemBtnClicked(_ sender: UIBarButtonItem) {
+    }
+    
+    //MARK: 分享
+    func activityShare() {
+        let textToShare = "分享测试"
+        let imageToShare = UIImage.init(named: "appLogo") as Any
+        let urlToShare = "https://weibo.com/yangzai360"
+        let activityItems = [textToShare, imageToShare, urlToShare] as [Any]
+        
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        
+        present(activityVC, animated: true, completion: nil)
     }
     
     //MARK: 发送邮件
@@ -61,7 +74,7 @@ class MPSettingVC : FormViewController{
         mailVC.mailComposeDelegate = self
         mailVC.setSubject("自觉计划用户问题反馈：")
         mailVC.setToRecipients(["consciousplanhelp@icloud.com"])
-        mailVC.setMessageBody("在使用中遇到的问题如下：\n", isHTML: false)
+        mailVC.setMessageBody("在使用中遇到的问题 & 优化建议如下：\n", isHTML: false)
         present(mailVC, animated: true, completion: nil)
     }
 }

@@ -112,7 +112,6 @@ class MPPlanDetailVC : UIViewController {
             viewController.managedObjectContext = managedObjectContext!
         }
     }
-    
 }
 
 extension MPPlanDetailVC : MPAddPlanProgressPopVCDelegate {
