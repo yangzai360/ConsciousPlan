@@ -35,6 +35,7 @@ class MPCalendarVC: UIViewController, YZDatePickerControllerDelegate, YZDatePick
         //Tint color.
         updateAppearance(tintColor: self.defaultTintColor())
         prepareExecutionsData()
+        datePickerController.didUpdateActiveDate()
     }
     
     func addSubViews() {

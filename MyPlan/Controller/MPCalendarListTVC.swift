@@ -34,15 +34,8 @@ class MPCalendarListTVC: UITableViewController {
         tableView.tableFooterView = UIView() //去掉表格视图中多余的线
     }
     
-    func loadDataWithDate(activeDate: Date) {
-//        let executionDate = Int(Execution.dayDateFormatter().string(from: activeDate))
-//        showResult = fetchResultDict[executionDate!] ?? []
-//        tableView.reloadData()
-    }
-    
     struct CalendarListCellIDs {
         static let executionCell = "MPCalendarExecutionCell"
-        //        static let noPlanCell = "NothingFoundCell"
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,7 +65,7 @@ class MPCalendarListTVC: UITableViewController {
         cell.executionDateLabel.text = dateFormatter.string(from: execution.date as! Date)
         cell.valueLabel.text = (execution.value > 0 ? "+ \(execution.value) " : "- \(abs(execution.value)) ")
             + execution.plan!.valueUnit()
-        
+
         return cell
     }
     

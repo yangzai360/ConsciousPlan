@@ -37,6 +37,7 @@ class YZMonthView: UIView{
             monthLabel.setTitle(dateFormat.string(from: activeDate), for: .normal)
             monthLabel.sizeToFit()
             monthLabel.center = CGPoint(x: frame.size.width/2.0, y: 20)
+            delegate?.didUpdateActiveDate()
         }
     }
     
@@ -72,7 +73,6 @@ class YZMonthView: UIView{
             weekLabel.text = weekStrArray[i]
             weekLabel.font = UIFont.systemFont(ofSize: 11.0)
             weekLabel.textAlignment = .center
-            //            weekLabel.textColor = (i == 0 || i == 6) ? DOBlue : UIColor.black
             weekLabel.textColor = UIColor.lightGray
             addSubview(weekLabel)
         }
@@ -92,12 +92,16 @@ class YZMonthView: UIView{
             view.removeFromSuperview()
         }
         dayGridViews.removeAll()
+
+        //删除并重新添加所有日视图。
+        //遍历拿 activeDay，isToday，让后根据是不是今天去变色
+        var activeDateComponents = Calendar.current.dateComponents([.year, .month, .day, .weekOfMonth, .weekday], from: activeDate)
         
         var monthDateComponents = Calendar.current.dateComponents([.year, .month, .day, .weekOfMonth, .weekday], from: activeDate)
         let numberOfMonthDay: Int = (Calendar.current.range(of: .day, in: .month, for: activeDate)?.count)!
         
         let todayComp = Calendar.current.dateComponents([.year, .month, .day, .weekOfMonth, .weekday], from: Date())
-        var hasToday = false
+        var isToday = false
         for i in 1...numberOfMonthDay {
             monthDateComponents.day = i
             let iDayComp = Calendar.current.dateComponents([.year, .month, .day, .weekOfMonth, .weekday], from: Calendar.current.date(from: monthDateComponents)!)
@@ -112,29 +116,36 @@ class YZMonthView: UIView{
             dayGridView.dataSource = self
             dayGridView.addTarget(self, action:#selector(dayViewSelected(sender:)), for: .touchUpInside)
             
+            //样式
+            dayGridView.dayLabel?.textColor = UIColor.black
+            //判断是否是activeDay，是的话记录为激活日，并且
+            if activeDateComponents.year! == iDayComp.year! &&
+                activeDateComponents.month! == iDayComp.month! &&
+                activeDateComponents.day! == iDayComp.day! {
+                heightLightDayGrid = dayGridView
+                if todayComp.year! == iDayComp.year! &&
+                    todayComp.month! == iDayComp.month! &&
+                    todayComp.day! == iDayComp.day! {
+                    isToday = true
+                }
+            }
+            
             if todayComp.year! == iDayComp.year! &&
                 todayComp.month! == iDayComp.month! &&
                 todayComp.day! == iDayComp.day! {
                 dayGridView.dayLabel?.textColor = heightLightColor
-                heightLightDayGrid = dayGridView
-                hasToday = true
-            } else {
-                dayGridView.dayLabel?.textColor = UIColor.black
             }
             addSubview(dayGridView)
             dayGridViews.append(dayGridView)
         }
         
-        if !hasToday {
-            heightLightDayGrid = dayGridViews.first!
-            
-            heightLightDayGrid?.backgroundColor = UIColor.black
-            heightLightDayGrid?.dayLabel?.textColor = UIColor.white
-        } else {
+        if isToday {
             heightLightDayGrid?.backgroundColor = heightLightColor
             heightLightDayGrid?.dayLabel?.textColor = UIColor.white
+        } else {
+            heightLightDayGrid?.backgroundColor = UIColor.black
+            heightLightDayGrid?.dayLabel?.textColor = UIColor.white
         }
-        delegate?.didUpdateActiveDate()
     }
     
     func dayViewSelected(sender: YZDayGridView) {

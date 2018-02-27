@@ -20,7 +20,7 @@ extension UILabel {
 class YZDigitalTextField: UITextField {
     override var text: String? {
         didSet {
-            if text == nil || text == ""{
+            if text == nil || text == "" {
                 return
             }
             let nf = NumberFormatter()
@@ -32,7 +32,6 @@ class YZDigitalTextField: UITextField {
     }
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        
         return super.beginTracking(touch, with: event)
     }
 }

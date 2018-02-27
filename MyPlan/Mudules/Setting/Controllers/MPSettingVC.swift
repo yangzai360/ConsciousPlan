@@ -54,7 +54,7 @@ class MPSettingVC : FormViewController{
     
     //MARK: 分享
     func activityShare() {
-        let textToShare = "分享测试"
+        let textToShare = "我在使用「自觉计划」App，一款计划管理软件，帮你记录追踪计划进度，愿你的每一天都不再虚度！"
         let imageToShare = UIImage.init(named: "appLogo") as Any
         let urlToShare = "https://weibo.com/yangzai360"
         let activityItems = [textToShare, imageToShare, urlToShare] as [Any]

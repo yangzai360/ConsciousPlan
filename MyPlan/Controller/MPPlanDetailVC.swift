@@ -81,11 +81,19 @@ class MPPlanDetailVC : UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        //因为左滑手势的原因，如果画了一半没有退出，再次更新一个 Navigator 的Appearance
-        updateAppearance(tintColor: plan.tintColor as! UIColor)
-        
-        planDetailView.configureViewWithPlan()
+        // 动画的方式更新样式颜色
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut , animations: {
+            //因为左滑手势的原因，如果画了一半没有退出，再次更新一个 Navigator 的Appearance
+            self.updateAppearance(tintColor: self.plan.tintColor as! UIColor)
+            self.planDetailView.configureViewWithPlan()
+        }, completion: nil)
         planDetailView.animateProgress()
+        
+        if (Int(plan.planType) ==  2) {
+//            planDetailTableVC!.tableView.reloadData()
+        } else {
+            planExecutionListVC!.tableView.reloadData()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
