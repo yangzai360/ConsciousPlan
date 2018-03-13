@@ -10,8 +10,9 @@ import Eureka
 
 public class EKSettingSelectCell: Cell<String>, CellType {
 
-    @IBOutlet weak var iconImageView: UIImageView!
+
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
     
     public override func setup() {
         super.setup()
@@ -19,7 +20,7 @@ public class EKSettingSelectCell: Cell<String>, CellType {
     }
     public override func update() {
         super.update()
-        titleLabel.text = row.value ?? ""
+        valueLabel.text = row.value ?? ""
     }
     public override func didSelect() {
         row.deselect()

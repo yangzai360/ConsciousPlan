@@ -62,6 +62,7 @@ class YZDatePickerController: UIViewController, YZYearlyViewDelegate, YZMonthVie
         }
     }
     
+    //delegate 跟新月视图的数据
     func didSelectMonth(_ month: Int, inYear year: Int) {
         var dateCom = Calendar.current.dateComponents([.year, .month, .day, .weekOfMonth, .weekday ], from: Date())
         
@@ -77,6 +78,7 @@ class YZDatePickerController: UIViewController, YZYearlyViewDelegate, YZMonthVie
         }
         monthView.initDays()
         
+        //从年份换到月份的动画
         UIView.animate(withDuration: 0.5) { [weak self] in
             self!.monthView.alpha = 1
             self!.yearlyView.alpha = 0
@@ -84,6 +86,7 @@ class YZDatePickerController: UIViewController, YZYearlyViewDelegate, YZMonthVie
     }
     
     func didTouchMonthButton() {
+        //从月份换到年份的动画
         UIView.animate(withDuration: 0.5) { [weak self] in
             self!.monthView.alpha = 0
             self!.yearlyView.alpha = 1

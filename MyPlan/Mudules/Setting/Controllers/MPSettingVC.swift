@@ -8,39 +8,57 @@
 
 import Eureka
 import MessageUI
+import StoreKit
 
 class MPSettingVC : FormViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
-         initializeForm()
-        //Tint color.
+        
+        initializeForm()
+        
         updateAppearance(tintColor: self.defaultTintColor())
     }
     
     func initializeForm() {
-        form +++ Section () { section in
-            let header = HeaderFooterView<UIView>(.callback({ return UIView(frame: CGRect()) }))
-            section.header = header
-        }
 
         form +++ Section () { section in
             var header = HeaderFooterView<UIView>(.callback({
                 let view = Bundle.main.loadNibNamed("MPSettingHeaderView", owner: nil, options: nil)?.first! as! UIView
                 return view
             }))
-            header.height = {160.0}
+            header.height = { 180.0 }
             section.header = header
             }
+        
+            <<< EKSettingSelectRow("当前版本") {
+                $0.cell.titleLabel.text = $0.tag
+                $0.value = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String // 动态获取Info里面的版本号
+                $0.cell.accessoryType = .none
+                $0.cell.selectionStyle = .none
+                }
+        
+        form +++ Section()
             
-            <<< EKSettingSelectRow("技术支持") {
-//                $0.title = "计划名称"
-                $0.value = $0.tag
+            <<< EKSettingSelectRow("意见反馈") {
+                $0.cell.titleLabel.text = $0.tag
+                $0.value = ""
                 }.onChange{ row in
                 }.onCellSelection({ [weak self] (cell, row) in
                     self?.sendMail()
                 })
         
-        form +++ Section("")
+            <<< EKSettingSelectRow("五星好评") {
+                $0.cell.titleLabel.text = $0.tag
+                $0.value = ""
+                }.onChange{ row in
+                }.onCellSelection({ (cell, row) in
+                    SKStoreReviewController.requestReview()
+                })
+        
+        form +++ Section() { section in
+            let footer = HeaderFooterView(title: "使用自觉计划，记录追踪你的每一个计划，愿你的每一天过得充实有意义！\n\n@扬仔360")
+            section.footer = footer
+            }
             <<< ButtonRow("推荐给朋友") {
                 $0.title = $0.tag
             }
@@ -54,7 +72,7 @@ class MPSettingVC : FormViewController{
     
     //MARK: 分享
     func activityShare() {
-        let textToShare = "我在使用「自觉计划」App，一款计划管理软件，帮你记录追踪计划进度，愿你的每一天都不再虚度！"
+        let textToShare = "我在使用「自觉计划」App，一款计划管理软件，帮你记录追踪计划进度，愿你的每一天过得充实有意义！"
         let imageToShare = UIImage.init(named: "appLogo") as Any
         let urlToShare = "https://weibo.com/yangzai360"
         let activityItems = [textToShare, imageToShare, urlToShare] as [Any]

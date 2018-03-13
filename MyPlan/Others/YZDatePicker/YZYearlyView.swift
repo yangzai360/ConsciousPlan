@@ -25,7 +25,6 @@ class YZYearlyView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-//        self.backgroundColor = UIColor.yellow //Debug
         self.clipsToBounds = true
         
         let DOBlue = UIColor(red: 50/255, green: 191/255, blue: 254/255, alpha: 1.0) // DO blue
@@ -55,6 +54,12 @@ class YZYearlyView: UIView {
         rightBtn.center = CGPoint(x: yearLabel.center.x + 100, y: yearLabel.center.y)
         addSubview(rightBtn)
         
+        let leftSwipeGesureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeHandle(_:)))
+        leftSwipeGesureRecognizer.direction = .left
+        self.addGestureRecognizer(leftSwipeGesureRecognizer)
+        let rightSwipeGesureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeHandle(_:)))
+        rightSwipeGesureRecognizer.direction = .right
+        self.addGestureRecognizer(rightSwipeGesureRecognizer)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -63,13 +68,19 @@ class YZYearlyView: UIView {
     
     // MARK: - Target
     func leftBtnClicked() {
-    print("leftBtnClicked")
         changeYear(changeValue: -1)
     }
     
     func rightBtnClicked() {
-    print("rightBtnClicked")
         changeYear(changeValue: 1)
+    }
+    
+    func swipeHandle(_ swipeGestureRecognizer: UISwipeGestureRecognizer) {
+        if swipeGestureRecognizer.direction == .left {
+            changeYear(changeValue: 1)
+        } else {
+            changeYear(changeValue: -1)
+        }
     }
     
     func changeYear(changeValue:Int) {
@@ -77,11 +88,10 @@ class YZYearlyView: UIView {
         dateComp.year = dateComp.year! + changeValue
         activeDate = calendar.date(from: dateComp)!
         
-        UIView.transition(with: self, duration: 0.5, options: changeValue > 0 ? .transitionFlipFromLeft : .transitionFlipFromRight, animations: {
+        UIView.transition(with: self, duration: 0.5, options: changeValue > 0 ? .transitionFlipFromRight : .transitionFlipFromLeft, animations: {
             self.initMonthsWithYear(year: dateComp.year!)
         }, completion: nil)
         
-    
         yearLabel.text = "\(dateComp.year!)"
         yearLabel.sizeToFit()
     }
@@ -116,6 +126,5 @@ class YZYearlyView: UIView {
     func monthViewSelected(sender: YZMonthGridView) {
         delegate?.didSelectMonth(sender.dateComponents!.month!, inYear: sender.dateComponents!.year!)
     }
-    
     
 }

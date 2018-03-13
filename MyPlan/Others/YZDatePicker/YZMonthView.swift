@@ -77,6 +77,12 @@ class YZMonthView: UIView{
             addSubview(weekLabel)
         }
         
+        let leftSwipeGesureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeHandle(_:)))
+        leftSwipeGesureRecognizer.direction = .left
+        self.addGestureRecognizer(leftSwipeGesureRecognizer)
+        let rightSwipeGesureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeHandle(_:)))
+        rightSwipeGesureRecognizer.direction = .right
+        self.addGestureRecognizer(rightSwipeGesureRecognizer)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -148,6 +154,31 @@ class YZMonthView: UIView{
         }
     }
     
+    
+    func swipeHandle(_ swipeGestureRecognizer: UISwipeGestureRecognizer) {
+        var dateCom = Calendar.current.dateComponents([.year, .month, .day, .weekOfMonth, .weekday ], from: activeDate)
+        var todayCom = Calendar.current.dateComponents([.year, .month, .day, .weekOfMonth, .weekday ], from: Date())
+
+        if swipeGestureRecognizer.direction == .left {
+            dateCom.month = dateCom.month! + 1
+        } else {
+            dateCom.month = dateCom.month! - 1
+        }
+        
+        //如果是bfyt，那么还是初始化为今天
+        if dateCom.year! == todayCom.year! && dateCom.month! == todayCom.month! {
+            activeDate = Date()
+        } else {
+            dateCom.day = 1
+            let activeDate = Calendar.current.date(from: dateCom)
+            self.activeDate = activeDate!
+        }
+        
+        UIView.transition(with: self, duration: 0.5, options: swipeGestureRecognizer.direction == .right ? .transitionFlipFromLeft : .transitionFlipFromRight, animations: {
+            self.initDays()
+        }, completion: nil)
+    }
+    
     func dayViewSelected(sender: YZDayGridView) {
         let todayComp = Calendar.current.dateComponents([.year, .month, .day, .weekOfMonth, .weekday], from: Date())
         
@@ -187,5 +218,4 @@ extension YZMonthView: YZDatePickerControllerDataSource {
     func colorAryInDate(date: Date) -> [UIColor] {
         return dataSource!.colorAryInDate(date:date)
     }
-
 }
