@@ -74,7 +74,7 @@ class MPSettingVC : FormViewController{
     func activityShare() {
         let textToShare = "我在使用「自觉计划」App，一款计划管理软件，帮你记录追踪计划进度，愿你的每一天过得充实有意义！"
         let imageToShare = UIImage.init(named: "appLogo") as Any
-        let urlToShare = "https://weibo.com/yangzai360"
+        let urlToShare = "https://itunes.apple.com/us/app/自觉计划/id1358959588?l=zh&ls=1&mt=8"
         let activityItems = [textToShare, imageToShare, urlToShare] as [Any]
         
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
