@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ies-Kd-XY1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ies-Kd-XY1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,14 +14,11 @@
         <scene sceneID="1iW-JR-UKv">
             <objects>
                 <viewController id="tsS-KZ-fp5" customClass="MPSettingVC" customModule="MyPlan" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="i9B-6Y-Flt"/>
-                        <viewControllerLayoutGuide type="bottom" id="slP-lG-I9U"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WHq-x2-ETK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="HO6-kk-uOY"/>
                     </view>
                     <navigationItem key="navigationItem" title="自觉计划" id="Bn0-qG-wlU">
                         <barButtonItem key="rightBarButtonItem" title="完成" id="HUq-mD-uPb">
@@ -57,10 +55,6 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MPPlanListVC" customModule="MyPlan" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,11 +70,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6r8-fb-7r0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="49L-o7-zMw"/>
-                            <constraint firstAttribute="trailing" secondItem="6r8-fb-7r0" secondAttribute="trailing" id="NGV-pS-hJC"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6r8-fb-7r0" secondAttribute="bottom" id="WLh-mz-2oy"/>
-                            <constraint firstItem="6r8-fb-7r0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="goT-jy-2a4"/>
+                            <constraint firstItem="6r8-fb-7r0" firstAttribute="top" secondItem="VBX-Pm-Pzu" secondAttribute="top" id="49L-o7-zMw"/>
+                            <constraint firstItem="VBX-Pm-Pzu" firstAttribute="trailing" secondItem="6r8-fb-7r0" secondAttribute="trailing" id="NGV-pS-hJC"/>
+                            <constraint firstItem="VBX-Pm-Pzu" firstAttribute="bottom" secondItem="6r8-fb-7r0" secondAttribute="bottom" id="WLh-mz-2oy"/>
+                            <constraint firstItem="6r8-fb-7r0" firstAttribute="leading" secondItem="VBX-Pm-Pzu" secondAttribute="leading" id="goT-jy-2a4"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="VBX-Pm-Pzu"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="计划列表" image="Calendar" id="b7q-5d-S1L"/>
                     <navigationItem key="navigationItem" title="计划列表" id="DsO-qx-axi">
@@ -106,14 +101,11 @@
         <scene sceneID="Tb3-4a-dam">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="Mlr-TY-brg" customClass="MPCreatePlanVC" customModule="MyPlan" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Lbt-c2-5Mt"/>
-                        <viewControllerLayoutGuide type="bottom" id="TsO-Z7-lhb"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pqR-32-2of">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="ESs-dg-kJZ"/>
                     </view>
                     <navigationItem key="navigationItem" title="创建计划" id="lMT-OC-HWT">
                         <barButtonItem key="leftBarButtonItem" title="取消" id="tpZ-Fy-uZv">
@@ -140,14 +132,11 @@
         <scene sceneID="SST-yu-Lro">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="zOJ-7t-Sar" customClass="MPPlanDetailVC" customModule="MyPlan" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6y6-fK-tdY"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ufn-TX-EEX"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OCK-B3-qq7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="s43-if-sLa"/>
                     </view>
                     <navigationItem key="navigationItem" title="计划" id="Bdf-4i-uoR">
                         <barButtonItem key="rightBarButtonItem" title="编辑" id="Cdg-34-ieq">
@@ -173,10 +162,6 @@
         <scene sceneID="sQ5-Eg-X4V">
             <objects>
                 <viewController id="mEm-UU-dDK" customClass="MPPlanRemarkVC" customModule="MyPlan" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="X1j-6D-Mb9"/>
-                        <viewControllerLayoutGuide type="bottom" id="qbD-Mw-77I"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aME-KZ-jhl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,11 +179,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.93802324861568664" blue="0.85115125864978414" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="TEd-TQ-oot" secondAttribute="trailing" constant="8" id="Ktd-Bv-vpS"/>
-                            <constraint firstItem="qbD-Mw-77I" firstAttribute="top" secondItem="TEd-TQ-oot" secondAttribute="bottom" constant="216" id="Wkp-K5-z2S"/>
-                            <constraint firstItem="TEd-TQ-oot" firstAttribute="top" secondItem="X1j-6D-Mb9" secondAttribute="bottom" constant="8" id="ZI2-Jq-8hK"/>
-                            <constraint firstItem="TEd-TQ-oot" firstAttribute="leading" secondItem="aME-KZ-jhl" secondAttribute="leading" constant="8" id="pj2-yl-8hL"/>
+                            <constraint firstItem="lcj-ik-bhh" firstAttribute="trailing" secondItem="TEd-TQ-oot" secondAttribute="trailing" constant="8" id="Ktd-Bv-vpS"/>
+                            <constraint firstItem="lcj-ik-bhh" firstAttribute="bottom" secondItem="TEd-TQ-oot" secondAttribute="bottom" constant="216" id="Wkp-K5-z2S"/>
+                            <constraint firstItem="TEd-TQ-oot" firstAttribute="top" secondItem="lcj-ik-bhh" secondAttribute="top" constant="8" id="ZI2-Jq-8hK"/>
+                            <constraint firstItem="TEd-TQ-oot" firstAttribute="leading" secondItem="lcj-ik-bhh" secondAttribute="leading" constant="8" id="pj2-yl-8hL"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="lcj-ik-bhh"/>
                     </view>
                     <navigationItem key="navigationItem" title="备注" id="u3S-UF-xNF"/>
                     <connections>
@@ -214,10 +200,6 @@
         <scene sceneID="vsg-zW-pmD">
             <objects>
                 <viewController storyboardIdentifier="MPPlanExecutionListVC" id="gh8-8J-e47" customClass="MPPlanExecutionListVC" customModule="MyPlan" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="AIC-ws-QSO"/>
-                        <viewControllerLayoutGuide type="bottom" id="qvu-tE-AaQ"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rTa-cy-nRZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,11 +215,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="I76-iH-7xq" secondAttribute="trailing" id="3NW-Ei-gwU"/>
-                            <constraint firstItem="I76-iH-7xq" firstAttribute="leading" secondItem="rTa-cy-nRZ" secondAttribute="leading" id="CPB-wf-lRb"/>
+                            <constraint firstItem="boi-Cx-6G7" firstAttribute="trailing" secondItem="I76-iH-7xq" secondAttribute="trailing" id="3NW-Ei-gwU"/>
+                            <constraint firstItem="I76-iH-7xq" firstAttribute="leading" secondItem="boi-Cx-6G7" secondAttribute="leading" id="CPB-wf-lRb"/>
                             <constraint firstItem="I76-iH-7xq" firstAttribute="top" secondItem="rTa-cy-nRZ" secondAttribute="top" id="IPw-aX-H5w"/>
-                            <constraint firstItem="qvu-tE-AaQ" firstAttribute="top" secondItem="I76-iH-7xq" secondAttribute="bottom" id="gjJ-VH-uml"/>
+                            <constraint firstItem="boi-Cx-6G7" firstAttribute="bottom" secondItem="I76-iH-7xq" secondAttribute="bottom" id="gjJ-VH-uml"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="boi-Cx-6G7"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="I76-iH-7xq" id="Xh2-QM-nDi"/>
@@ -251,10 +234,6 @@
         <scene sceneID="mcY-jo-01S">
             <objects>
                 <viewController id="pq4-Lh-PcS" customClass="MPAddPlanProgressPopVC" customModule="MyPlan" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="d5d-ho-SWA"/>
-                        <viewControllerLayoutGuide type="bottom" id="88c-q9-fGO"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9hr-y3-tIH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -356,8 +335,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FW8-4k-Du2" firstAttribute="centerY" secondItem="9hr-y3-tIH" secondAttribute="centerY" constant="-100" id="3ow-ju-zX1"/>
-                            <constraint firstItem="FW8-4k-Du2" firstAttribute="centerX" secondItem="9hr-y3-tIH" secondAttribute="centerX" id="k7j-U8-N9G"/>
+                            <constraint firstItem="FW8-4k-Du2" firstAttribute="centerX" secondItem="dad-hV-0c5" secondAttribute="centerX" id="k7j-U8-N9G"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="dad-hV-0c5"/>
                     </view>
                     <connections>
                         <outlet property="countLabel" destination="Ssi-WS-PV4" id="VRe-Ux-tSx"/>
@@ -413,14 +393,11 @@
         <scene sceneID="hEe-8I-ZMp">
             <objects>
                 <viewController id="EQJ-mp-O55" customClass="MPCalendarVC" customModule="MyPlan" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bHF-zp-cXD"/>
-                        <viewControllerLayoutGuide type="bottom" id="U1S-kX-GGA"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WAR-FM-Pl5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="kwG-AN-5ux"/>
                     </view>
                     <navigationItem key="navigationItem" title="日历" id="ihP-4D-jkE"/>
                     <connections>
@@ -454,10 +431,6 @@
         <scene sceneID="Hjk-Ue-gjl">
             <objects>
                 <viewController id="dbP-Ra-26F" customClass="MPAddTodoPopVC" customModule="MyPlan" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hqV-2W-iXr"/>
-                        <viewControllerLayoutGuide type="bottom" id="t4z-j0-282"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1hF-ib-LYB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -523,9 +496,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3xJ-VM-s8q" firstAttribute="centerX" secondItem="1hF-ib-LYB" secondAttribute="centerX" id="Gtk-pi-S7r"/>
+                            <constraint firstItem="3xJ-VM-s8q" firstAttribute="centerX" secondItem="1pE-2I-hXe" secondAttribute="centerX" id="Gtk-pi-S7r"/>
                             <constraint firstItem="3xJ-VM-s8q" firstAttribute="centerY" secondItem="1hF-ib-LYB" secondAttribute="centerY" constant="-100" id="aFW-ep-Abb"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="1pE-2I-hXe"/>
                     </view>
                     <connections>
                         <outlet property="nameTextField" destination="RwD-QK-wgd" id="sOw-8Z-z7m"/>
@@ -557,10 +531,6 @@
         <scene sceneID="1om-6z-Nv1">
             <objects>
                 <viewController id="OgZ-0N-OOz" customClass="MPTodayListVC" customModule="MyPlan" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="KPo-In-04M"/>
-                        <viewControllerLayoutGuide type="bottom" id="QUO-WI-d7y"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hU4-2C-QpP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -576,11 +546,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Agd-DK-ivd" firstAttribute="top" secondItem="KPo-In-04M" secondAttribute="bottom" id="2kp-2Z-mtt"/>
-                            <constraint firstAttribute="trailing" secondItem="Agd-DK-ivd" secondAttribute="trailing" id="5Ac-CD-yGB"/>
-                            <constraint firstItem="QUO-WI-d7y" firstAttribute="top" secondItem="Agd-DK-ivd" secondAttribute="bottom" id="GTo-WW-T9V"/>
-                            <constraint firstItem="Agd-DK-ivd" firstAttribute="leading" secondItem="hU4-2C-QpP" secondAttribute="leading" id="sCh-Lj-Srl"/>
+                            <constraint firstItem="Agd-DK-ivd" firstAttribute="top" secondItem="Sm1-aK-Ea2" secondAttribute="top" id="2kp-2Z-mtt"/>
+                            <constraint firstItem="Sm1-aK-Ea2" firstAttribute="trailing" secondItem="Agd-DK-ivd" secondAttribute="trailing" id="5Ac-CD-yGB"/>
+                            <constraint firstItem="Sm1-aK-Ea2" firstAttribute="bottom" secondItem="Agd-DK-ivd" secondAttribute="bottom" id="GTo-WW-T9V"/>
+                            <constraint firstItem="Agd-DK-ivd" firstAttribute="leading" secondItem="Sm1-aK-Ea2" secondAttribute="leading" id="sCh-Lj-Srl"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sm1-aK-Ea2"/>
                     </view>
                     <navigationItem key="navigationItem" title="今日计划" id="hME-cD-hfc">
                         <barButtonItem key="leftBarButtonItem" image="Setting" id="EzD-5V-bSc">
@@ -636,6 +607,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dON-6D-sXm"/>
-        <segue reference="BjB-eg-aTQ"/>
+        <segue reference="HDo-Ur-NCM"/>
     </inferredMetricsTieBreakers>
 </document>

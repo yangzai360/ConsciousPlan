@@ -6,7 +6,7 @@ use_frameworks!
 
 target 'MyPlan' do
     
-    pod 'SnapKit',    '~> 3.2.0'
+    pod 'SnapKit',    '~> 4.0.0'
     pod 'Eureka', '~> 4.0.1'
     
 	pod 'DZNEmptyDataSet', '~> 1.8.1'
