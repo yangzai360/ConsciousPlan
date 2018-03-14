@@ -65,7 +65,12 @@ class MPPlanDetailVC : UIViewController {
         planDetailView.snp.makeConstraints { (make) -> Void in
             make.width.equalTo(self.view)
             make.height.equalTo(planDetailView.viewHeight)
-            make.top.equalTo(self.view).offset(64)
+//            make.top.equalTo(self.view).offset(64)
+            if #available(iOS 11.0, *) {
+                make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            } else {
+                make.top.equalTo(self.view).offset(64)
+            }
             make.centerX.equalTo(self.view)
         }
         planDetailView.configureViewWithPlan()
