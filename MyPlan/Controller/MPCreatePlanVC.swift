@@ -280,7 +280,7 @@ class MPCreatePlanVC : FormViewController, UsesCoreDataObjects {
         //ToDo 的子项目加在 Plan 下面
         if plan.planType == 2 {
             for row in form.rows {
-                guard row is TextRow, row.tag == "TodoSection", let subTodoName = row.baseValue as? String else { continue }
+                guard row is TextRow, row.section?.tag == "TodoSection", let subTodoName = row.baseValue as? String else { continue }
                 let subTodo = SubTodo(context: managedObjectContext!)
                 subTodo.createTime = NSDate()
                 subTodo.name = subTodoName;
