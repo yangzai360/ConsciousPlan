@@ -82,8 +82,8 @@ class MPCalendarListTVC: UITableViewController {
 extension MPCalendarListTVC : DZNEmptyDataSetSource {
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let text = "这一天没有执行记录"
-        let attributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: CGFloat(16.0)),
-                          NSForegroundColorAttributeName: UIColor.darkGray]
+        let attributes = [NSAttributedString.Key.foregroundColor: UIFont.boldSystemFont(ofSize: CGFloat(16.0)),
+                          NSAttributedString.Key.foregroundColor: UIColor.darkGray]
         return NSAttributedString(string: text, attributes: attributes)
     }
     func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
@@ -91,9 +91,9 @@ extension MPCalendarListTVC : DZNEmptyDataSetSource {
         let paragraph = NSMutableParagraphStyle()
         paragraph.lineBreakMode = .byWordWrapping
         paragraph.alignment = .center
-        let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: CGFloat(14.0)),
-                          NSForegroundColorAttributeName: UIColor.lightGray,
-                          NSParagraphStyleAttributeName: paragraph]
+        let attributes = [NSAttributedString.Key.foregroundColor: UIFont.systemFont(ofSize: CGFloat(14.0)),
+                          NSAttributedString.Key.foregroundColor: UIColor.lightGray,
+                          NSAttributedString.Key.paragraphStyle: paragraph]
         return NSAttributedString(string: text, attributes: attributes)
     }
     func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {

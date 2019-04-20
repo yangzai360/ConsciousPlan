@@ -43,7 +43,7 @@ class MPCalendarVC: UIViewController, YZDatePickerControllerDelegate, YZDatePick
         calendarListTVC = MPCalendarListTVC()
         view.addSubview(calendarListTVC.view)
         
-        addChildViewController(datePickerController)
+        addChild(datePickerController)
         datePickerController.view.frame = CGRect(x: 0, y: 80, width: UIScreen.main.bounds.size.width, height: 270)
         datePickerController.delegate = self
         datePickerController.dataSource = self

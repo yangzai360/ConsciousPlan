@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import MyPlan
+@testable import Pods_MyPlan
 
 class MyPlanTests: XCTestCase {
     

@@ -89,7 +89,7 @@ class YZMonthView: UIView{
         super.init(coder: aDecoder)
     }
     
-    func monthBtnClicked() {
+    @objc func monthBtnClicked() {
         delegate?.didTouchMonthButton()
     }
     
@@ -155,7 +155,7 @@ class YZMonthView: UIView{
     }
     
     
-    func swipeHandle(_ swipeGestureRecognizer: UISwipeGestureRecognizer) {
+    @objc func swipeHandle(_ swipeGestureRecognizer: UISwipeGestureRecognizer) {
         var dateCom = Calendar.current.dateComponents([.year, .month, .day, .weekOfMonth, .weekday ], from: activeDate)
         var todayCom = Calendar.current.dateComponents([.year, .month, .day, .weekOfMonth, .weekday ], from: Date())
 
@@ -179,7 +179,7 @@ class YZMonthView: UIView{
         }, completion: nil)
     }
     
-    func dayViewSelected(sender: YZDayGridView) {
+    @objc func dayViewSelected(sender: YZDayGridView) {
         let todayComp = Calendar.current.dateComponents([.year, .month, .day, .weekOfMonth, .weekday], from: Date())
         
         heightLightDayGrid?.backgroundColor = UIColor.clear

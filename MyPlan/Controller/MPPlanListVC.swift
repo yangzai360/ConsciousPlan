@@ -99,7 +99,7 @@ extension MPPlanListVC: UITableViewDelegate {
     }
     
     // Delete plan row and data.
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             self.managedContext.delete(self.fetchResult[indexPath.row])
             self.fetchResult.remove(at: indexPath.row)
@@ -132,8 +132,8 @@ extension MPPlanListVC : DZNEmptyDataSetSource {
     //实现第三方库协议的方法
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let text = "你还没有任何计划~"
-        let attributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: CGFloat(18.0)),
-                          NSForegroundColorAttributeName: UIColor.darkGray]
+        let attributes = [NSAttributedString.Key.foregroundColor: UIFont.boldSystemFont(ofSize: CGFloat(18.0)),
+                          NSAttributedString.Key.foregroundColor: UIColor.darkGray]
         return NSAttributedString(string: text, attributes: attributes)
     }
     func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
@@ -141,15 +141,15 @@ extension MPPlanListVC : DZNEmptyDataSetSource {
         let paragraph = NSMutableParagraphStyle()
         paragraph.lineBreakMode = .byWordWrapping
         paragraph.alignment = .center
-        let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: CGFloat(14.0)),
-                          NSForegroundColorAttributeName: UIColor.lightGray,
-                          NSParagraphStyleAttributeName: paragraph]
+        let attributes = [NSAttributedString.Key.foregroundColor: UIFont.systemFont(ofSize: CGFloat(14.0)),
+                          NSAttributedString.Key.foregroundColor: UIColor.lightGray,
+                          NSAttributedString.Key.paragraphStyle: paragraph]
         return NSAttributedString(string: text, attributes: attributes)
         
     }
-    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControlState) -> NSAttributedString! {
-        let attributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: CGFloat(18.0)),
-                          NSForegroundColorAttributeName: self.defaultTintColor()]
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> NSAttributedString! {
+        let attributes = [NSAttributedString.Key.foregroundColor: UIFont.boldSystemFont(ofSize: CGFloat(18.0)),
+                          NSAttributedString.Key.foregroundColor: self.defaultTintColor()]
         return NSAttributedString(string: "创建新计划", attributes: attributes)
         
     }

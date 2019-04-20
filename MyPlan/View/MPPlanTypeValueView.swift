@@ -82,7 +82,7 @@ class MPPlanTypeValueView: MPPlanDetailView {
         delegate.didClickedExecutionListBtn()
     }
     
-    func remarkViewTapped() {
+    @objc func remarkViewTapped() {
         delegate.didTapEditRemark()
     }
     

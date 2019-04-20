@@ -39,7 +39,7 @@ class MPAddTodoPopVC: MPPopView {
     @IBAction func add(_ sender: Any) {
         nameTextField.endEditing(true)
         
-        if nameTextField.text!.characters.count > 0 {
+        if nameTextField.text!.count > 0 {
             newTodo.name = nameTextField.text!
             plan.addSubTodo(todo: newTodo)
             managedObjectContext.trySave()

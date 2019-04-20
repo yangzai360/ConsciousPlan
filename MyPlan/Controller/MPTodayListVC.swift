@@ -26,8 +26,8 @@ class MPTodayListVC: UIViewController {
         tableView.register(cellNib, forCellReuseIdentifier: "MPPlanListCell")
         tableView.rowHeight = 80
         
-        tableView.emptyDataSetDelegate = self
-        tableView.emptyDataSetSource = self
+//        tableView.emptyDataSetDelegate = self
+//        tableView.emptyDataSetSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,38 +97,38 @@ extension MPTodayListVC: UITableViewDelegate {
     }
 }
 
-// MARK: - DZNEmptyDataSet.
-extension MPTodayListVC : DZNEmptyDataSetSource {
-    //实现第三方库协议的方法
-    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        let text = "你今天没有任何计划~"
-        let attributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: CGFloat(18.0)),
-                          NSForegroundColorAttributeName: UIColor.darkGray]
-        return NSAttributedString(string: text, attributes: attributes)
-    }
-    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        let text = "这里列举了今天的计划"
-        let paragraph = NSMutableParagraphStyle()
-        paragraph.lineBreakMode = .byWordWrapping
-        paragraph.alignment = .center
-        let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: CGFloat(14.0)),
-                          NSForegroundColorAttributeName: UIColor.lightGray,
-                          NSParagraphStyleAttributeName: paragraph]
-        return NSAttributedString(string: text, attributes: attributes)
-        
-    }
-    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControlState) -> NSAttributedString! {
-        let attributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: CGFloat(18.0)),
-                          NSForegroundColorAttributeName: self.defaultTintColor()]
-        return NSAttributedString(string: "创建新计划", attributes: attributes)
-        
-    }
-    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
-        return UIColor.white
-    }
-}
-extension MPTodayListVC : DZNEmptyDataSetDelegate {
-    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
-        performSegue(withIdentifier: "createPlanSegue", sender: nil)
-    }
-}
+//// MARK: - DZNEmptyDataSet.
+//extension MPTodayListVC : DZNEmptyDataSetSource {
+//    //实现第三方库协议的方法
+//    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+//        let text = "你今天没有任何计划~"
+//        let attributes = [NSAttributedString.Key.foregroundColor: UIFont.boldSystemFont(ofSize: CGFloat(18.0)),
+//                          NSAttributedString.Key.foregroundColor: UIColor.darkGray]
+//        return NSAttributedString(string: text, attributes: attributes)
+//    }
+//    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+//        let text = "这里列举了今天的计划"
+//        let paragraph = NSMutableParagraphStyle()
+//        paragraph.lineBreakMode = .byWordWrapping
+//        paragraph.alignment = .center
+//        let attributes = [NSAttributedString.Key.foregroundColor: UIFont.systemFont(ofSize: CGFloat(14.0)),
+//                          NSAttributedString.Key.foregroundColor: UIColor.lightGray,
+//                          NSAttributedString.Key.paragraphStyle: paragraph]
+//        return NSAttributedString(string: text, attributes: attributes)
+//
+//    }
+//    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> NSAttributedString! {
+//        let attributes = [NSAttributedString.Key.foregroundColor: UIFont.boldSystemFont(ofSize: CGFloat(18.0)),
+//                          NSAttributedString.Key.foregroundColor: self.defaultTintColor()]
+//        return NSAttributedString(string: "创建新计划", attributes: attributes)
+//
+//    }
+//    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+//        return UIColor.white
+//    }
+//}
+//extension MPTodayListVC : DZNEmptyDataSetDelegate {
+//    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+//        performSegue(withIdentifier: "createPlanSegue", sender: nil)
+//    }
+//}

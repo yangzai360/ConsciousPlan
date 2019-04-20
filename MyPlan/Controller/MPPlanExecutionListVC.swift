@@ -68,7 +68,7 @@ extension MPPlanExecutionListVC: UITableViewDelegate {
         return true
     }
     // Delete execution row and data.
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let deleteExecutionItem = plan.executions![indexPath.row] as! Execution
             plan.value -= deleteExecutionItem.value
@@ -87,8 +87,8 @@ extension MPPlanExecutionListVC: UITableViewDelegate {
 extension MPPlanExecutionListVC : DZNEmptyDataSetSource {
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let text = "此计划没有执行记录"
-        let attributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: CGFloat(16.0)),
-                          NSForegroundColorAttributeName: UIColor.darkGray]
+        let attributes = [NSAttributedString.Key.foregroundColor: UIFont.boldSystemFont(ofSize: CGFloat(16.0)),
+                          NSAttributedString.Key.foregroundColor: UIColor.darkGray]
         return NSAttributedString(string: text, attributes: attributes)
     }
     func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
@@ -96,9 +96,9 @@ extension MPPlanExecutionListVC : DZNEmptyDataSetSource {
         let paragraph = NSMutableParagraphStyle()
         paragraph.lineBreakMode = .byWordWrapping
         paragraph.alignment = .center
-        let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: CGFloat(14.0)),
-                          NSForegroundColorAttributeName: UIColor.lightGray,
-                          NSParagraphStyleAttributeName: paragraph]
+        let attributes = [NSAttributedString.Key.foregroundColor: UIFont.systemFont(ofSize: CGFloat(14.0)),
+                          NSAttributedString.Key.foregroundColor: UIColor.lightGray,
+                          NSAttributedString.Key.paragraphStyle: paragraph]
         return NSAttributedString(string: text, attributes: attributes)
     }
 }

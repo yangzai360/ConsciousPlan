@@ -22,8 +22,9 @@ extension UIViewController {
         let navController = self.navigationController!
         navController.navigationBar.barTintColor = tintColor
         navController.navigationBar.tintColor = fontColor
-        let attr: [String : Any]! = [NSForegroundColorAttributeName: fontColor]
-        navController.navigationBar.titleTextAttributes = attr
+        let attr = [NSAttributedString.Key.foregroundColor.rawValue: fontColor]
+        //fixed later
+//        navController.navigationBar.titleTextAttributes = attr
         
         UIApplication.shared.statusBarStyle = yValue > 0.8 ? .default : .lightContent
     }

@@ -26,7 +26,6 @@
 		8F52E82A1E87B5C500E41627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F52E8291E87B5C500E41627 /* Assets.xcassets */; };
 		8F52E82D1E87B5C500E41627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F52E82B1E87B5C500E41627 /* LaunchScreen.storyboard */; };
 		8F52E8381E87B5C500E41627 /* MyPlanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52E8371E87B5C500E41627 /* MyPlanTests.swift */; };
-		8F52E8431E87B5C500E41627 /* MyPlanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52E8421E87B5C500E41627 /* MyPlanUITests.swift */; };
 		8F52E8541E87B7DB00E41627 /* MPPlanListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52E8531E87B7DB00E41627 /* MPPlanListVC.swift */; };
 		8F52E8561E87B80300E41627 /* MPCreatePlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52E8551E87B80300E41627 /* MPCreatePlanVC.swift */; };
 		8F6FCAEB1FDD82E000FDD01A /* YZDigitalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6FCAEA1FDD82E000FDD01A /* YZDigitalTextField.swift */; };
@@ -85,13 +84,6 @@
 			remoteGlobalIDString = 8F52E81B1E87B5C500E41627;
 			remoteInfo = MyPlan;
 		};
-		8F52E83F1E87B5C500E41627 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8F52E8141E87B5C500E41627 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8F52E81B1E87B5C500E41627;
-			remoteInfo = MyPlan;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -118,9 +110,6 @@
 		8F52E8331E87B5C500E41627 /* MyPlanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPlanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F52E8371E87B5C500E41627 /* MyPlanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlanTests.swift; sourceTree = "<group>"; };
 		8F52E8391E87B5C500E41627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8F52E83E1E87B5C500E41627 /* MyPlanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPlanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F52E8421E87B5C500E41627 /* MyPlanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlanUITests.swift; sourceTree = "<group>"; };
-		8F52E8441E87B5C500E41627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F52E8531E87B7DB00E41627 /* MPPlanListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPPlanListVC.swift; sourceTree = "<group>"; };
 		8F52E8551E87B80300E41627 /* MPCreatePlanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCreatePlanVC.swift; sourceTree = "<group>"; };
 		8F6FCAE51FDBC36900FDD01A /* MyPlan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyPlan-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -191,13 +180,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8F52E83B1E87B5C500E41627 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -237,7 +219,6 @@
 			children = (
 				8F52E81E1E87B5C500E41627 /* MyPlan */,
 				8F52E8361E87B5C500E41627 /* MyPlanTests */,
-				8F52E8411E87B5C500E41627 /* MyPlanUITests */,
 				8F52E81D1E87B5C500E41627 /* Products */,
 				30606550526D2B85E1FAE4E0 /* Pods */,
 				EE386B7DA00A94257EB0FDDE /* Frameworks */,
@@ -249,7 +230,6 @@
 			children = (
 				8F52E81C1E87B5C500E41627 /* MyPlan.app */,
 				8F52E8331E87B5C500E41627 /* MyPlanTests.xctest */,
-				8F52E83E1E87B5C500E41627 /* MyPlanUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -286,15 +266,6 @@
 				8F52E8391E87B5C500E41627 /* Info.plist */,
 			);
 			path = MyPlanTests;
-			sourceTree = "<group>";
-		};
-		8F52E8411E87B5C500E41627 /* MyPlanUITests */ = {
-			isa = PBXGroup;
-			children = (
-				8F52E8421E87B5C500E41627 /* MyPlanUITests.swift */,
-				8F52E8441E87B5C500E41627 /* Info.plist */,
-			);
-			path = MyPlanUITests;
 			sourceTree = "<group>";
 		};
 		8F52E8501E87B79A00E41627 /* Controller */ = {
@@ -449,7 +420,6 @@
 				8F52E8191E87B5C500E41627 /* Frameworks */,
 				8F52E81A1E87B5C500E41627 /* Resources */,
 				B57360C40C4943299C0310C5 /* [CP] Embed Pods Frameworks */,
-				1C71EDDC13B3836DF7E1F32F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -478,24 +448,6 @@
 			productReference = 8F52E8331E87B5C500E41627 /* MyPlanTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		8F52E83D1E87B5C500E41627 /* MyPlanUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8F52E84D1E87B5C500E41627 /* Build configuration list for PBXNativeTarget "MyPlanUITests" */;
-			buildPhases = (
-				8F52E83A1E87B5C500E41627 /* Sources */,
-				8F52E83B1E87B5C500E41627 /* Frameworks */,
-				8F52E83C1E87B5C500E41627 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8F52E8401E87B5C500E41627 /* PBXTargetDependency */,
-			);
-			name = MyPlanUITests;
-			productName = MyPlanUITests;
-			productReference = 8F52E83E1E87B5C500E41627 /* MyPlanUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -518,12 +470,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8F52E81B1E87B5C500E41627;
 					};
-					8F52E83D1E87B5C500E41627 = {
-						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 539UQ5N6XQ;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 8F52E81B1E87B5C500E41627;
-					};
 				};
 			};
 			buildConfigurationList = 8F52E8171E87B5C500E41627 /* Build configuration list for PBXProject "MyPlan" */;
@@ -531,6 +477,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -541,7 +488,6 @@
 			targets = (
 				8F52E81B1E87B5C500E41627 /* MyPlan */,
 				8F52E8321E87B5C500E41627 /* MyPlanTests */,
-				8F52E83D1E87B5C500E41627 /* MyPlanUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -577,31 +523,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8F52E83C1E87B5C500E41627 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1C71EDDC13B3836DF7E1F32F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyPlan/Pods-MyPlan-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3F261AA7D120B04EDEF1E858 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -626,7 +550,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MyPlan/Pods-MyPlan-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MyPlan/Pods-MyPlan-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -639,7 +563,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyPlan/Pods-MyPlan-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyPlan/Pods-MyPlan-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -709,14 +633,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8F52E83A1E87B5C500E41627 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8F52E8431E87B5C500E41627 /* MyPlanUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -724,11 +640,6 @@
 			isa = PBXTargetDependency;
 			target = 8F52E81B1E87B5C500E41627 /* MyPlan */;
 			targetProxy = 8F52E8341E87B5C500E41627 /* PBXContainerItemProxy */;
-		};
-		8F52E8401E87B5C500E41627 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8F52E81B1E87B5C500E41627 /* MyPlan */;
-			targetProxy = 8F52E83F1E87B5C500E41627 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -873,7 +784,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyPlan/MyPlan-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -895,7 +806,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyPlan/MyPlan-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -910,7 +821,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SeanJie.MyPlanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyPlan.app/MyPlan";
 			};
 			name = Debug;
@@ -925,36 +836,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SeanJie.MyPlanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyPlan.app/MyPlan";
-			};
-			name = Release;
-		};
-		8F52E84E1E87B5C500E41627 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 539UQ5N6XQ;
-				INFOPLIST_FILE = MyPlanUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.SeanJie.MyPlanUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = MyPlan;
-			};
-			name = Debug;
-		};
-		8F52E84F1E87B5C500E41627 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 539UQ5N6XQ;
-				INFOPLIST_FILE = MyPlanUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.SeanJie.MyPlanUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = MyPlan;
 			};
 			name = Release;
 		};
@@ -984,15 +867,6 @@
 			buildConfigurations = (
 				8F52E84B1E87B5C500E41627 /* Debug */,
 				8F52E84C1E87B5C500E41627 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8F52E84D1E87B5C500E41627 /* Build configuration list for PBXNativeTarget "MyPlanUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8F52E84E1E87B5C500E41627 /* Debug */,
-				8F52E84F1E87B5C500E41627 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

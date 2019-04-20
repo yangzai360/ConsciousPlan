@@ -46,7 +46,7 @@ class MPPlanDetailVC : UIViewController {
             planExexutionsVC.managedObjectContext = managedObjectContext!
         }
         
-        addChildViewController(planDetailTVC)
+        addChild(planDetailTVC)
         view.addSubview(planDetailTVC.view)
         planDetailTVC.view.snp.makeConstraints { (make) -> Void in
             make.width.equalTo(self.view)
@@ -76,9 +76,9 @@ class MPPlanDetailVC : UIViewController {
         planDetailView.configureViewWithPlan()
         
         if (Int(plan.planType) ==  2) {
-            planDetailTableVC!.tableView.contentInset = UIEdgeInsetsMake(CGFloat(planDetailView.viewHeight), 0, 0, 0);
+            planDetailTableVC!.tableView.contentInset = UIEdgeInsets(top: CGFloat(planDetailView.viewHeight), left: 0, bottom: 0, right: 0);
         } else {
-            planExecutionListVC!.tableView.contentInset = UIEdgeInsetsMake(CGFloat(planDetailView.viewHeight), 0, 0, 0);
+            planExecutionListVC!.tableView.contentInset = UIEdgeInsets(top: CGFloat(planDetailView.viewHeight), left: 0, bottom: 0, right: 0);
         }
         planDetailView.alpha = 0.94
     }

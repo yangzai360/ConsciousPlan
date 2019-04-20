@@ -46,7 +46,7 @@ public class MPPlan: NSManagedObject {
     ///
     /// - Returns: nil is right, else return the error alert string.
     func checkForCreatPlan() -> String? {
-        if planName == nil || planName?.characters.count == 0 { return "请输入计划名称"}
+        if planName == nil || planName?.count == 0 { return "请输入计划名称"}
 //        if beginTime!.compare(endTime! as Date) == .orderedAscending { return "请修正结束时间"}
         return nil
     }

@@ -67,15 +67,15 @@ class YZYearlyView: UIView {
     }
     
     // MARK: - Target
-    func leftBtnClicked() {
+    @objc func leftBtnClicked() {
         changeYear(changeValue: -1)
     }
     
-    func rightBtnClicked() {
+    @objc func rightBtnClicked() {
         changeYear(changeValue: 1)
     }
     
-    func swipeHandle(_ swipeGestureRecognizer: UISwipeGestureRecognizer) {
+    @objc func swipeHandle(_ swipeGestureRecognizer: UISwipeGestureRecognizer) {
         if swipeGestureRecognizer.direction == .left {
             changeYear(changeValue: 1)
         } else {
@@ -123,7 +123,7 @@ class YZYearlyView: UIView {
         }}
     }
     
-    func monthViewSelected(sender: YZMonthGridView) {
+    @objc func monthViewSelected(sender: YZMonthGridView) {
         delegate?.didSelectMonth(sender.dateComponents!.month!, inYear: sender.dateComponents!.year!)
     }
     

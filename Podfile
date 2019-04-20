@@ -1,13 +1,13 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 use_frameworks!
 
 target 'MyPlan' do
     
-    pod 'SnapKit',    '~> 4.0.0'
-    pod 'Eureka', '~> 4.0.1'
+    pod 'SnapKit',    '~> 4.2.0'
+    pod 'Eureka', '~> 5.0.0'
     
 	pod 'DZNEmptyDataSet', '~> 1.8.1'
     
